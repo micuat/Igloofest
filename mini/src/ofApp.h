@@ -28,7 +28,9 @@ public:
 
     ofxPanel gui;
     ofxVec3Slider lightPosition, cameraPosition;
-    ofxFloatSlider matRoughness, matSpecular, matMetallic, lightRadius;
+    ofxFloatSlider matRoughness, matSpecular, matMetallic, lightRadius, gravitySlider;
+    ofxToggle refreshButton;
+    ofxToggle metaballToggle, traceToggle, sphereToggle;
 
     ofLight pointLight, ambientLight;
 
@@ -59,4 +61,8 @@ public:
     ofxBloom        bloom;
 
     ofNode scene;
+
+    ofImage skyboxImage;
+
+    vector<ofMesh> traces;
 };

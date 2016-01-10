@@ -3,17 +3,22 @@
 //--------------------------------------------------------------
 void ofApp::setup() {
     ofSetVerticalSync(true);
-    ofSetFrameRate(15);
+    ofSetFrameRate(60);
     ofBackground(10, 10, 10);
     ofEnableDepthTest();
 
     gui.setup();
     gui.add(lightPosition.setup("light", ofVec3f(), ofVec3f(-10), ofVec3f(10)));
     gui.add(cameraPosition.setup("camera", ofVec3f(), ofVec3f(-10), ofVec3f(10)));
+    gui.add(gravitySlider.setup("gravity", 0.98f, 0, 0.98f));
     gui.add(matRoughness.setup("roughness", 0.5f, 0, 1));
     gui.add(matSpecular.setup("specular", 0.5f, 0, 1));
     gui.add(matMetallic.setup("metallic", 0.5f, 0, 1));
     gui.add(lightRadius.setup("light radius", 4, 0, 100));
+    gui.add(refreshButton.setup("refresh", false));
+    gui.add(metaballToggle.setup("metaballs", false));
+    gui.add(traceToggle.setup("traces", true));
+    gui.add(sphereToggle.setup("spheres", false));
     gui.loadFromFile("settings.xml");
 
     // turn on smooth lighting //
@@ -60,14 +65,21 @@ void ofApp::setup() {
     world.enableGrabbing();
     world.enableDebugDraw();
     world.setCamera(&camera);
+    world.setGravity(ofVec3f(0, gravitySlider, 0));
 
     for (int i = 0; i < 16; i++)
     {
         auto sphere = ofPtr<ofxBulletSphere>(new ofxBulletSphere());
-        sphere->create(world.world, ofVec3f(ofRandomf() * 0.01f, ofMap(i, 0, 16, 2, -2), ofRandomf() * 0.01f), 0.1f, 0.5f);
+        sphere->create(world.world, ofVec3f(ofRandomf() * 0.01f, ofMap(i, 0, 16, 2, -2), ofRandomf() * 0.01f), 0.001f, 0.5f);
         sphere->setProperties(1, 0);
+        sphere->setDamping(0);
         sphere->add();
+        sphere->applyCentralForce(ofVec3f(0, 9.8f * 0.01f, 0));
         spheres.push_back(sphere);
+
+        ofMesh mesh;
+        mesh.setMode(OF_PRIMITIVE_LINE_STRIP);
+        traces.push_back(mesh);
     }
 
     float rest = 1;
@@ -95,6 +107,7 @@ void ofApp::setup() {
 
     camera.setPosition(ofVec3f(0, -3.f, -10.f));
     camera.lookAt(ofVec3f(0, 3, 0), ofVec3f(0, -1, 0));
+    camera.setNearClip(0.01f);
 
     iso.setup(32);
 
@@ -103,7 +116,7 @@ void ofApp::setup() {
         centers.push_back(ofVec3f());
     }
     iso.setCenters(centers);
-    iso.setRadius(2 / 32., 6 / 32.);
+    iso.setRadius(2 / 32., 3 / 32.);
     iso.update();
 
     bloom.allocate(ofGetWidth(), ofGetHeight());
@@ -111,6 +124,32 @@ void ofApp::setup() {
 
 //--------------------------------------------------------------
 void ofApp::update() {
+    if (refreshButton == true)
+    {
+        for (int i = 0; i < traces.size(); i++)
+        {
+            traces.at(i).clear();
+            traces.at(i).setMode(OF_PRIMITIVE_LINE_STRIP);
+        }
+        world.setGravity(ofVec3f(0, gravitySlider, 0));
+
+        for (int i = 0; i < spheres.size(); i++)
+        {
+            spheres.at(i)->remove();
+            auto sphere = ofPtr<ofxBulletSphere>(new ofxBulletSphere());
+            sphere->create(world.world, ofVec3f(ofRandomf() * 0.01f, ofMap(i, 0, 16, 2, -2), ofRandomf() * 0.01f), 0.1f, 0.5f);
+            sphere->setProperties(1, 0);
+            sphere->setDamping(0);
+            sphere->add();
+            sphere->applyCentralForce(ofVec3f(0, 9.8f * 0.01f, 0));
+            spheres.at(i) = sphere;
+
+            //ofMesh mesh;
+            //mesh.setMode(OF_PRIMITIVE_LINE_STRIP);
+            //traces.push_back(mesh);
+        }
+        refreshButton = false;
+    }
     world.update();
 
     colorHue += .1f;
@@ -136,49 +175,35 @@ void ofApp::update() {
         auto p = spheres.at(i)->getPosition();
         centers.push_back(ofVec3f(ofMap(p.x, -5, 5, 0, 1, true), ofMap(p.y, -5, 5, 0, 1, true), ofMap(p.z, -5, 5, 0, 1, true)));
         //centers.push_back(ofVec3f(ofNoise(ofGetElapsedTimef() * 0.01f, i / 12.0f), ofNoise(ofGetElapsedTimef() * 0.02f, i / 12.0f), ofNoise(ofGetElapsedTimef() * 0.04f, i / 12.0f)));
+        traces.at(i).addVertex(p);
+        traces.at(i).addColor(ofFloatColor(0.2f, 0.2f, 0.2f));
     }
     iso.setCenters(centers);
-    iso.update();
+    if(metaballToggle)
+        iso.update();
 }
 
 //--------------------------------------------------------------
 void ofApp::draw() {
 
-    // enable lighting //
-    ofEnableLighting();
-    // the position of the light must be updated every frame, 
-    // call enable() so that it can update itself //
-    pointLight.enable();
-    ambientLight.enable();
-
-    if (bDrawWireframe) ofNoFill();
-    else ofFill();
-
-    glEnable(GL_DEPTH_TEST);
+    ofEnableDepthTest();
     camera.begin();
+    
+    ofSetLineWidth(1);
 
-    //ofSetLineWidth(1.f);
-    //ofSetColor(255, 0, 200);
-    //world.drawDebug();
-
-    //ofSetColor(100, 100, 100);
-    //ground.draw();
+    ofEnableBlendMode(OF_BLENDMODE_ADD);
+    if (traceToggle)
+    {
+        for (int i = 0; i < traces.size(); i++)
+        {
+            traces.at(i).draw();
+        }
+    }
+    ofDisableBlendMode();
 
     material.begin();
 
-    //ofSetColor(255, 255, 255);
-    //sphere->draw();
-    //shader.begin();
-    //for (int i = 0; i < spheres.size(); i++) spheres.at(i)->draw();
-    //shader.end();
-
-    ofPushMatrix();
-    scene.resetTransform();
-    scene.setPosition(-5, -5, -5);
-    scene.setScale(10, 10, 10);
-    scene.transformGL();
     shader.begin();
-    shader.setUniformMatrix4f("modelMatrix", scene.getGlobalTransformMatrix());
     shader.setUniformMatrix4f("vMatrix", camera.getModelViewMatrix());
     shader.setUniform3fv("uLightPosition", pointLight.getPosition().getPtr());
     shader.setUniform3fv("uLightColor", pointLight.getSpecularColor().v);
@@ -189,9 +214,43 @@ void ofApp::draw() {
     shader.setUniform1f("uGamma", 2.2f);
     shader.setUniform1f("uRoughness", matRoughness);
     shader.setUniform1f("uMetallic", matMetallic);
-    iso.getMesh().draw();
     shader.end();
-    scene.restoreTransformGL();
+    ofPushMatrix();
+
+    // enable lighting //
+    ofEnableLighting();
+    // the position of the light must be updated every frame, 
+    // call enable() so that it can update itself //
+    pointLight.enable();
+    ambientLight.enable();
+    if (sphereToggle)
+    {
+        for (int i = 0; i < spheres.size(); i++)
+        {
+            scene.resetTransform();
+            scene.setPosition(spheres.at(i)->getPosition());
+            scene.setScale(spheres.at(i)->getRadius() * ofVec3f(1, 1, 1));
+            scene.transformGL();
+            shader.begin();
+            shader.setUniformMatrix4f("modelMatrix", scene.getGlobalTransformMatrix());
+            //spheres.at(i)->draw();
+            ofDrawSphere(1);
+            shader.end();
+            scene.restoreTransformGL();
+        }
+    }
+    if (metaballToggle)
+    {
+        scene.resetTransform();
+        scene.setPosition(-5, -5, -5);
+        scene.setScale(10, 10, 10);
+        scene.transformGL();
+        shader.begin();
+        shader.setUniformMatrix4f("modelMatrix", scene.getGlobalTransformMatrix());
+        iso.getMesh().draw();
+        shader.end();
+        scene.restoreTransformGL();
+    }
 
     ofPopMatrix();
 
