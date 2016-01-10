@@ -24,7 +24,7 @@ void main(){
 
     vNormal					= gl_NormalMatrix * gl_Normal;
     vLightPosition			= ( vMatrix * vec4( uLightPosition, 1.0 ) ).xyz;
-    vPosition				= worldSpacePosition.xyz;
+    vPosition				= viewSpacePosition.xyz;
 
     gl_Position				= gl_ProjectionMatrix * viewSpacePosition;
 }
