@@ -1,0 +1,1956 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <ClCompile Include="src\ofApp.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\main.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\main.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\ofApp.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\addons\ofxBullet\src\joints\ofxBulletJoint.cpp">
+      <Filter>addons\ofxBullet\src\joints</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\addons\ofxBullet\src\ofxBulletWorldRigid.cpp">
+      <Filter>addons\ofxBullet\src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\addons\ofxBullet\src\render\GLDebugDrawer.cpp">
+      <Filter>addons\ofxBullet\src\render</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\addons\ofxBullet\src\shapes\ofxBulletBaseShape.cpp">
+      <Filter>addons\ofxBullet\src\shapes</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\addons\ofxBullet\src\shapes\ofxBulletBox.cpp">
+      <Filter>addons\ofxBullet\src\shapes</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\addons\ofxBullet\src\shapes\ofxBulletCapsule.cpp">
+      <Filter>addons\ofxBullet\src\shapes</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\addons\ofxBullet\src\shapes\ofxBulletCone.cpp">
+      <Filter>addons\ofxBullet\src\shapes</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\addons\ofxBullet\src\shapes\ofxBulletConvexShape.cpp">
+      <Filter>addons\ofxBullet\src\shapes</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\addons\ofxBullet\src\shapes\ofxBulletCustomShape.cpp">
+      <Filter>addons\ofxBullet\src\shapes</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\addons\ofxBullet\src\shapes\ofxBulletCylinder.cpp">
+      <Filter>addons\ofxBullet\src\shapes</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\addons\ofxBullet\src\shapes\ofxBulletSphere.cpp">
+      <Filter>addons\ofxBullet\src\shapes</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\addons\ofxBullet\src\shapes\ofxBulletStaticPlane.cpp">
+      <Filter>addons\ofxBullet\src\shapes</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\addons\ofxBullet\src\shapes\ofxBulletTriMeshShape.cpp">
+      <Filter>addons\ofxBullet\src\shapes</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\addons\ofxBullet\libs\bullet2.8.2\include\BulletCollision\BroadphaseCollision\btAxisSweep3.cpp">
+      <Filter>addons\ofxBullet\libs\bullet2.8.2\include\BulletCollision\BroadphaseCollision</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\addons\ofxBullet\libs\bullet2.8.2\include\BulletCollision\BroadphaseCollision\btBroadphaseProxy.cpp">
+      <Filter>addons\ofxBullet\libs\bullet2.8.2\include\BulletCollision\BroadphaseCollision</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\addons\ofxBullet\libs\bullet2.8.2\include\BulletCollision\BroadphaseCollision\btCollisionAlgorithm.cpp">
+      <Filter>addons\ofxBullet\libs\bullet2.8.2\include\BulletCollision\BroadphaseCollision</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\addons\ofxBullet\libs\bullet2.8.2\include\BulletCollision\BroadphaseCollision\btDbvt.cpp">
+      <Filter>addons\ofxBullet\libs\bullet2.8.2\include\BulletCollision\BroadphaseCollision</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\addons\ofxBullet\libs\bullet2.8.2\include\BulletCollision\BroadphaseCollision\btDbvtBroadphase.cpp">
+      <Filter>addons\ofxBullet\libs\bullet2.8.2\include\BulletCollision\BroadphaseCollision</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\addons\ofxBullet\libs\bullet2.8.2\include\BulletCollision\BroadphaseCollision\btDispatcher.cpp">
+      <Filter>addons\ofxBullet\libs\bullet2.8.2\include\BulletCollision\BroadphaseCollision</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\addons\ofxBullet\libs\bullet2.8.2\include\BulletCollision\BroadphaseCollision\btMultiSapBroadphase.cpp">
+      <Filter>addons\ofxBullet\libs\bullet2.8.2\include\BulletCollision\BroadphaseCollision</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\addons\ofxBullet\libs\bullet2.8.2\include\BulletCollision\BroadphaseCollision\btOverlappingPairCache.cpp">
+      <Filter>addons\ofxBullet\libs\bullet2.8.2\include\BulletCollision\BroadphaseCollision</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\addons\ofxBullet\libs\bullet2.8.2\include\BulletCollision\BroadphaseCollision\btQuantizedBvh.cpp">
+      <Filter>addons\ofxBullet\libs\bullet2.8.2\include\BulletCollision\BroadphaseCollision</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\addons\ofxBullet\libs\bullet2.8.2\include\BulletCollision\BroadphaseCollision\btSimpleBroadphase.cpp">
+      <Filter>addons\ofxBullet\libs\bullet2.8.2\include\BulletCollision\BroadphaseCollision</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\addons\ofxBullet\libs\bullet2.8.2\include\BulletCollision\CollisionDispatch\btActivatingCollisionAlgorithm.cpp">
+      <Filter>addons\ofxBullet\libs\bullet2.8.2\include\BulletCollision\CollisionDispatch</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\addons\ofxBullet\libs\bullet2.8.2\include\BulletCollision\CollisionDispatch\btBox2dBox2dCollisionAlgorithm.cpp">
+      <Filter>addons\ofxBullet\libs\bullet2.8.2\include\BulletCollision\CollisionDispatch</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\addons\ofxBullet\libs\bullet2.8.2\include\BulletCollision\CollisionDispatch\btBoxBoxCollisionAlgorithm.cpp">
+      <Filter>addons\ofxBullet\libs\bullet2.8.2\include\BulletCollision\CollisionDispatch</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\addons\ofxBullet\libs\bullet2.8.2\include\BulletCollision\CollisionDispatch\btBoxBoxDetector.cpp">
+      <Filter>addons\ofxBullet\libs\bullet2.8.2\include\BulletCollision\CollisionDispatch</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\addons\ofxBullet\libs\bullet2.8.2\include\BulletCollision\CollisionDispatch\btCollisionDispatcher.cpp">
+      <Filter>addons\ofxBullet\libs\bullet2.8.2\include\BulletCollision\CollisionDispatch</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\addons\ofxBullet\libs\bullet2.8.2\include\BulletCollision\CollisionDispatch\btCollisionObject.cpp">
+      <Filter>addons\ofxBullet\libs\bullet2.8.2\include\BulletCollision\CollisionDispatch</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\addons\ofxBullet\libs\bullet2.8.2\include\BulletCollision\CollisionDispatch\btCollisionWorld.cpp">
+      <Filter>addons\ofxBullet\libs\bullet2.8.2\include\BulletCollision\CollisionDispatch</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\addons\ofxBullet\libs\bullet2.8.2\include\BulletCollision\CollisionDispatch\btCompoundCollisionAlgorithm.cpp">
+      <Filter>addons\ofxBullet\libs\bullet2.8.2\include\BulletCollision\CollisionDispatch</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\addons\ofxBullet\libs\bullet2.8.2\include\BulletCollision\CollisionDispatch\btCompoundCompoundCollisionAlgorithm.cpp">
+      <Filter>addons\ofxBullet\libs\bullet2.8.2\include\BulletCollision\CollisionDispatch</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\addons\ofxBullet\libs\bullet2.8.2\include\BulletCollision\CollisionDispatch\btConvex2dConvex2dAlgorithm.cpp">
+      <Filter>addons\ofxBullet\libs\bullet2.8.2\include\BulletCollision\CollisionDispatch</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\addons\ofxBullet\libs\bullet2.8.2\include\BulletCollision\CollisionDispatch\btConvexConcaveCollisionAlgorithm.cpp">
+      <Filter>addons\ofxBullet\libs\bullet2.8.2\include\BulletCollision\CollisionDispatch</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\addons\ofxBullet\libs\bullet2.8.2\include\BulletCollision\CollisionDispatch\btConvexConvexAlgorithm.cpp">
+      <Filter>addons\ofxBullet\libs\bullet2.8.2\include\BulletCollision\CollisionDispatch</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\addons\ofxBullet\libs\bullet2.8.2\include\BulletCollision\CollisionDispatch\btConvexPlaneCollisionAlgorithm.cpp">
+      <Filter>addons\ofxBullet\libs\bullet2.8.2\include\BulletCollision\CollisionDispatch</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\addons\ofxBullet\libs\bullet2.8.2\include\BulletCollision\CollisionDispatch\btDefaultCollisionConfiguration.cpp">
+      <Filter>addons\ofxBullet\libs\bullet2.8.2\include\BulletCollision\CollisionDispatch</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\addons\ofxBullet\libs\bullet2.8.2\include\BulletCollision\CollisionDispatch\btEmptyCollisionAlgorithm.cpp">
+      <Filter>addons\ofxBullet\libs\bullet2.8.2\include\BulletCollision\CollisionDispatch</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\addons\ofxBullet\libs\bullet2.8.2\include\BulletCollision\CollisionDispatch\btGhostObject.cpp">
+      <Filter>addons\ofxBullet\libs\bullet2.8.2\include\BulletCollision\CollisionDispatch</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\addons\ofxBullet\libs\bullet2.8.2\include\BulletCollision\CollisionDispatch\btHashedSimplePairCache.cpp">
+      <Filter>addons\ofxBullet\libs\bullet2.8.2\include\BulletCollision\CollisionDispatch</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\addons\ofxBullet\libs\bullet2.8.2\include\BulletCollision\CollisionDispatch\btInternalEdgeUtility.cpp">
+      <Filter>addons\ofxBullet\libs\bullet2.8.2\include\BulletCollision\CollisionDispatch</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\addons\ofxBullet\libs\bullet2.8.2\include\BulletCollision\CollisionDispatch\btManifoldResult.cpp">
+      <Filter>addons\ofxBullet\libs\bullet2.8.2\include\BulletCollision\CollisionDispatch</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\addons\ofxBullet\libs\bullet2.8.2\include\BulletCollision\CollisionDispatch\btSimulationIslandManager.cpp">
+      <Filter>addons\ofxBullet\libs\bullet2.8.2\include\BulletCollision\CollisionDispatch</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\addons\ofxBullet\libs\bullet2.8.2\include\BulletCollision\CollisionDispatch\btSphereBoxCollisionAlgorithm.cpp">
+      <Filter>addons\ofxBullet\libs\bullet2.8.2\include\BulletCollision\CollisionDispatch</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\addons\ofxBullet\libs\bullet2.8.2\include\BulletCollision\CollisionDispatch\btSphereSphereCollisionAlgorithm.cpp">
+      <Filter>addons\ofxBullet\libs\bullet2.8.2\include\BulletCollision\CollisionDispatch</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\addons\ofxBullet\libs\bullet2.8.2\include\BulletCollision\CollisionDispatch\btSphereTriangleCollisionAlgorithm.cpp">
+      <Filter>addons\ofxBullet\libs\bullet2.8.2\include\BulletCollision\CollisionDispatch</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\addons\ofxBullet\libs\bullet2.8.2\include\BulletCollision\CollisionDispatch\btUnionFind.cpp">
+      <Filter>addons\ofxBullet\libs\bullet2.8.2\include\BulletCollision\CollisionDispatch</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\addons\ofxBullet\libs\bullet2.8.2\include\BulletCollision\CollisionDispatch\SphereTriangleDetector.cpp">
+      <Filter>addons\ofxBullet\libs\bullet2.8.2\include\BulletCollision\CollisionDispatch</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\addons\ofxBullet\libs\bullet2.8.2\include\BulletCollision\CollisionShapes\btBox2dShape.cpp">
+      <Filter>addons\ofxBullet\libs\bullet2.8.2\include\BulletCollision\CollisionShapes</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\addons\ofxBullet\libs\bullet2.8.2\include\BulletCollision\CollisionShapes\btBoxShape.cpp">
+      <Filter>addons\ofxBullet\libs\bullet2.8.2\include\BulletCollision\CollisionShapes</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\addons\ofxBullet\libs\bullet2.8.2\include\BulletCollision\CollisionShapes\btBvhTriangleMeshShape.cpp">
+      <Filter>addons\ofxBullet\libs\bullet2.8.2\include\BulletCollision\CollisionShapes</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\addons\ofxBullet\libs\bullet2.8.2\include\BulletCollision\CollisionShapes\btCapsuleShape.cpp">
+      <Filter>addons\ofxBullet\libs\bullet2.8.2\include\BulletCollision\CollisionShapes</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\addons\ofxBullet\libs\bullet2.8.2\include\BulletCollision\CollisionShapes\btCollisionShape.cpp">
+      <Filter>addons\ofxBullet\libs\bullet2.8.2\include\BulletCollision\CollisionShapes</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\addons\ofxBullet\libs\bullet2.8.2\include\BulletCollision\CollisionShapes\btCompoundShape.cpp">
+      <Filter>addons\ofxBullet\libs\bullet2.8.2\include\BulletCollision\CollisionShapes</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\addons\ofxBullet\libs\bullet2.8.2\include\BulletCollision\CollisionShapes\btConcaveShape.cpp">
+      <Filter>addons\ofxBullet\libs\bullet2.8.2\include\BulletCollision\CollisionShapes</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\addons\ofxBullet\libs\bullet2.8.2\include\BulletCollision\CollisionShapes\btConeShape.cpp">
+      <Filter>addons\ofxBullet\libs\bullet2.8.2\include\BulletCollision\CollisionShapes</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\addons\ofxBullet\libs\bullet2.8.2\include\BulletCollision\CollisionShapes\btConvex2dShape.cpp">
+      <Filter>addons\ofxBullet\libs\bullet2.8.2\include\BulletCollision\CollisionShapes</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\addons\ofxBullet\libs\bullet2.8.2\include\BulletCollision\CollisionShapes\btConvexHullShape.cpp">
+      <Filter>addons\ofxBullet\libs\bullet2.8.2\include\BulletCollision\CollisionShapes</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\addons\ofxBullet\libs\bullet2.8.2\include\BulletCollision\CollisionShapes\btConvexInternalShape.cpp">
+      <Filter>addons\ofxBullet\libs\bullet2.8.2\include\BulletCollision\CollisionShapes</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\addons\ofxBullet\libs\bullet2.8.2\include\BulletCollision\CollisionShapes\btConvexPointCloudShape.cpp">
+      <Filter>addons\ofxBullet\libs\bullet2.8.2\include\BulletCollision\CollisionShapes</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\addons\ofxBullet\libs\bullet2.8.2\include\BulletCollision\CollisionShapes\btConvexPolyhedron.cpp">
+      <Filter>addons\ofxBullet\libs\bullet2.8.2\include\BulletCollision\CollisionShapes</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\addons\ofxBullet\libs\bullet2.8.2\include\BulletCollision\CollisionShapes\btConvexShape.cpp">
+      <Filter>addons\ofxBullet\libs\bullet2.8.2\include\BulletCollision\CollisionShapes</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\addons\ofxBullet\libs\bullet2.8.2\include\BulletCollision\CollisionShapes\btConvexTriangleMeshShape.cpp">
+      <Filter>addons\ofxBullet\libs\bullet2.8.2\include\BulletCollision\CollisionShapes</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\addons\ofxBullet\libs\bullet2.8.2\include\BulletCollision\CollisionShapes\btCylinderShape.cpp">
+      <Filter>addons\ofxBullet\libs\bullet2.8.2\include\BulletCollision\CollisionShapes</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\addons\ofxBullet\libs\bullet2.8.2\include\BulletCollision\CollisionShapes\btEmptyShape.cpp">
+      <Filter>addons\ofxBullet\libs\bullet2.8.2\include\BulletCollision\CollisionShapes</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\addons\ofxBullet\libs\bullet2.8.2\include\BulletCollision\CollisionShapes\btHeightfieldTerrainShape.cpp">
+      <Filter>addons\ofxBullet\libs\bullet2.8.2\include\BulletCollision\CollisionShapes</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\addons\ofxBullet\libs\bullet2.8.2\include\BulletCollision\CollisionShapes\btMinkowskiSumShape.cpp">
+      <Filter>addons\ofxBullet\libs\bullet2.8.2\include\BulletCollision\CollisionShapes</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\addons\ofxBullet\libs\bullet2.8.2\include\BulletCollision\CollisionShapes\btMultimaterialTriangleMeshShape.cpp">
+      <Filter>addons\ofxBullet\libs\bullet2.8.2\include\BulletCollision\CollisionShapes</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\addons\ofxBullet\libs\bullet2.8.2\include\BulletCollision\CollisionShapes\btMultiSphereShape.cpp">
+      <Filter>addons\ofxBullet\libs\bullet2.8.2\include\BulletCollision\CollisionShapes</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\addons\ofxBullet\libs\bullet2.8.2\include\BulletCollision\CollisionShapes\btOptimizedBvh.cpp">
+      <Filter>addons\ofxBullet\libs\bullet2.8.2\include\BulletCollision\CollisionShapes</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\addons\ofxBullet\libs\bullet2.8.2\include\BulletCollision\CollisionShapes\btPolyhedralConvexShape.cpp">
+      <Filter>addons\ofxBullet\libs\bullet2.8.2\include\BulletCollision\CollisionShapes</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\addons\ofxBullet\libs\bullet2.8.2\include\BulletCollision\CollisionShapes\btScaledBvhTriangleMeshShape.cpp">
+      <Filter>addons\ofxBullet\libs\bullet2.8.2\include\BulletCollision\CollisionShapes</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\addons\ofxBullet\libs\bullet2.8.2\include\BulletCollision\CollisionShapes\btShapeHull.cpp">
+      <Filter>addons\ofxBullet\libs\bullet2.8.2\include\BulletCollision\CollisionShapes</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\addons\ofxBullet\libs\bullet2.8.2\include\BulletCollision\CollisionShapes\btSphereShape.cpp">
+      <Filter>addons\ofxBullet\libs\bullet2.8.2\include\BulletCollision\CollisionShapes</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\addons\ofxBullet\libs\bullet2.8.2\include\BulletCollision\CollisionShapes\btStaticPlaneShape.cpp">
+      <Filter>addons\ofxBullet\libs\bullet2.8.2\include\BulletCollision\CollisionShapes</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\addons\ofxBullet\libs\bullet2.8.2\include\BulletCollision\CollisionShapes\btStridingMeshInterface.cpp">
+      <Filter>addons\ofxBullet\libs\bullet2.8.2\include\BulletCollision\CollisionShapes</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\addons\ofxBullet\libs\bullet2.8.2\include\BulletCollision\CollisionShapes\btTetrahedronShape.cpp">
+      <Filter>addons\ofxBullet\libs\bullet2.8.2\include\BulletCollision\CollisionShapes</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\addons\ofxBullet\libs\bullet2.8.2\include\BulletCollision\CollisionShapes\btTriangleBuffer.cpp">
+      <Filter>addons\ofxBullet\libs\bullet2.8.2\include\BulletCollision\CollisionShapes</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\addons\ofxBullet\libs\bullet2.8.2\include\BulletCollision\CollisionShapes\btTriangleCallback.cpp">
+      <Filter>addons\ofxBullet\libs\bullet2.8.2\include\BulletCollision\CollisionShapes</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\addons\ofxBullet\libs\bullet2.8.2\include\BulletCollision\CollisionShapes\btTriangleIndexVertexArray.cpp">
+      <Filter>addons\ofxBullet\libs\bullet2.8.2\include\BulletCollision\CollisionShapes</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\addons\ofxBullet\libs\bullet2.8.2\include\BulletCollision\CollisionShapes\btTriangleIndexVertexMaterialArray.cpp">
+      <Filter>addons\ofxBullet\libs\bullet2.8.2\include\BulletCollision\CollisionShapes</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\addons\ofxBullet\libs\bullet2.8.2\include\BulletCollision\CollisionShapes\btTriangleMesh.cpp">
+      <Filter>addons\ofxBullet\libs\bullet2.8.2\include\BulletCollision\CollisionShapes</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\addons\ofxBullet\libs\bullet2.8.2\include\BulletCollision\CollisionShapes\btTriangleMeshShape.cpp">
+      <Filter>addons\ofxBullet\libs\bullet2.8.2\include\BulletCollision\CollisionShapes</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\addons\ofxBullet\libs\bullet2.8.2\include\BulletCollision\CollisionShapes\btUniformScalingShape.cpp">
+      <Filter>addons\ofxBullet\libs\bullet2.8.2\include\BulletCollision\CollisionShapes</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\addons\ofxBullet\libs\bullet2.8.2\include\BulletCollision\Gimpact\btContactProcessing.cpp">
+      <Filter>addons\ofxBullet\libs\bullet2.8.2\include\BulletCollision\Gimpact</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\addons\ofxBullet\libs\bullet2.8.2\include\BulletCollision\Gimpact\btGenericPoolAllocator.cpp">
+      <Filter>addons\ofxBullet\libs\bullet2.8.2\include\BulletCollision\Gimpact</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\addons\ofxBullet\libs\bullet2.8.2\include\BulletCollision\Gimpact\btGImpactBvh.cpp">
+      <Filter>addons\ofxBullet\libs\bullet2.8.2\include\BulletCollision\Gimpact</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\addons\ofxBullet\libs\bullet2.8.2\include\BulletCollision\Gimpact\btGImpactCollisionAlgorithm.cpp">
+      <Filter>addons\ofxBullet\libs\bullet2.8.2\include\BulletCollision\Gimpact</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\addons\ofxBullet\libs\bullet2.8.2\include\BulletCollision\Gimpact\btGImpactQuantizedBvh.cpp">
+      <Filter>addons\ofxBullet\libs\bullet2.8.2\include\BulletCollision\Gimpact</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\addons\ofxBullet\libs\bullet2.8.2\include\BulletCollision\Gimpact\btGImpactShape.cpp">
+      <Filter>addons\ofxBullet\libs\bullet2.8.2\include\BulletCollision\Gimpact</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\addons\ofxBullet\libs\bullet2.8.2\include\BulletCollision\Gimpact\btTriangleShapeEx.cpp">
+      <Filter>addons\ofxBullet\libs\bullet2.8.2\include\BulletCollision\Gimpact</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\addons\ofxBullet\libs\bullet2.8.2\include\BulletCollision\Gimpact\gim_box_set.cpp">
+      <Filter>addons\ofxBullet\libs\bullet2.8.2\include\BulletCollision\Gimpact</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\addons\ofxBullet\libs\bullet2.8.2\include\BulletCollision\Gimpact\gim_contact.cpp">
+      <Filter>addons\ofxBullet\libs\bullet2.8.2\include\BulletCollision\Gimpact</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\addons\ofxBullet\libs\bullet2.8.2\include\BulletCollision\Gimpact\gim_memory.cpp">
+      <Filter>addons\ofxBullet\libs\bullet2.8.2\include\BulletCollision\Gimpact</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\addons\ofxBullet\libs\bullet2.8.2\include\BulletCollision\Gimpact\gim_tri_collision.cpp">
+      <Filter>addons\ofxBullet\libs\bullet2.8.2\include\BulletCollision\Gimpact</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\addons\ofxBullet\libs\bullet2.8.2\include\BulletCollision\NarrowPhaseCollision\btContinuousConvexCollision.cpp">
+      <Filter>addons\ofxBullet\libs\bullet2.8.2\include\BulletCollision\NarrowPhaseCollision</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\addons\ofxBullet\libs\bullet2.8.2\include\BulletCollision\NarrowPhaseCollision\btConvexCast.cpp">
+      <Filter>addons\ofxBullet\libs\bullet2.8.2\include\BulletCollision\NarrowPhaseCollision</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\addons\ofxBullet\libs\bullet2.8.2\include\BulletCollision\NarrowPhaseCollision\btGjkConvexCast.cpp">
+      <Filter>addons\ofxBullet\libs\bullet2.8.2\include\BulletCollision\NarrowPhaseCollision</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\addons\ofxBullet\libs\bullet2.8.2\include\BulletCollision\NarrowPhaseCollision\btGjkEpa2.cpp">
+      <Filter>addons\ofxBullet\libs\bullet2.8.2\include\BulletCollision\NarrowPhaseCollision</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\addons\ofxBullet\libs\bullet2.8.2\include\BulletCollision\NarrowPhaseCollision\btGjkEpaPenetrationDepthSolver.cpp">
+      <Filter>addons\ofxBullet\libs\bullet2.8.2\include\BulletCollision\NarrowPhaseCollision</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\addons\ofxBullet\libs\bullet2.8.2\include\BulletCollision\NarrowPhaseCollision\btGjkPairDetector.cpp">
+      <Filter>addons\ofxBullet\libs\bullet2.8.2\include\BulletCollision\NarrowPhaseCollision</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\addons\ofxBullet\libs\bullet2.8.2\include\BulletCollision\NarrowPhaseCollision\btMinkowskiPenetrationDepthSolver.cpp">
+      <Filter>addons\ofxBullet\libs\bullet2.8.2\include\BulletCollision\NarrowPhaseCollision</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\addons\ofxBullet\libs\bullet2.8.2\include\BulletCollision\NarrowPhaseCollision\btPersistentManifold.cpp">
+      <Filter>addons\ofxBullet\libs\bullet2.8.2\include\BulletCollision\NarrowPhaseCollision</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\addons\ofxBullet\libs\bullet2.8.2\include\BulletCollision\NarrowPhaseCollision\btPolyhedralContactClipping.cpp">
+      <Filter>addons\ofxBullet\libs\bullet2.8.2\include\BulletCollision\NarrowPhaseCollision</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\addons\ofxBullet\libs\bullet2.8.2\include\BulletCollision\NarrowPhaseCollision\btRaycastCallback.cpp">
+      <Filter>addons\ofxBullet\libs\bullet2.8.2\include\BulletCollision\NarrowPhaseCollision</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\addons\ofxBullet\libs\bullet2.8.2\include\BulletCollision\NarrowPhaseCollision\btSubSimplexConvexCast.cpp">
+      <Filter>addons\ofxBullet\libs\bullet2.8.2\include\BulletCollision\NarrowPhaseCollision</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\addons\ofxBullet\libs\bullet2.8.2\include\BulletCollision\NarrowPhaseCollision\btVoronoiSimplexSolver.cpp">
+      <Filter>addons\ofxBullet\libs\bullet2.8.2\include\BulletCollision\NarrowPhaseCollision</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\addons\ofxBullet\libs\bullet2.8.2\include\BulletDynamics\Character\btKinematicCharacterController.cpp">
+      <Filter>addons\ofxBullet\libs\bullet2.8.2\include\BulletDynamics\Character</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\addons\ofxBullet\libs\bullet2.8.2\include\BulletDynamics\ConstraintSolver\btConeTwistConstraint.cpp">
+      <Filter>addons\ofxBullet\libs\bullet2.8.2\include\BulletDynamics\ConstraintSolver</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\addons\ofxBullet\libs\bullet2.8.2\include\BulletDynamics\ConstraintSolver\btContactConstraint.cpp">
+      <Filter>addons\ofxBullet\libs\bullet2.8.2\include\BulletDynamics\ConstraintSolver</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\addons\ofxBullet\libs\bullet2.8.2\include\BulletDynamics\ConstraintSolver\btFixedConstraint.cpp">
+      <Filter>addons\ofxBullet\libs\bullet2.8.2\include\BulletDynamics\ConstraintSolver</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\addons\ofxBullet\libs\bullet2.8.2\include\BulletDynamics\ConstraintSolver\btGearConstraint.cpp">
+      <Filter>addons\ofxBullet\libs\bullet2.8.2\include\BulletDynamics\ConstraintSolver</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\addons\ofxBullet\libs\bullet2.8.2\include\BulletDynamics\ConstraintSolver\btGeneric6DofConstraint.cpp">
+      <Filter>addons\ofxBullet\libs\bullet2.8.2\include\BulletDynamics\ConstraintSolver</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\addons\ofxBullet\libs\bullet2.8.2\include\BulletDynamics\ConstraintSolver\btGeneric6DofSpringConstraint.cpp">
+      <Filter>addons\ofxBullet\libs\bullet2.8.2\include\BulletDynamics\ConstraintSolver</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\addons\ofxBullet\libs\bullet2.8.2\include\BulletDynamics\ConstraintSolver\btHinge2Constraint.cpp">
+      <Filter>addons\ofxBullet\libs\bullet2.8.2\include\BulletDynamics\ConstraintSolver</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\addons\ofxBullet\libs\bullet2.8.2\include\BulletDynamics\ConstraintSolver\btHingeConstraint.cpp">
+      <Filter>addons\ofxBullet\libs\bullet2.8.2\include\BulletDynamics\ConstraintSolver</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\addons\ofxBullet\libs\bullet2.8.2\include\BulletDynamics\ConstraintSolver\btPoint2PointConstraint.cpp">
+      <Filter>addons\ofxBullet\libs\bullet2.8.2\include\BulletDynamics\ConstraintSolver</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\addons\ofxBullet\libs\bullet2.8.2\include\BulletDynamics\ConstraintSolver\btSequentialImpulseConstraintSolver.cpp">
+      <Filter>addons\ofxBullet\libs\bullet2.8.2\include\BulletDynamics\ConstraintSolver</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\addons\ofxBullet\libs\bullet2.8.2\include\BulletDynamics\ConstraintSolver\btSliderConstraint.cpp">
+      <Filter>addons\ofxBullet\libs\bullet2.8.2\include\BulletDynamics\ConstraintSolver</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\addons\ofxBullet\libs\bullet2.8.2\include\BulletDynamics\ConstraintSolver\btSolve2LinearConstraint.cpp">
+      <Filter>addons\ofxBullet\libs\bullet2.8.2\include\BulletDynamics\ConstraintSolver</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\addons\ofxBullet\libs\bullet2.8.2\include\BulletDynamics\ConstraintSolver\btTypedConstraint.cpp">
+      <Filter>addons\ofxBullet\libs\bullet2.8.2\include\BulletDynamics\ConstraintSolver</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\addons\ofxBullet\libs\bullet2.8.2\include\BulletDynamics\ConstraintSolver\btUniversalConstraint.cpp">
+      <Filter>addons\ofxBullet\libs\bullet2.8.2\include\BulletDynamics\ConstraintSolver</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\addons\ofxBullet\libs\bullet2.8.2\include\BulletDynamics\Dynamics\btDiscreteDynamicsWorld.cpp">
+      <Filter>addons\ofxBullet\libs\bullet2.8.2\include\BulletDynamics\Dynamics</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\addons\ofxBullet\libs\bullet2.8.2\include\BulletDynamics\Dynamics\btRigidBody.cpp">
+      <Filter>addons\ofxBullet\libs\bullet2.8.2\include\BulletDynamics\Dynamics</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\addons\ofxBullet\libs\bullet2.8.2\include\BulletDynamics\Dynamics\btSimpleDynamicsWorld.cpp">
+      <Filter>addons\ofxBullet\libs\bullet2.8.2\include\BulletDynamics\Dynamics</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\addons\ofxBullet\libs\bullet2.8.2\include\BulletDynamics\Dynamics\Bullet-C-API.cpp">
+      <Filter>addons\ofxBullet\libs\bullet2.8.2\include\BulletDynamics\Dynamics</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\addons\ofxBullet\libs\bullet2.8.2\include\BulletDynamics\Featherstone\btMultiBody.cpp">
+      <Filter>addons\ofxBullet\libs\bullet2.8.2\include\BulletDynamics\Featherstone</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\addons\ofxBullet\libs\bullet2.8.2\include\BulletDynamics\Featherstone\btMultiBodyConstraint.cpp">
+      <Filter>addons\ofxBullet\libs\bullet2.8.2\include\BulletDynamics\Featherstone</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\addons\ofxBullet\libs\bullet2.8.2\include\BulletDynamics\Featherstone\btMultiBodyConstraintSolver.cpp">
+      <Filter>addons\ofxBullet\libs\bullet2.8.2\include\BulletDynamics\Featherstone</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\addons\ofxBullet\libs\bullet2.8.2\include\BulletDynamics\Featherstone\btMultiBodyDynamicsWorld.cpp">
+      <Filter>addons\ofxBullet\libs\bullet2.8.2\include\BulletDynamics\Featherstone</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\addons\ofxBullet\libs\bullet2.8.2\include\BulletDynamics\Featherstone\btMultiBodyJointLimitConstraint.cpp">
+      <Filter>addons\ofxBullet\libs\bullet2.8.2\include\BulletDynamics\Featherstone</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\addons\ofxBullet\libs\bullet2.8.2\include\BulletDynamics\Featherstone\btMultiBodyJointMotor.cpp">
+      <Filter>addons\ofxBullet\libs\bullet2.8.2\include\BulletDynamics\Featherstone</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\addons\ofxBullet\libs\bullet2.8.2\include\BulletDynamics\Featherstone\btMultiBodyPoint2Point.cpp">
+      <Filter>addons\ofxBullet\libs\bullet2.8.2\include\BulletDynamics\Featherstone</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\addons\ofxBullet\libs\bullet2.8.2\include\BulletDynamics\MLCPSolvers\btDantzigLCP.cpp">
+      <Filter>addons\ofxBullet\libs\bullet2.8.2\include\BulletDynamics\MLCPSolvers</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\addons\ofxBullet\libs\bullet2.8.2\include\BulletDynamics\MLCPSolvers\btMLCPSolver.cpp">
+      <Filter>addons\ofxBullet\libs\bullet2.8.2\include\BulletDynamics\MLCPSolvers</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\addons\ofxBullet\libs\bullet2.8.2\include\BulletDynamics\Vehicle\btRaycastVehicle.cpp">
+      <Filter>addons\ofxBullet\libs\bullet2.8.2\include\BulletDynamics\Vehicle</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\addons\ofxBullet\libs\bullet2.8.2\include\BulletDynamics\Vehicle\btWheelInfo.cpp">
+      <Filter>addons\ofxBullet\libs\bullet2.8.2\include\BulletDynamics\Vehicle</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\addons\ofxBullet\libs\bullet2.8.2\include\BulletSoftBody\btDefaultSoftBodySolver.cpp">
+      <Filter>addons\ofxBullet\libs\bullet2.8.2\include\BulletSoftBody</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\addons\ofxBullet\libs\bullet2.8.2\include\BulletSoftBody\btSoftBody.cpp">
+      <Filter>addons\ofxBullet\libs\bullet2.8.2\include\BulletSoftBody</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\addons\ofxBullet\libs\bullet2.8.2\include\BulletSoftBody\btSoftBodyConcaveCollisionAlgorithm.cpp">
+      <Filter>addons\ofxBullet\libs\bullet2.8.2\include\BulletSoftBody</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\addons\ofxBullet\libs\bullet2.8.2\include\BulletSoftBody\btSoftBodyHelpers.cpp">
+      <Filter>addons\ofxBullet\libs\bullet2.8.2\include\BulletSoftBody</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\addons\ofxBullet\libs\bullet2.8.2\include\BulletSoftBody\btSoftBodyRigidBodyCollisionConfiguration.cpp">
+      <Filter>addons\ofxBullet\libs\bullet2.8.2\include\BulletSoftBody</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\addons\ofxBullet\libs\bullet2.8.2\include\BulletSoftBody\btSoftRigidCollisionAlgorithm.cpp">
+      <Filter>addons\ofxBullet\libs\bullet2.8.2\include\BulletSoftBody</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\addons\ofxBullet\libs\bullet2.8.2\include\BulletSoftBody\btSoftRigidDynamicsWorld.cpp">
+      <Filter>addons\ofxBullet\libs\bullet2.8.2\include\BulletSoftBody</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\addons\ofxBullet\libs\bullet2.8.2\include\BulletSoftBody\btSoftSoftCollisionAlgorithm.cpp">
+      <Filter>addons\ofxBullet\libs\bullet2.8.2\include\BulletSoftBody</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\addons\ofxBullet\libs\bullet2.8.2\include\LinearMath\btAlignedAllocator.cpp">
+      <Filter>addons\ofxBullet\libs\bullet2.8.2\include\LinearMath</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\addons\ofxBullet\libs\bullet2.8.2\include\LinearMath\btConvexHull.cpp">
+      <Filter>addons\ofxBullet\libs\bullet2.8.2\include\LinearMath</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\addons\ofxBullet\libs\bullet2.8.2\include\LinearMath\btConvexHullComputer.cpp">
+      <Filter>addons\ofxBullet\libs\bullet2.8.2\include\LinearMath</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\addons\ofxBullet\libs\bullet2.8.2\include\LinearMath\btGeometryUtil.cpp">
+      <Filter>addons\ofxBullet\libs\bullet2.8.2\include\LinearMath</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\addons\ofxBullet\libs\bullet2.8.2\include\LinearMath\btPolarDecomposition.cpp">
+      <Filter>addons\ofxBullet\libs\bullet2.8.2\include\LinearMath</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\addons\ofxBullet\libs\bullet2.8.2\include\LinearMath\btQuickprof.cpp">
+      <Filter>addons\ofxBullet\libs\bullet2.8.2\include\LinearMath</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\addons\ofxBullet\libs\bullet2.8.2\include\LinearMath\btSerializer.cpp">
+      <Filter>addons\ofxBullet\libs\bullet2.8.2\include\LinearMath</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\addons\ofxBullet\libs\bullet2.8.2\include\LinearMath\btVector3.cpp">
+      <Filter>addons\ofxBullet\libs\bullet2.8.2\include\LinearMath</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\addons\ofxFx\src\ofxFXObject.cpp">
+      <Filter>addons\ofxFx\src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\addons\ofxGui\src\ofxBaseGui.cpp">
+      <Filter>addons\ofxGui\src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\addons\ofxGui\src\ofxButton.cpp">
+      <Filter>addons\ofxGui\src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\addons\ofxGui\src\ofxGuiGroup.cpp">
+      <Filter>addons\ofxGui\src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\addons\ofxGui\src\ofxLabel.cpp">
+      <Filter>addons\ofxGui\src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\addons\ofxGui\src\ofxPanel.cpp">
+      <Filter>addons\ofxGui\src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\addons\ofxGui\src\ofxSlider.cpp">
+      <Filter>addons\ofxGui\src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\addons\ofxGui\src\ofxSliderGroup.cpp">
+      <Filter>addons\ofxGui\src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\addons\ofxGui\src\ofxToggle.cpp">
+      <Filter>addons\ofxGui\src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\addons\ofxMSATimer\src\ofxMSATimer.cpp">
+      <Filter>addons\ofxMSATimer\src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\addons\ofxTextInputField\src\ofxTextInputField.cpp">
+      <Filter>addons\ofxTextInputField\src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\addons\ofxTimecode\src\ofxTimecode.cpp">
+      <Filter>addons\ofxTimecode\src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\addons\ofxTimeline\src\ofxHotKeys_impl_linux.cpp">
+      <Filter>addons\ofxTimeline\src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\addons\ofxTimeline\src\ofxHotKeys_impl_mac.mm">
+      <Filter>addons\ofxTimeline\src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\addons\ofxTimeline\src\ofxHotKeys_impl_win.cpp">
+      <Filter>addons\ofxTimeline\src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\addons\ofxTimeline\src\ofxRemoveCocoaMenu.mm">
+      <Filter>addons\ofxTimeline\src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\addons\ofxTimeline\src\ofxTimeline.cpp">
+      <Filter>addons\ofxTimeline\src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\addons\ofxTimeline\src\ofxTLBangs.cpp">
+      <Filter>addons\ofxTimeline\src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\addons\ofxTimeline\src\ofxTLCameraTrack.cpp">
+      <Filter>addons\ofxTimeline\src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\addons\ofxTimeline\src\ofxTLColors.cpp">
+      <Filter>addons\ofxTimeline\src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\addons\ofxTimeline\src\ofxTLColorTrack.cpp">
+      <Filter>addons\ofxTimeline\src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\addons\ofxTimeline\src\ofxTLCurves.cpp">
+      <Filter>addons\ofxTimeline\src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\addons\ofxTimeline\src\ofxTLEmptyKeyframes.cpp">
+      <Filter>addons\ofxTimeline\src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\addons\ofxTimeline\src\ofxTLEmptyTrack.cpp">
+      <Filter>addons\ofxTimeline\src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\addons\ofxTimeline\src\ofxTLFlags.cpp">
+      <Filter>addons\ofxTimeline\src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\addons\ofxTimeline\src\ofxTLImageSequence.cpp">
+      <Filter>addons\ofxTimeline\src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\addons\ofxTimeline\src\ofxTLImageSequenceFrame.cpp">
+      <Filter>addons\ofxTimeline\src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\addons\ofxTimeline\src\ofxTLImageTrack.cpp">
+      <Filter>addons\ofxTimeline\src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\addons\ofxTimeline\src\ofxTLInOut.cpp">
+      <Filter>addons\ofxTimeline\src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\addons\ofxTimeline\src\ofxTLKeyframes.cpp">
+      <Filter>addons\ofxTimeline\src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\addons\ofxTimeline\src\ofxTLLFO.cpp">
+      <Filter>addons\ofxTimeline\src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\addons\ofxTimeline\src\ofxTLPage.cpp">
+      <Filter>addons\ofxTimeline\src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\addons\ofxTimeline\src\ofxTLPageTabs.cpp">
+      <Filter>addons\ofxTimeline\src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\addons\ofxTimeline\src\ofxTLSwitches.cpp">
+      <Filter>addons\ofxTimeline\src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\addons\ofxTimeline\src\ofxTLTicker.cpp">
+      <Filter>addons\ofxTimeline\src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\addons\ofxTimeline\src\ofxTLTrack.cpp">
+      <Filter>addons\ofxTimeline\src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\addons\ofxTimeline\src\ofxTLTrackHeader.cpp">
+      <Filter>addons\ofxTimeline\src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\addons\ofxTimeline\src\ofxTLVideoThumb.cpp">
+      <Filter>addons\ofxTimeline\src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\addons\ofxTimeline\src\ofxTLVideoTrack.cpp">
+      <Filter>addons\ofxTimeline\src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\addons\ofxTimeline\src\ofxTLZoomer.cpp">
+      <Filter>addons\ofxTimeline\src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\addons\ofxTimeline\libs\kiss\src\kiss_fft.c">
+      <Filter>addons\ofxTimeline\libs\kiss\src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\addons\ofxTimeline\libs\kiss\src\kiss_fftr.c">
+      <Filter>addons\ofxTimeline\libs\kiss\src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\addons\ofxTween\src\Easings\ofxEasing.cpp">
+      <Filter>addons\ofxTween\src\Easings</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\addons\ofxTween\src\Easings\ofxEasingBack.cpp">
+      <Filter>addons\ofxTween\src\Easings</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\addons\ofxTween\src\Easings\ofxEasingBounce.cpp">
+      <Filter>addons\ofxTween\src\Easings</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\addons\ofxTween\src\Easings\ofxEasingCirc.cpp">
+      <Filter>addons\ofxTween\src\Easings</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\addons\ofxTween\src\Easings\ofxEasingCubic.cpp">
+      <Filter>addons\ofxTween\src\Easings</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\addons\ofxTween\src\Easings\ofxEasingElastic.cpp">
+      <Filter>addons\ofxTween\src\Easings</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\addons\ofxTween\src\Easings\ofxEasingExpo.cpp">
+      <Filter>addons\ofxTween\src\Easings</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\addons\ofxTween\src\Easings\ofxEasingLinear.cpp">
+      <Filter>addons\ofxTween\src\Easings</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\addons\ofxTween\src\Easings\ofxEasingQuad.cpp">
+      <Filter>addons\ofxTween\src\Easings</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\addons\ofxTween\src\Easings\ofxEasingQuart.cpp">
+      <Filter>addons\ofxTween\src\Easings</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\addons\ofxTween\src\Easings\ofxEasingQuint.cpp">
+      <Filter>addons\ofxTween\src\Easings</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\addons\ofxTween\src\Easings\ofxEasingSine.cpp">
+      <Filter>addons\ofxTween\src\Easings</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\addons\ofxTween\src\ofxTween.cpp">
+      <Filter>addons\ofxTween\src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\addons\ofxXmlSettings\src\ofxXmlSettings.cpp">
+      <Filter>addons\ofxXmlSettings\src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\addons\ofxXmlSettings\libs\tinyxml.cpp">
+      <Filter>addons\ofxXmlSettings\libs</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\addons\ofxXmlSettings\libs\tinyxmlerror.cpp">
+      <Filter>addons\ofxXmlSettings\libs</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\addons\ofxXmlSettings\libs\tinyxmlparser.cpp">
+      <Filter>addons\ofxXmlSettings\libs</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\addons\ofxMetaballs\src\MarchingCubes.cpp">
+      <Filter>addons\ofxMetaballs\src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\addons\ofxMetaballs\src\MarchingTetrahedrons.cpp">
+      <Filter>addons\ofxMetaballs\src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\addons\ofxAutoReloadedShader\src\ofxAutoReloadedShader.cpp">
+      <Filter>addons\ofxAutoReloadedShader\src</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="src">
+      <UniqueIdentifier>{d8376475-7454-4a24-b08a-aac121d3ad6f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="addons">
+      <UniqueIdentifier>{71834F65-F3A9-211E-73B8-DC85}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="addons\ofxBullet">
+      <UniqueIdentifier>{9CDA2276-1303-A7FC-3B5A-8EC0}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="addons\ofxBullet\src">
+      <UniqueIdentifier>{101F2357-BB17-8765-D563-1824}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="addons\ofxBullet\src\events">
+      <UniqueIdentifier>{D223442A-725D-641F-70ED-2F65}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="addons\ofxBullet\src\joints">
+      <UniqueIdentifier>{D1F4442E-990A-64E7-769E-6787}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="addons\ofxBullet\src\render">
+      <UniqueIdentifier>{B6FC123E-0CD4-AEE7-0C30-228C}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="addons\ofxBullet\src\shapes">
+      <UniqueIdentifier>{0F6D4FF3-5763-C526-C19D-E256}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="addons\ofxBullet\libs">
+      <UniqueIdentifier>{FF530E57-B079-28E7-864F-7452}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="addons\ofxBullet\libs\bullet2.8.2">
+      <UniqueIdentifier>{F0301FD6-71E5-C4E9-3B19-C1BB}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="addons\ofxBullet\libs\bullet2.8.2\include">
+      <UniqueIdentifier>{3477FF26-CA1D-E078-EA42-A4C2}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="addons\ofxBullet\libs\bullet2.8.2\include\BulletCollision">
+      <UniqueIdentifier>{EB23ED70-2C9F-C4E5-0BCF-679C}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="addons\ofxBullet\libs\bullet2.8.2\include\BulletCollision\BroadphaseCollision">
+      <UniqueIdentifier>{25BF5A65-A4C8-C8B2-C9E9-753B}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="addons\ofxBullet\libs\bullet2.8.2\include\BulletCollision\CollisionDispatch">
+      <UniqueIdentifier>{F72110DD-8850-5FCD-1F48-F3D7}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="addons\ofxBullet\libs\bullet2.8.2\include\BulletCollision\CollisionShapes">
+      <UniqueIdentifier>{F5A45F58-8EBE-3BE8-20C5-3385}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="addons\ofxBullet\libs\bullet2.8.2\include\BulletCollision\Gimpact">
+      <UniqueIdentifier>{0C0474E6-D28D-53C5-E55D-C3E3}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="addons\ofxBullet\libs\bullet2.8.2\include\BulletCollision\NarrowPhaseCollision">
+      <UniqueIdentifier>{9B671571-D9A4-6348-4830-2980}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="addons\ofxBullet\libs\bullet2.8.2\include\BulletDynamics">
+      <UniqueIdentifier>{A7E1FA09-B138-F312-DE94-1433}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="addons\ofxBullet\libs\bullet2.8.2\include\BulletDynamics\Character">
+      <UniqueIdentifier>{6AFB258F-7C1F-9E92-1341-ADE2}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="addons\ofxBullet\libs\bullet2.8.2\include\BulletDynamics\ConstraintSolver">
+      <UniqueIdentifier>{D7EF3D98-D949-12C7-00F5-4AAE}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="addons\ofxBullet\libs\bullet2.8.2\include\BulletDynamics\Dynamics">
+      <UniqueIdentifier>{7AB4345F-52DF-FE8D-7684-6739}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="addons\ofxBullet\libs\bullet2.8.2\include\BulletDynamics\Featherstone">
+      <UniqueIdentifier>{66A4B366-FD20-A60D-9181-AAB7}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="addons\ofxBullet\libs\bullet2.8.2\include\BulletDynamics\MLCPSolvers">
+      <UniqueIdentifier>{CDD2184F-4AA8-543A-C5FA-F091}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="addons\ofxBullet\libs\bullet2.8.2\include\BulletDynamics\Vehicle">
+      <UniqueIdentifier>{BE778EB8-AB03-7CF6-A745-6892}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="addons\ofxBullet\libs\bullet2.8.2\include\BulletSoftBody">
+      <UniqueIdentifier>{CE89A6AF-4D16-1672-B3A1-72F5}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="addons\ofxBullet\libs\bullet2.8.2\include\LinearMath">
+      <UniqueIdentifier>{FF28EA49-335C-8337-5E86-75F2}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="addons\ofxBullet\libs\bullet2.8.2\include\vectormath">
+      <UniqueIdentifier>{C08FA205-8632-9EDE-B023-85BE}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="addons\ofxBullet\libs\bullet2.8.2\include\vectormath\neon">
+      <UniqueIdentifier>{81DB2C25-697D-9E31-695F-AEE5}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="addons\ofxBullet\libs\bullet2.8.2\include\vectormath\scalar">
+      <UniqueIdentifier>{2913B602-8E8F-BB1F-C204-FDAE}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="addons\ofxBullet\libs\bullet2.8.2\include\vectormath\sse">
+      <UniqueIdentifier>{796E08E9-E73A-B0F2-5B61-9B62}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="addons\ofxFx">
+      <UniqueIdentifier>{9B51DC6D-95A3-DB4A-5482-B2D1}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="addons\ofxFx\src">
+      <UniqueIdentifier>{3635BA34-53B8-F038-0159-6D38}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="addons\ofxFx\src\composers">
+      <UniqueIdentifier>{83BD1EA2-CFD0-F4C2-8370-38BE}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="addons\ofxFx\src\filters">
+      <UniqueIdentifier>{A722D73B-7A84-1F80-4832-4256}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="addons\ofxFx\src\generative">
+      <UniqueIdentifier>{970B49DD-F9BE-EE84-3B67-0A91}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="addons\ofxFx\src\operations">
+      <UniqueIdentifier>{163533AC-E91E-48DD-98D2-DAA5}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="addons\ofxGui">
+      <UniqueIdentifier>{4F2A59AF-5F4E-704B-D067-EC13}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="addons\ofxGui\src">
+      <UniqueIdentifier>{645E9533-4DCD-6179-1CDF-CB65}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="addons\ofxMSATimer">
+      <UniqueIdentifier>{FA2C7F81-95AD-913A-95EE-6D67}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="addons\ofxMSATimer\src">
+      <UniqueIdentifier>{21227B69-34BA-DC94-65C0-E080}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="addons\ofxRange">
+      <UniqueIdentifier>{C5CF358F-F6D6-0F61-5433-25F1}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="addons\ofxRange\src">
+      <UniqueIdentifier>{AFEE1AF4-3BE7-35E2-F89C-FEB8}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="addons\ofxTextInputField">
+      <UniqueIdentifier>{A4B02712-30E4-B504-C110-2C93}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="addons\ofxTextInputField\src">
+      <UniqueIdentifier>{B67AFC83-AF32-6FE3-281F-AC21}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="addons\ofxTimecode">
+      <UniqueIdentifier>{1B5CD1F2-714C-1A5F-97D0-2F97}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="addons\ofxTimecode\src">
+      <UniqueIdentifier>{1E8626D6-B6A0-D240-F534-C5E8}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="addons\ofxTimeline">
+      <UniqueIdentifier>{B6CB78C7-BC44-AD08-8E43-896C}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="addons\ofxTimeline\src">
+      <UniqueIdentifier>{AC132E01-0F0D-5FF9-8D64-8DAD}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="addons\ofxTimeline\libs">
+      <UniqueIdentifier>{333C4390-0B4E-EAAA-5CFE-0663}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="addons\ofxTimeline\libs\kiss">
+      <UniqueIdentifier>{93D28ED9-A2CA-418A-4538-D332}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="addons\ofxTimeline\libs\kiss\include">
+      <UniqueIdentifier>{239F8B47-5D3C-673B-95DE-5E70}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="addons\ofxTimeline\libs\kiss\src">
+      <UniqueIdentifier>{5451193A-C0CF-9361-B431-0F7F}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="addons\ofxTimeline\libs\ofOpenALSoundPlayer_TimelineAdditions">
+      <UniqueIdentifier>{012014BF-0161-A228-4C75-8D28}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="addons\ofxTimeline\libs\ofOpenALSoundPlayer_TimelineAdditions\src">
+      <UniqueIdentifier>{2A871B0D-D088-017C-101E-4857}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="addons\ofxTimeline\libs\openal">
+      <UniqueIdentifier>{7D44A927-3EF3-D18B-0302-5262}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="addons\ofxTimeline\libs\openal\include">
+      <UniqueIdentifier>{994A9BE4-6199-2707-46E1-49BC}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="addons\ofxTimeline\libs\openal\include\AL">
+      <UniqueIdentifier>{8B1E05C6-FEC0-22B7-592B-3DE2}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="addons\ofxTimeline\libs\sndfile">
+      <UniqueIdentifier>{944E9321-A6F2-45B7-407B-559E}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="addons\ofxTimeline\libs\sndfile\include">
+      <UniqueIdentifier>{4ED1F364-A201-A241-2587-2223}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="addons\ofxTween">
+      <UniqueIdentifier>{8A8810E8-A79D-7A1D-2F0A-7203}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="addons\ofxTween\src">
+      <UniqueIdentifier>{40AC4B42-6A5A-9537-EB82-D1B8}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="addons\ofxTween\src\Easings">
+      <UniqueIdentifier>{EF0F6A8B-B04F-E782-21EF-D4BA}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="addons\ofxXmlSettings">
+      <UniqueIdentifier>{877F005D-13E6-0592-1D97-F2E3}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="addons\ofxXmlSettings\src">
+      <UniqueIdentifier>{CCB2AC63-49D2-977C-CFE8-AEAD}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="addons\ofxXmlSettings\libs">
+      <UniqueIdentifier>{687714A8-1662-FA1C-261F-50F0}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="addons\ofxMetaballs">
+      <UniqueIdentifier>{686a2475-96cf-43a5-b35e-a207aa3ef9da}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="addons\ofxMetaballs\src">
+      <UniqueIdentifier>{e20d8a82-964c-48f5-875d-62bc102fd5b7}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="addons\ofxAutoReloadedShader">
+      <UniqueIdentifier>{20d53a00-5cc7-4684-abfa-0b9a8cd0b6d0}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="addons\ofxAutoReloadedShader\src">
+      <UniqueIdentifier>{3a71d219-b2e4-4347-bfb6-93cc101362e7}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="src\ofApp.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\ofApp.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\addons\ofxBullet\src\events\ofxBulletCollisionData.h">
+      <Filter>addons\ofxBullet\src\events</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\addons\ofxBullet\src\events\ofxBulletMousePickEvent.h">
+      <Filter>addons\ofxBullet\src\events</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\addons\ofxBullet\src\events\ofxBulletRaycastData.h">
+      <Filter>addons\ofxBullet\src\events</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\addons\ofxBullet\src\joints\ofxBulletJoint.h">
+      <Filter>addons\ofxBullet\src\joints</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\addons\ofxBullet\src\ofxBullet.h">
+      <Filter>addons\ofxBullet\src</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\addons\ofxBullet\src\ofxBulletConstants.h">
+      <Filter>addons\ofxBullet\src</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\addons\ofxBullet\src\ofxBulletUserData.h">
+      <Filter>addons\ofxBullet\src</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\addons\ofxBullet\src\ofxBulletUtils.h">
+      <Filter>addons\ofxBullet\src</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\addons\ofxBullet\src\ofxBulletWorldRigid.h">
+      <Filter>addons\ofxBullet\src</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\addons\ofxBullet\src\render\GLDebugDrawer.h">
+      <Filter>addons\ofxBullet\src\render</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\addons\ofxBullet\src\shapes\ofxBulletBaseShape.h">
+      <Filter>addons\ofxBullet\src\shapes</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\addons\ofxBullet\src\shapes\ofxBulletBox.h">
+      <Filter>addons\ofxBullet\src\shapes</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\addons\ofxBullet\src\shapes\ofxBulletCapsule.h">
+      <Filter>addons\ofxBullet\src\shapes</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\addons\ofxBullet\src\shapes\ofxBulletCone.h">
+      <Filter>addons\ofxBullet\src\shapes</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\addons\ofxBullet\src\shapes\ofxBulletConvexShape.h">
+      <Filter>addons\ofxBullet\src\shapes</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\addons\ofxBullet\src\shapes\ofxBulletCustomShape.h">
+      <Filter>addons\ofxBullet\src\shapes</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\addons\ofxBullet\src\shapes\ofxBulletCylinder.h">
+      <Filter>addons\ofxBullet\src\shapes</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\addons\ofxBullet\src\shapes\ofxBulletSphere.h">
+      <Filter>addons\ofxBullet\src\shapes</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\addons\ofxBullet\src\shapes\ofxBulletStaticPlane.h">
+      <Filter>addons\ofxBullet\src\shapes</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\addons\ofxBullet\src\shapes\ofxBulletTriMeshShape.h">
+      <Filter>addons\ofxBullet\src\shapes</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\addons\ofxBullet\libs\bullet2.8.2\include\btBulletCollisionCommon.h">
+      <Filter>addons\ofxBullet\libs\bullet2.8.2\include</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\addons\ofxBullet\libs\bullet2.8.2\include\btBulletDynamicsCommon.h">
+      <Filter>addons\ofxBullet\libs\bullet2.8.2\include</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\addons\ofxBullet\libs\bullet2.8.2\include\Bullet-C-Api.h">
+      <Filter>addons\ofxBullet\libs\bullet2.8.2\include</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\addons\ofxBullet\libs\bullet2.8.2\include\BulletCollision\BroadphaseCollision\btAxisSweep3.h">
+      <Filter>addons\ofxBullet\libs\bullet2.8.2\include\BulletCollision\BroadphaseCollision</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\addons\ofxBullet\libs\bullet2.8.2\include\BulletCollision\BroadphaseCollision\btBroadphaseInterface.h">
+      <Filter>addons\ofxBullet\libs\bullet2.8.2\include\BulletCollision\BroadphaseCollision</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\addons\ofxBullet\libs\bullet2.8.2\include\BulletCollision\BroadphaseCollision\btBroadphaseProxy.h">
+      <Filter>addons\ofxBullet\libs\bullet2.8.2\include\BulletCollision\BroadphaseCollision</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\addons\ofxBullet\libs\bullet2.8.2\include\BulletCollision\BroadphaseCollision\btCollisionAlgorithm.h">
+      <Filter>addons\ofxBullet\libs\bullet2.8.2\include\BulletCollision\BroadphaseCollision</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\addons\ofxBullet\libs\bullet2.8.2\include\BulletCollision\BroadphaseCollision\btDbvt.h">
+      <Filter>addons\ofxBullet\libs\bullet2.8.2\include\BulletCollision\BroadphaseCollision</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\addons\ofxBullet\libs\bullet2.8.2\include\BulletCollision\BroadphaseCollision\btDbvtBroadphase.h">
+      <Filter>addons\ofxBullet\libs\bullet2.8.2\include\BulletCollision\BroadphaseCollision</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\addons\ofxBullet\libs\bullet2.8.2\include\BulletCollision\BroadphaseCollision\btDispatcher.h">
+      <Filter>addons\ofxBullet\libs\bullet2.8.2\include\BulletCollision\BroadphaseCollision</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\addons\ofxBullet\libs\bullet2.8.2\include\BulletCollision\BroadphaseCollision\btMultiSapBroadphase.h">
+      <Filter>addons\ofxBullet\libs\bullet2.8.2\include\BulletCollision\BroadphaseCollision</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\addons\ofxBullet\libs\bullet2.8.2\include\BulletCollision\BroadphaseCollision\btOverlappingPairCache.h">
+      <Filter>addons\ofxBullet\libs\bullet2.8.2\include\BulletCollision\BroadphaseCollision</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\addons\ofxBullet\libs\bullet2.8.2\include\BulletCollision\BroadphaseCollision\btOverlappingPairCallback.h">
+      <Filter>addons\ofxBullet\libs\bullet2.8.2\include\BulletCollision\BroadphaseCollision</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\addons\ofxBullet\libs\bullet2.8.2\include\BulletCollision\BroadphaseCollision\btQuantizedBvh.h">
+      <Filter>addons\ofxBullet\libs\bullet2.8.2\include\BulletCollision\BroadphaseCollision</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\addons\ofxBullet\libs\bullet2.8.2\include\BulletCollision\BroadphaseCollision\btSimpleBroadphase.h">
+      <Filter>addons\ofxBullet\libs\bullet2.8.2\include\BulletCollision\BroadphaseCollision</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\addons\ofxBullet\libs\bullet2.8.2\include\BulletCollision\CollisionDispatch\btActivatingCollisionAlgorithm.h">
+      <Filter>addons\ofxBullet\libs\bullet2.8.2\include\BulletCollision\CollisionDispatch</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\addons\ofxBullet\libs\bullet2.8.2\include\BulletCollision\CollisionDispatch\btBox2dBox2dCollisionAlgorithm.h">
+      <Filter>addons\ofxBullet\libs\bullet2.8.2\include\BulletCollision\CollisionDispatch</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\addons\ofxBullet\libs\bullet2.8.2\include\BulletCollision\CollisionDispatch\btBoxBoxCollisionAlgorithm.h">
+      <Filter>addons\ofxBullet\libs\bullet2.8.2\include\BulletCollision\CollisionDispatch</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\addons\ofxBullet\libs\bullet2.8.2\include\BulletCollision\CollisionDispatch\btBoxBoxDetector.h">
+      <Filter>addons\ofxBullet\libs\bullet2.8.2\include\BulletCollision\CollisionDispatch</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\addons\ofxBullet\libs\bullet2.8.2\include\BulletCollision\CollisionDispatch\btCollisionConfiguration.h">
+      <Filter>addons\ofxBullet\libs\bullet2.8.2\include\BulletCollision\CollisionDispatch</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\addons\ofxBullet\libs\bullet2.8.2\include\BulletCollision\CollisionDispatch\btCollisionCreateFunc.h">
+      <Filter>addons\ofxBullet\libs\bullet2.8.2\include\BulletCollision\CollisionDispatch</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\addons\ofxBullet\libs\bullet2.8.2\include\BulletCollision\CollisionDispatch\btCollisionDispatcher.h">
+      <Filter>addons\ofxBullet\libs\bullet2.8.2\include\BulletCollision\CollisionDispatch</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\addons\ofxBullet\libs\bullet2.8.2\include\BulletCollision\CollisionDispatch\btCollisionObject.h">
+      <Filter>addons\ofxBullet\libs\bullet2.8.2\include\BulletCollision\CollisionDispatch</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\addons\ofxBullet\libs\bullet2.8.2\include\BulletCollision\CollisionDispatch\btCollisionObjectWrapper.h">
+      <Filter>addons\ofxBullet\libs\bullet2.8.2\include\BulletCollision\CollisionDispatch</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\addons\ofxBullet\libs\bullet2.8.2\include\BulletCollision\CollisionDispatch\btCollisionWorld.h">
+      <Filter>addons\ofxBullet\libs\bullet2.8.2\include\BulletCollision\CollisionDispatch</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\addons\ofxBullet\libs\bullet2.8.2\include\BulletCollision\CollisionDispatch\btCompoundCollisionAlgorithm.h">
+      <Filter>addons\ofxBullet\libs\bullet2.8.2\include\BulletCollision\CollisionDispatch</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\addons\ofxBullet\libs\bullet2.8.2\include\BulletCollision\CollisionDispatch\btCompoundCompoundCollisionAlgorithm.h">
+      <Filter>addons\ofxBullet\libs\bullet2.8.2\include\BulletCollision\CollisionDispatch</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\addons\ofxBullet\libs\bullet2.8.2\include\BulletCollision\CollisionDispatch\btConvex2dConvex2dAlgorithm.h">
+      <Filter>addons\ofxBullet\libs\bullet2.8.2\include\BulletCollision\CollisionDispatch</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\addons\ofxBullet\libs\bullet2.8.2\include\BulletCollision\CollisionDispatch\btConvexConcaveCollisionAlgorithm.h">
+      <Filter>addons\ofxBullet\libs\bullet2.8.2\include\BulletCollision\CollisionDispatch</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\addons\ofxBullet\libs\bullet2.8.2\include\BulletCollision\CollisionDispatch\btConvexConvexAlgorithm.h">
+      <Filter>addons\ofxBullet\libs\bullet2.8.2\include\BulletCollision\CollisionDispatch</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\addons\ofxBullet\libs\bullet2.8.2\include\BulletCollision\CollisionDispatch\btConvexPlaneCollisionAlgorithm.h">
+      <Filter>addons\ofxBullet\libs\bullet2.8.2\include\BulletCollision\CollisionDispatch</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\addons\ofxBullet\libs\bullet2.8.2\include\BulletCollision\CollisionDispatch\btDefaultCollisionConfiguration.h">
+      <Filter>addons\ofxBullet\libs\bullet2.8.2\include\BulletCollision\CollisionDispatch</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\addons\ofxBullet\libs\bullet2.8.2\include\BulletCollision\CollisionDispatch\btEmptyCollisionAlgorithm.h">
+      <Filter>addons\ofxBullet\libs\bullet2.8.2\include\BulletCollision\CollisionDispatch</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\addons\ofxBullet\libs\bullet2.8.2\include\BulletCollision\CollisionDispatch\btGhostObject.h">
+      <Filter>addons\ofxBullet\libs\bullet2.8.2\include\BulletCollision\CollisionDispatch</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\addons\ofxBullet\libs\bullet2.8.2\include\BulletCollision\CollisionDispatch\btHashedSimplePairCache.h">
+      <Filter>addons\ofxBullet\libs\bullet2.8.2\include\BulletCollision\CollisionDispatch</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\addons\ofxBullet\libs\bullet2.8.2\include\BulletCollision\CollisionDispatch\btInternalEdgeUtility.h">
+      <Filter>addons\ofxBullet\libs\bullet2.8.2\include\BulletCollision\CollisionDispatch</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\addons\ofxBullet\libs\bullet2.8.2\include\BulletCollision\CollisionDispatch\btManifoldResult.h">
+      <Filter>addons\ofxBullet\libs\bullet2.8.2\include\BulletCollision\CollisionDispatch</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\addons\ofxBullet\libs\bullet2.8.2\include\BulletCollision\CollisionDispatch\btSimulationIslandManager.h">
+      <Filter>addons\ofxBullet\libs\bullet2.8.2\include\BulletCollision\CollisionDispatch</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\addons\ofxBullet\libs\bullet2.8.2\include\BulletCollision\CollisionDispatch\btSphereBoxCollisionAlgorithm.h">
+      <Filter>addons\ofxBullet\libs\bullet2.8.2\include\BulletCollision\CollisionDispatch</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\addons\ofxBullet\libs\bullet2.8.2\include\BulletCollision\CollisionDispatch\btSphereSphereCollisionAlgorithm.h">
+      <Filter>addons\ofxBullet\libs\bullet2.8.2\include\BulletCollision\CollisionDispatch</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\addons\ofxBullet\libs\bullet2.8.2\include\BulletCollision\CollisionDispatch\btSphereTriangleCollisionAlgorithm.h">
+      <Filter>addons\ofxBullet\libs\bullet2.8.2\include\BulletCollision\CollisionDispatch</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\addons\ofxBullet\libs\bullet2.8.2\include\BulletCollision\CollisionDispatch\btUnionFind.h">
+      <Filter>addons\ofxBullet\libs\bullet2.8.2\include\BulletCollision\CollisionDispatch</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\addons\ofxBullet\libs\bullet2.8.2\include\BulletCollision\CollisionDispatch\SphereTriangleDetector.h">
+      <Filter>addons\ofxBullet\libs\bullet2.8.2\include\BulletCollision\CollisionDispatch</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\addons\ofxBullet\libs\bullet2.8.2\include\BulletCollision\CollisionShapes\btBox2dShape.h">
+      <Filter>addons\ofxBullet\libs\bullet2.8.2\include\BulletCollision\CollisionShapes</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\addons\ofxBullet\libs\bullet2.8.2\include\BulletCollision\CollisionShapes\btBoxShape.h">
+      <Filter>addons\ofxBullet\libs\bullet2.8.2\include\BulletCollision\CollisionShapes</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\addons\ofxBullet\libs\bullet2.8.2\include\BulletCollision\CollisionShapes\btBvhTriangleMeshShape.h">
+      <Filter>addons\ofxBullet\libs\bullet2.8.2\include\BulletCollision\CollisionShapes</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\addons\ofxBullet\libs\bullet2.8.2\include\BulletCollision\CollisionShapes\btCapsuleShape.h">
+      <Filter>addons\ofxBullet\libs\bullet2.8.2\include\BulletCollision\CollisionShapes</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\addons\ofxBullet\libs\bullet2.8.2\include\BulletCollision\CollisionShapes\btCollisionMargin.h">
+      <Filter>addons\ofxBullet\libs\bullet2.8.2\include\BulletCollision\CollisionShapes</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\addons\ofxBullet\libs\bullet2.8.2\include\BulletCollision\CollisionShapes\btCollisionShape.h">
+      <Filter>addons\ofxBullet\libs\bullet2.8.2\include\BulletCollision\CollisionShapes</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\addons\ofxBullet\libs\bullet2.8.2\include\BulletCollision\CollisionShapes\btCompoundShape.h">
+      <Filter>addons\ofxBullet\libs\bullet2.8.2\include\BulletCollision\CollisionShapes</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\addons\ofxBullet\libs\bullet2.8.2\include\BulletCollision\CollisionShapes\btConcaveShape.h">
+      <Filter>addons\ofxBullet\libs\bullet2.8.2\include\BulletCollision\CollisionShapes</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\addons\ofxBullet\libs\bullet2.8.2\include\BulletCollision\CollisionShapes\btConeShape.h">
+      <Filter>addons\ofxBullet\libs\bullet2.8.2\include\BulletCollision\CollisionShapes</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\addons\ofxBullet\libs\bullet2.8.2\include\BulletCollision\CollisionShapes\btConvex2dShape.h">
+      <Filter>addons\ofxBullet\libs\bullet2.8.2\include\BulletCollision\CollisionShapes</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\addons\ofxBullet\libs\bullet2.8.2\include\BulletCollision\CollisionShapes\btConvexHullShape.h">
+      <Filter>addons\ofxBullet\libs\bullet2.8.2\include\BulletCollision\CollisionShapes</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\addons\ofxBullet\libs\bullet2.8.2\include\BulletCollision\CollisionShapes\btConvexInternalShape.h">
+      <Filter>addons\ofxBullet\libs\bullet2.8.2\include\BulletCollision\CollisionShapes</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\addons\ofxBullet\libs\bullet2.8.2\include\BulletCollision\CollisionShapes\btConvexPointCloudShape.h">
+      <Filter>addons\ofxBullet\libs\bullet2.8.2\include\BulletCollision\CollisionShapes</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\addons\ofxBullet\libs\bullet2.8.2\include\BulletCollision\CollisionShapes\btConvexPolyhedron.h">
+      <Filter>addons\ofxBullet\libs\bullet2.8.2\include\BulletCollision\CollisionShapes</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\addons\ofxBullet\libs\bullet2.8.2\include\BulletCollision\CollisionShapes\btConvexShape.h">
+      <Filter>addons\ofxBullet\libs\bullet2.8.2\include\BulletCollision\CollisionShapes</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\addons\ofxBullet\libs\bullet2.8.2\include\BulletCollision\CollisionShapes\btConvexTriangleMeshShape.h">
+      <Filter>addons\ofxBullet\libs\bullet2.8.2\include\BulletCollision\CollisionShapes</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\addons\ofxBullet\libs\bullet2.8.2\include\BulletCollision\CollisionShapes\btCylinderShape.h">
+      <Filter>addons\ofxBullet\libs\bullet2.8.2\include\BulletCollision\CollisionShapes</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\addons\ofxBullet\libs\bullet2.8.2\include\BulletCollision\CollisionShapes\btEmptyShape.h">
+      <Filter>addons\ofxBullet\libs\bullet2.8.2\include\BulletCollision\CollisionShapes</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\addons\ofxBullet\libs\bullet2.8.2\include\BulletCollision\CollisionShapes\btHeightfieldTerrainShape.h">
+      <Filter>addons\ofxBullet\libs\bullet2.8.2\include\BulletCollision\CollisionShapes</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\addons\ofxBullet\libs\bullet2.8.2\include\BulletCollision\CollisionShapes\btMaterial.h">
+      <Filter>addons\ofxBullet\libs\bullet2.8.2\include\BulletCollision\CollisionShapes</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\addons\ofxBullet\libs\bullet2.8.2\include\BulletCollision\CollisionShapes\btMinkowskiSumShape.h">
+      <Filter>addons\ofxBullet\libs\bullet2.8.2\include\BulletCollision\CollisionShapes</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\addons\ofxBullet\libs\bullet2.8.2\include\BulletCollision\CollisionShapes\btMultimaterialTriangleMeshShape.h">
+      <Filter>addons\ofxBullet\libs\bullet2.8.2\include\BulletCollision\CollisionShapes</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\addons\ofxBullet\libs\bullet2.8.2\include\BulletCollision\CollisionShapes\btMultiSphereShape.h">
+      <Filter>addons\ofxBullet\libs\bullet2.8.2\include\BulletCollision\CollisionShapes</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\addons\ofxBullet\libs\bullet2.8.2\include\BulletCollision\CollisionShapes\btOptimizedBvh.h">
+      <Filter>addons\ofxBullet\libs\bullet2.8.2\include\BulletCollision\CollisionShapes</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\addons\ofxBullet\libs\bullet2.8.2\include\BulletCollision\CollisionShapes\btPolyhedralConvexShape.h">
+      <Filter>addons\ofxBullet\libs\bullet2.8.2\include\BulletCollision\CollisionShapes</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\addons\ofxBullet\libs\bullet2.8.2\include\BulletCollision\CollisionShapes\btScaledBvhTriangleMeshShape.h">
+      <Filter>addons\ofxBullet\libs\bullet2.8.2\include\BulletCollision\CollisionShapes</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\addons\ofxBullet\libs\bullet2.8.2\include\BulletCollision\CollisionShapes\btShapeHull.h">
+      <Filter>addons\ofxBullet\libs\bullet2.8.2\include\BulletCollision\CollisionShapes</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\addons\ofxBullet\libs\bullet2.8.2\include\BulletCollision\CollisionShapes\btSphereShape.h">
+      <Filter>addons\ofxBullet\libs\bullet2.8.2\include\BulletCollision\CollisionShapes</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\addons\ofxBullet\libs\bullet2.8.2\include\BulletCollision\CollisionShapes\btStaticPlaneShape.h">
+      <Filter>addons\ofxBullet\libs\bullet2.8.2\include\BulletCollision\CollisionShapes</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\addons\ofxBullet\libs\bullet2.8.2\include\BulletCollision\CollisionShapes\btStridingMeshInterface.h">
+      <Filter>addons\ofxBullet\libs\bullet2.8.2\include\BulletCollision\CollisionShapes</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\addons\ofxBullet\libs\bullet2.8.2\include\BulletCollision\CollisionShapes\btTetrahedronShape.h">
+      <Filter>addons\ofxBullet\libs\bullet2.8.2\include\BulletCollision\CollisionShapes</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\addons\ofxBullet\libs\bullet2.8.2\include\BulletCollision\CollisionShapes\btTriangleBuffer.h">
+      <Filter>addons\ofxBullet\libs\bullet2.8.2\include\BulletCollision\CollisionShapes</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\addons\ofxBullet\libs\bullet2.8.2\include\BulletCollision\CollisionShapes\btTriangleCallback.h">
+      <Filter>addons\ofxBullet\libs\bullet2.8.2\include\BulletCollision\CollisionShapes</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\addons\ofxBullet\libs\bullet2.8.2\include\BulletCollision\CollisionShapes\btTriangleIndexVertexArray.h">
+      <Filter>addons\ofxBullet\libs\bullet2.8.2\include\BulletCollision\CollisionShapes</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\addons\ofxBullet\libs\bullet2.8.2\include\BulletCollision\CollisionShapes\btTriangleIndexVertexMaterialArray.h">
+      <Filter>addons\ofxBullet\libs\bullet2.8.2\include\BulletCollision\CollisionShapes</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\addons\ofxBullet\libs\bullet2.8.2\include\BulletCollision\CollisionShapes\btTriangleInfoMap.h">
+      <Filter>addons\ofxBullet\libs\bullet2.8.2\include\BulletCollision\CollisionShapes</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\addons\ofxBullet\libs\bullet2.8.2\include\BulletCollision\CollisionShapes\btTriangleMesh.h">
+      <Filter>addons\ofxBullet\libs\bullet2.8.2\include\BulletCollision\CollisionShapes</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\addons\ofxBullet\libs\bullet2.8.2\include\BulletCollision\CollisionShapes\btTriangleMeshShape.h">
+      <Filter>addons\ofxBullet\libs\bullet2.8.2\include\BulletCollision\CollisionShapes</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\addons\ofxBullet\libs\bullet2.8.2\include\BulletCollision\CollisionShapes\btTriangleShape.h">
+      <Filter>addons\ofxBullet\libs\bullet2.8.2\include\BulletCollision\CollisionShapes</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\addons\ofxBullet\libs\bullet2.8.2\include\BulletCollision\CollisionShapes\btUniformScalingShape.h">
+      <Filter>addons\ofxBullet\libs\bullet2.8.2\include\BulletCollision\CollisionShapes</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\addons\ofxBullet\libs\bullet2.8.2\include\BulletCollision\Gimpact\btBoxCollision.h">
+      <Filter>addons\ofxBullet\libs\bullet2.8.2\include\BulletCollision\Gimpact</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\addons\ofxBullet\libs\bullet2.8.2\include\BulletCollision\Gimpact\btClipPolygon.h">
+      <Filter>addons\ofxBullet\libs\bullet2.8.2\include\BulletCollision\Gimpact</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\addons\ofxBullet\libs\bullet2.8.2\include\BulletCollision\Gimpact\btCompoundFromGimpact.h">
+      <Filter>addons\ofxBullet\libs\bullet2.8.2\include\BulletCollision\Gimpact</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\addons\ofxBullet\libs\bullet2.8.2\include\BulletCollision\Gimpact\btContactProcessing.h">
+      <Filter>addons\ofxBullet\libs\bullet2.8.2\include\BulletCollision\Gimpact</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\addons\ofxBullet\libs\bullet2.8.2\include\BulletCollision\Gimpact\btGenericPoolAllocator.h">
+      <Filter>addons\ofxBullet\libs\bullet2.8.2\include\BulletCollision\Gimpact</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\addons\ofxBullet\libs\bullet2.8.2\include\BulletCollision\Gimpact\btGeometryOperations.h">
+      <Filter>addons\ofxBullet\libs\bullet2.8.2\include\BulletCollision\Gimpact</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\addons\ofxBullet\libs\bullet2.8.2\include\BulletCollision\Gimpact\btGImpactBvh.h">
+      <Filter>addons\ofxBullet\libs\bullet2.8.2\include\BulletCollision\Gimpact</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\addons\ofxBullet\libs\bullet2.8.2\include\BulletCollision\Gimpact\btGImpactCollisionAlgorithm.h">
+      <Filter>addons\ofxBullet\libs\bullet2.8.2\include\BulletCollision\Gimpact</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\addons\ofxBullet\libs\bullet2.8.2\include\BulletCollision\Gimpact\btGImpactMassUtil.h">
+      <Filter>addons\ofxBullet\libs\bullet2.8.2\include\BulletCollision\Gimpact</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\addons\ofxBullet\libs\bullet2.8.2\include\BulletCollision\Gimpact\btGImpactQuantizedBvh.h">
+      <Filter>addons\ofxBullet\libs\bullet2.8.2\include\BulletCollision\Gimpact</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\addons\ofxBullet\libs\bullet2.8.2\include\BulletCollision\Gimpact\btGImpactShape.h">
+      <Filter>addons\ofxBullet\libs\bullet2.8.2\include\BulletCollision\Gimpact</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\addons\ofxBullet\libs\bullet2.8.2\include\BulletCollision\Gimpact\btQuantization.h">
+      <Filter>addons\ofxBullet\libs\bullet2.8.2\include\BulletCollision\Gimpact</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\addons\ofxBullet\libs\bullet2.8.2\include\BulletCollision\Gimpact\btTriangleShapeEx.h">
+      <Filter>addons\ofxBullet\libs\bullet2.8.2\include\BulletCollision\Gimpact</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\addons\ofxBullet\libs\bullet2.8.2\include\BulletCollision\Gimpact\gim_array.h">
+      <Filter>addons\ofxBullet\libs\bullet2.8.2\include\BulletCollision\Gimpact</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\addons\ofxBullet\libs\bullet2.8.2\include\BulletCollision\Gimpact\gim_basic_geometry_operations.h">
+      <Filter>addons\ofxBullet\libs\bullet2.8.2\include\BulletCollision\Gimpact</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\addons\ofxBullet\libs\bullet2.8.2\include\BulletCollision\Gimpact\gim_bitset.h">
+      <Filter>addons\ofxBullet\libs\bullet2.8.2\include\BulletCollision\Gimpact</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\addons\ofxBullet\libs\bullet2.8.2\include\BulletCollision\Gimpact\gim_box_collision.h">
+      <Filter>addons\ofxBullet\libs\bullet2.8.2\include\BulletCollision\Gimpact</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\addons\ofxBullet\libs\bullet2.8.2\include\BulletCollision\Gimpact\gim_box_set.h">
+      <Filter>addons\ofxBullet\libs\bullet2.8.2\include\BulletCollision\Gimpact</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\addons\ofxBullet\libs\bullet2.8.2\include\BulletCollision\Gimpact\gim_clip_polygon.h">
+      <Filter>addons\ofxBullet\libs\bullet2.8.2\include\BulletCollision\Gimpact</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\addons\ofxBullet\libs\bullet2.8.2\include\BulletCollision\Gimpact\gim_contact.h">
+      <Filter>addons\ofxBullet\libs\bullet2.8.2\include\BulletCollision\Gimpact</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\addons\ofxBullet\libs\bullet2.8.2\include\BulletCollision\Gimpact\gim_geometry.h">
+      <Filter>addons\ofxBullet\libs\bullet2.8.2\include\BulletCollision\Gimpact</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\addons\ofxBullet\libs\bullet2.8.2\include\BulletCollision\Gimpact\gim_geom_types.h">
+      <Filter>addons\ofxBullet\libs\bullet2.8.2\include\BulletCollision\Gimpact</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\addons\ofxBullet\libs\bullet2.8.2\include\BulletCollision\Gimpact\gim_hash_table.h">
+      <Filter>addons\ofxBullet\libs\bullet2.8.2\include\BulletCollision\Gimpact</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\addons\ofxBullet\libs\bullet2.8.2\include\BulletCollision\Gimpact\gim_linear_math.h">
+      <Filter>addons\ofxBullet\libs\bullet2.8.2\include\BulletCollision\Gimpact</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\addons\ofxBullet\libs\bullet2.8.2\include\BulletCollision\Gimpact\gim_math.h">
+      <Filter>addons\ofxBullet\libs\bullet2.8.2\include\BulletCollision\Gimpact</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\addons\ofxBullet\libs\bullet2.8.2\include\BulletCollision\Gimpact\gim_memory.h">
+      <Filter>addons\ofxBullet\libs\bullet2.8.2\include\BulletCollision\Gimpact</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\addons\ofxBullet\libs\bullet2.8.2\include\BulletCollision\Gimpact\gim_radixsort.h">
+      <Filter>addons\ofxBullet\libs\bullet2.8.2\include\BulletCollision\Gimpact</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\addons\ofxBullet\libs\bullet2.8.2\include\BulletCollision\Gimpact\gim_tri_collision.h">
+      <Filter>addons\ofxBullet\libs\bullet2.8.2\include\BulletCollision\Gimpact</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\addons\ofxBullet\libs\bullet2.8.2\include\BulletCollision\NarrowPhaseCollision\btContinuousConvexCollision.h">
+      <Filter>addons\ofxBullet\libs\bullet2.8.2\include\BulletCollision\NarrowPhaseCollision</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\addons\ofxBullet\libs\bullet2.8.2\include\BulletCollision\NarrowPhaseCollision\btConvexCast.h">
+      <Filter>addons\ofxBullet\libs\bullet2.8.2\include\BulletCollision\NarrowPhaseCollision</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\addons\ofxBullet\libs\bullet2.8.2\include\BulletCollision\NarrowPhaseCollision\btConvexPenetrationDepthSolver.h">
+      <Filter>addons\ofxBullet\libs\bullet2.8.2\include\BulletCollision\NarrowPhaseCollision</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\addons\ofxBullet\libs\bullet2.8.2\include\BulletCollision\NarrowPhaseCollision\btDiscreteCollisionDetectorInterface.h">
+      <Filter>addons\ofxBullet\libs\bullet2.8.2\include\BulletCollision\NarrowPhaseCollision</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\addons\ofxBullet\libs\bullet2.8.2\include\BulletCollision\NarrowPhaseCollision\btGjkConvexCast.h">
+      <Filter>addons\ofxBullet\libs\bullet2.8.2\include\BulletCollision\NarrowPhaseCollision</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\addons\ofxBullet\libs\bullet2.8.2\include\BulletCollision\NarrowPhaseCollision\btGjkEpa2.h">
+      <Filter>addons\ofxBullet\libs\bullet2.8.2\include\BulletCollision\NarrowPhaseCollision</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\addons\ofxBullet\libs\bullet2.8.2\include\BulletCollision\NarrowPhaseCollision\btGjkEpaPenetrationDepthSolver.h">
+      <Filter>addons\ofxBullet\libs\bullet2.8.2\include\BulletCollision\NarrowPhaseCollision</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\addons\ofxBullet\libs\bullet2.8.2\include\BulletCollision\NarrowPhaseCollision\btGjkPairDetector.h">
+      <Filter>addons\ofxBullet\libs\bullet2.8.2\include\BulletCollision\NarrowPhaseCollision</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\addons\ofxBullet\libs\bullet2.8.2\include\BulletCollision\NarrowPhaseCollision\btManifoldPoint.h">
+      <Filter>addons\ofxBullet\libs\bullet2.8.2\include\BulletCollision\NarrowPhaseCollision</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\addons\ofxBullet\libs\bullet2.8.2\include\BulletCollision\NarrowPhaseCollision\btMinkowskiPenetrationDepthSolver.h">
+      <Filter>addons\ofxBullet\libs\bullet2.8.2\include\BulletCollision\NarrowPhaseCollision</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\addons\ofxBullet\libs\bullet2.8.2\include\BulletCollision\NarrowPhaseCollision\btPersistentManifold.h">
+      <Filter>addons\ofxBullet\libs\bullet2.8.2\include\BulletCollision\NarrowPhaseCollision</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\addons\ofxBullet\libs\bullet2.8.2\include\BulletCollision\NarrowPhaseCollision\btPointCollector.h">
+      <Filter>addons\ofxBullet\libs\bullet2.8.2\include\BulletCollision\NarrowPhaseCollision</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\addons\ofxBullet\libs\bullet2.8.2\include\BulletCollision\NarrowPhaseCollision\btPolyhedralContactClipping.h">
+      <Filter>addons\ofxBullet\libs\bullet2.8.2\include\BulletCollision\NarrowPhaseCollision</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\addons\ofxBullet\libs\bullet2.8.2\include\BulletCollision\NarrowPhaseCollision\btRaycastCallback.h">
+      <Filter>addons\ofxBullet\libs\bullet2.8.2\include\BulletCollision\NarrowPhaseCollision</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\addons\ofxBullet\libs\bullet2.8.2\include\BulletCollision\NarrowPhaseCollision\btSimplexSolverInterface.h">
+      <Filter>addons\ofxBullet\libs\bullet2.8.2\include\BulletCollision\NarrowPhaseCollision</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\addons\ofxBullet\libs\bullet2.8.2\include\BulletCollision\NarrowPhaseCollision\btSubSimplexConvexCast.h">
+      <Filter>addons\ofxBullet\libs\bullet2.8.2\include\BulletCollision\NarrowPhaseCollision</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\addons\ofxBullet\libs\bullet2.8.2\include\BulletCollision\NarrowPhaseCollision\btVoronoiSimplexSolver.h">
+      <Filter>addons\ofxBullet\libs\bullet2.8.2\include\BulletCollision\NarrowPhaseCollision</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\addons\ofxBullet\libs\bullet2.8.2\include\BulletDynamics\Character\btCharacterControllerInterface.h">
+      <Filter>addons\ofxBullet\libs\bullet2.8.2\include\BulletDynamics\Character</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\addons\ofxBullet\libs\bullet2.8.2\include\BulletDynamics\Character\btKinematicCharacterController.h">
+      <Filter>addons\ofxBullet\libs\bullet2.8.2\include\BulletDynamics\Character</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\addons\ofxBullet\libs\bullet2.8.2\include\BulletDynamics\ConstraintSolver\btConeTwistConstraint.h">
+      <Filter>addons\ofxBullet\libs\bullet2.8.2\include\BulletDynamics\ConstraintSolver</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\addons\ofxBullet\libs\bullet2.8.2\include\BulletDynamics\ConstraintSolver\btConstraintSolver.h">
+      <Filter>addons\ofxBullet\libs\bullet2.8.2\include\BulletDynamics\ConstraintSolver</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\addons\ofxBullet\libs\bullet2.8.2\include\BulletDynamics\ConstraintSolver\btContactConstraint.h">
+      <Filter>addons\ofxBullet\libs\bullet2.8.2\include\BulletDynamics\ConstraintSolver</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\addons\ofxBullet\libs\bullet2.8.2\include\BulletDynamics\ConstraintSolver\btContactSolverInfo.h">
+      <Filter>addons\ofxBullet\libs\bullet2.8.2\include\BulletDynamics\ConstraintSolver</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\addons\ofxBullet\libs\bullet2.8.2\include\BulletDynamics\ConstraintSolver\btFixedConstraint.h">
+      <Filter>addons\ofxBullet\libs\bullet2.8.2\include\BulletDynamics\ConstraintSolver</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\addons\ofxBullet\libs\bullet2.8.2\include\BulletDynamics\ConstraintSolver\btGearConstraint.h">
+      <Filter>addons\ofxBullet\libs\bullet2.8.2\include\BulletDynamics\ConstraintSolver</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\addons\ofxBullet\libs\bullet2.8.2\include\BulletDynamics\ConstraintSolver\btGeneric6DofConstraint.h">
+      <Filter>addons\ofxBullet\libs\bullet2.8.2\include\BulletDynamics\ConstraintSolver</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\addons\ofxBullet\libs\bullet2.8.2\include\BulletDynamics\ConstraintSolver\btGeneric6DofSpringConstraint.h">
+      <Filter>addons\ofxBullet\libs\bullet2.8.2\include\BulletDynamics\ConstraintSolver</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\addons\ofxBullet\libs\bullet2.8.2\include\BulletDynamics\ConstraintSolver\btHinge2Constraint.h">
+      <Filter>addons\ofxBullet\libs\bullet2.8.2\include\BulletDynamics\ConstraintSolver</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\addons\ofxBullet\libs\bullet2.8.2\include\BulletDynamics\ConstraintSolver\btHingeConstraint.h">
+      <Filter>addons\ofxBullet\libs\bullet2.8.2\include\BulletDynamics\ConstraintSolver</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\addons\ofxBullet\libs\bullet2.8.2\include\BulletDynamics\ConstraintSolver\btJacobianEntry.h">
+      <Filter>addons\ofxBullet\libs\bullet2.8.2\include\BulletDynamics\ConstraintSolver</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\addons\ofxBullet\libs\bullet2.8.2\include\BulletDynamics\ConstraintSolver\btPoint2PointConstraint.h">
+      <Filter>addons\ofxBullet\libs\bullet2.8.2\include\BulletDynamics\ConstraintSolver</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\addons\ofxBullet\libs\bullet2.8.2\include\BulletDynamics\ConstraintSolver\btSequentialImpulseConstraintSolver.h">
+      <Filter>addons\ofxBullet\libs\bullet2.8.2\include\BulletDynamics\ConstraintSolver</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\addons\ofxBullet\libs\bullet2.8.2\include\BulletDynamics\ConstraintSolver\btSliderConstraint.h">
+      <Filter>addons\ofxBullet\libs\bullet2.8.2\include\BulletDynamics\ConstraintSolver</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\addons\ofxBullet\libs\bullet2.8.2\include\BulletDynamics\ConstraintSolver\btSolve2LinearConstraint.h">
+      <Filter>addons\ofxBullet\libs\bullet2.8.2\include\BulletDynamics\ConstraintSolver</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\addons\ofxBullet\libs\bullet2.8.2\include\BulletDynamics\ConstraintSolver\btSolverBody.h">
+      <Filter>addons\ofxBullet\libs\bullet2.8.2\include\BulletDynamics\ConstraintSolver</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\addons\ofxBullet\libs\bullet2.8.2\include\BulletDynamics\ConstraintSolver\btSolverConstraint.h">
+      <Filter>addons\ofxBullet\libs\bullet2.8.2\include\BulletDynamics\ConstraintSolver</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\addons\ofxBullet\libs\bullet2.8.2\include\BulletDynamics\ConstraintSolver\btTypedConstraint.h">
+      <Filter>addons\ofxBullet\libs\bullet2.8.2\include\BulletDynamics\ConstraintSolver</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\addons\ofxBullet\libs\bullet2.8.2\include\BulletDynamics\ConstraintSolver\btUniversalConstraint.h">
+      <Filter>addons\ofxBullet\libs\bullet2.8.2\include\BulletDynamics\ConstraintSolver</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\addons\ofxBullet\libs\bullet2.8.2\include\BulletDynamics\Dynamics\btActionInterface.h">
+      <Filter>addons\ofxBullet\libs\bullet2.8.2\include\BulletDynamics\Dynamics</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\addons\ofxBullet\libs\bullet2.8.2\include\BulletDynamics\Dynamics\btDiscreteDynamicsWorld.h">
+      <Filter>addons\ofxBullet\libs\bullet2.8.2\include\BulletDynamics\Dynamics</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\addons\ofxBullet\libs\bullet2.8.2\include\BulletDynamics\Dynamics\btDynamicsWorld.h">
+      <Filter>addons\ofxBullet\libs\bullet2.8.2\include\BulletDynamics\Dynamics</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\addons\ofxBullet\libs\bullet2.8.2\include\BulletDynamics\Dynamics\btRigidBody.h">
+      <Filter>addons\ofxBullet\libs\bullet2.8.2\include\BulletDynamics\Dynamics</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\addons\ofxBullet\libs\bullet2.8.2\include\BulletDynamics\Dynamics\btSimpleDynamicsWorld.h">
+      <Filter>addons\ofxBullet\libs\bullet2.8.2\include\BulletDynamics\Dynamics</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\addons\ofxBullet\libs\bullet2.8.2\include\BulletDynamics\Featherstone\btMultiBody.h">
+      <Filter>addons\ofxBullet\libs\bullet2.8.2\include\BulletDynamics\Featherstone</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\addons\ofxBullet\libs\bullet2.8.2\include\BulletDynamics\Featherstone\btMultiBodyConstraint.h">
+      <Filter>addons\ofxBullet\libs\bullet2.8.2\include\BulletDynamics\Featherstone</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\addons\ofxBullet\libs\bullet2.8.2\include\BulletDynamics\Featherstone\btMultiBodyConstraintSolver.h">
+      <Filter>addons\ofxBullet\libs\bullet2.8.2\include\BulletDynamics\Featherstone</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\addons\ofxBullet\libs\bullet2.8.2\include\BulletDynamics\Featherstone\btMultiBodyDynamicsWorld.h">
+      <Filter>addons\ofxBullet\libs\bullet2.8.2\include\BulletDynamics\Featherstone</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\addons\ofxBullet\libs\bullet2.8.2\include\BulletDynamics\Featherstone\btMultiBodyJointLimitConstraint.h">
+      <Filter>addons\ofxBullet\libs\bullet2.8.2\include\BulletDynamics\Featherstone</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\addons\ofxBullet\libs\bullet2.8.2\include\BulletDynamics\Featherstone\btMultiBodyJointMotor.h">
+      <Filter>addons\ofxBullet\libs\bullet2.8.2\include\BulletDynamics\Featherstone</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\addons\ofxBullet\libs\bullet2.8.2\include\BulletDynamics\Featherstone\btMultiBodyLink.h">
+      <Filter>addons\ofxBullet\libs\bullet2.8.2\include\BulletDynamics\Featherstone</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\addons\ofxBullet\libs\bullet2.8.2\include\BulletDynamics\Featherstone\btMultiBodyLinkCollider.h">
+      <Filter>addons\ofxBullet\libs\bullet2.8.2\include\BulletDynamics\Featherstone</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\addons\ofxBullet\libs\bullet2.8.2\include\BulletDynamics\Featherstone\btMultiBodyPoint2Point.h">
+      <Filter>addons\ofxBullet\libs\bullet2.8.2\include\BulletDynamics\Featherstone</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\addons\ofxBullet\libs\bullet2.8.2\include\BulletDynamics\Featherstone\btMultiBodySolverConstraint.h">
+      <Filter>addons\ofxBullet\libs\bullet2.8.2\include\BulletDynamics\Featherstone</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\addons\ofxBullet\libs\bullet2.8.2\include\BulletDynamics\MLCPSolvers\btDantzigLCP.h">
+      <Filter>addons\ofxBullet\libs\bullet2.8.2\include\BulletDynamics\MLCPSolvers</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\addons\ofxBullet\libs\bullet2.8.2\include\BulletDynamics\MLCPSolvers\btDantzigSolver.h">
+      <Filter>addons\ofxBullet\libs\bullet2.8.2\include\BulletDynamics\MLCPSolvers</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\addons\ofxBullet\libs\bullet2.8.2\include\BulletDynamics\MLCPSolvers\btMLCPSolver.h">
+      <Filter>addons\ofxBullet\libs\bullet2.8.2\include\BulletDynamics\MLCPSolvers</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\addons\ofxBullet\libs\bullet2.8.2\include\BulletDynamics\MLCPSolvers\btMLCPSolverInterface.h">
+      <Filter>addons\ofxBullet\libs\bullet2.8.2\include\BulletDynamics\MLCPSolvers</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\addons\ofxBullet\libs\bullet2.8.2\include\BulletDynamics\MLCPSolvers\btPATHSolver.h">
+      <Filter>addons\ofxBullet\libs\bullet2.8.2\include\BulletDynamics\MLCPSolvers</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\addons\ofxBullet\libs\bullet2.8.2\include\BulletDynamics\MLCPSolvers\btSolveProjectedGaussSeidel.h">
+      <Filter>addons\ofxBullet\libs\bullet2.8.2\include\BulletDynamics\MLCPSolvers</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\addons\ofxBullet\libs\bullet2.8.2\include\BulletDynamics\Vehicle\btRaycastVehicle.h">
+      <Filter>addons\ofxBullet\libs\bullet2.8.2\include\BulletDynamics\Vehicle</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\addons\ofxBullet\libs\bullet2.8.2\include\BulletDynamics\Vehicle\btVehicleRaycaster.h">
+      <Filter>addons\ofxBullet\libs\bullet2.8.2\include\BulletDynamics\Vehicle</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\addons\ofxBullet\libs\bullet2.8.2\include\BulletDynamics\Vehicle\btWheelInfo.h">
+      <Filter>addons\ofxBullet\libs\bullet2.8.2\include\BulletDynamics\Vehicle</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\addons\ofxBullet\libs\bullet2.8.2\include\BulletSoftBody\btDefaultSoftBodySolver.h">
+      <Filter>addons\ofxBullet\libs\bullet2.8.2\include\BulletSoftBody</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\addons\ofxBullet\libs\bullet2.8.2\include\BulletSoftBody\btSoftBody.h">
+      <Filter>addons\ofxBullet\libs\bullet2.8.2\include\BulletSoftBody</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\addons\ofxBullet\libs\bullet2.8.2\include\BulletSoftBody\btSoftBodyConcaveCollisionAlgorithm.h">
+      <Filter>addons\ofxBullet\libs\bullet2.8.2\include\BulletSoftBody</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\addons\ofxBullet\libs\bullet2.8.2\include\BulletSoftBody\btSoftBodyData.h">
+      <Filter>addons\ofxBullet\libs\bullet2.8.2\include\BulletSoftBody</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\addons\ofxBullet\libs\bullet2.8.2\include\BulletSoftBody\btSoftBodyHelpers.h">
+      <Filter>addons\ofxBullet\libs\bullet2.8.2\include\BulletSoftBody</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\addons\ofxBullet\libs\bullet2.8.2\include\BulletSoftBody\btSoftBodyInternals.h">
+      <Filter>addons\ofxBullet\libs\bullet2.8.2\include\BulletSoftBody</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\addons\ofxBullet\libs\bullet2.8.2\include\BulletSoftBody\btSoftBodyRigidBodyCollisionConfiguration.h">
+      <Filter>addons\ofxBullet\libs\bullet2.8.2\include\BulletSoftBody</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\addons\ofxBullet\libs\bullet2.8.2\include\BulletSoftBody\btSoftBodySolvers.h">
+      <Filter>addons\ofxBullet\libs\bullet2.8.2\include\BulletSoftBody</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\addons\ofxBullet\libs\bullet2.8.2\include\BulletSoftBody\btSoftBodySolverVertexBuffer.h">
+      <Filter>addons\ofxBullet\libs\bullet2.8.2\include\BulletSoftBody</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\addons\ofxBullet\libs\bullet2.8.2\include\BulletSoftBody\btSoftRigidCollisionAlgorithm.h">
+      <Filter>addons\ofxBullet\libs\bullet2.8.2\include\BulletSoftBody</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\addons\ofxBullet\libs\bullet2.8.2\include\BulletSoftBody\btSoftRigidDynamicsWorld.h">
+      <Filter>addons\ofxBullet\libs\bullet2.8.2\include\BulletSoftBody</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\addons\ofxBullet\libs\bullet2.8.2\include\BulletSoftBody\btSoftSoftCollisionAlgorithm.h">
+      <Filter>addons\ofxBullet\libs\bullet2.8.2\include\BulletSoftBody</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\addons\ofxBullet\libs\bullet2.8.2\include\BulletSoftBody\btSparseSDF.h">
+      <Filter>addons\ofxBullet\libs\bullet2.8.2\include\BulletSoftBody</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\addons\ofxBullet\libs\bullet2.8.2\include\LinearMath\btAabbUtil2.h">
+      <Filter>addons\ofxBullet\libs\bullet2.8.2\include\LinearMath</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\addons\ofxBullet\libs\bullet2.8.2\include\LinearMath\btAlignedAllocator.h">
+      <Filter>addons\ofxBullet\libs\bullet2.8.2\include\LinearMath</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\addons\ofxBullet\libs\bullet2.8.2\include\LinearMath\btAlignedObjectArray.h">
+      <Filter>addons\ofxBullet\libs\bullet2.8.2\include\LinearMath</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\addons\ofxBullet\libs\bullet2.8.2\include\LinearMath\btConvexHull.h">
+      <Filter>addons\ofxBullet\libs\bullet2.8.2\include\LinearMath</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\addons\ofxBullet\libs\bullet2.8.2\include\LinearMath\btConvexHullComputer.h">
+      <Filter>addons\ofxBullet\libs\bullet2.8.2\include\LinearMath</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\addons\ofxBullet\libs\bullet2.8.2\include\LinearMath\btDefaultMotionState.h">
+      <Filter>addons\ofxBullet\libs\bullet2.8.2\include\LinearMath</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\addons\ofxBullet\libs\bullet2.8.2\include\LinearMath\btGeometryUtil.h">
+      <Filter>addons\ofxBullet\libs\bullet2.8.2\include\LinearMath</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\addons\ofxBullet\libs\bullet2.8.2\include\LinearMath\btGrahamScan2dConvexHull.h">
+      <Filter>addons\ofxBullet\libs\bullet2.8.2\include\LinearMath</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\addons\ofxBullet\libs\bullet2.8.2\include\LinearMath\btHashMap.h">
+      <Filter>addons\ofxBullet\libs\bullet2.8.2\include\LinearMath</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\addons\ofxBullet\libs\bullet2.8.2\include\LinearMath\btIDebugDraw.h">
+      <Filter>addons\ofxBullet\libs\bullet2.8.2\include\LinearMath</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\addons\ofxBullet\libs\bullet2.8.2\include\LinearMath\btList.h">
+      <Filter>addons\ofxBullet\libs\bullet2.8.2\include\LinearMath</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\addons\ofxBullet\libs\bullet2.8.2\include\LinearMath\btMatrix3x3.h">
+      <Filter>addons\ofxBullet\libs\bullet2.8.2\include\LinearMath</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\addons\ofxBullet\libs\bullet2.8.2\include\LinearMath\btMatrixX.h">
+      <Filter>addons\ofxBullet\libs\bullet2.8.2\include\LinearMath</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\addons\ofxBullet\libs\bullet2.8.2\include\LinearMath\btMinMax.h">
+      <Filter>addons\ofxBullet\libs\bullet2.8.2\include\LinearMath</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\addons\ofxBullet\libs\bullet2.8.2\include\LinearMath\btMotionState.h">
+      <Filter>addons\ofxBullet\libs\bullet2.8.2\include\LinearMath</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\addons\ofxBullet\libs\bullet2.8.2\include\LinearMath\btPolarDecomposition.h">
+      <Filter>addons\ofxBullet\libs\bullet2.8.2\include\LinearMath</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\addons\ofxBullet\libs\bullet2.8.2\include\LinearMath\btPoolAllocator.h">
+      <Filter>addons\ofxBullet\libs\bullet2.8.2\include\LinearMath</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\addons\ofxBullet\libs\bullet2.8.2\include\LinearMath\btQuadWord.h">
+      <Filter>addons\ofxBullet\libs\bullet2.8.2\include\LinearMath</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\addons\ofxBullet\libs\bullet2.8.2\include\LinearMath\btQuaternion.h">
+      <Filter>addons\ofxBullet\libs\bullet2.8.2\include\LinearMath</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\addons\ofxBullet\libs\bullet2.8.2\include\LinearMath\btQuickprof.h">
+      <Filter>addons\ofxBullet\libs\bullet2.8.2\include\LinearMath</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\addons\ofxBullet\libs\bullet2.8.2\include\LinearMath\btRandom.h">
+      <Filter>addons\ofxBullet\libs\bullet2.8.2\include\LinearMath</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\addons\ofxBullet\libs\bullet2.8.2\include\LinearMath\btScalar.h">
+      <Filter>addons\ofxBullet\libs\bullet2.8.2\include\LinearMath</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\addons\ofxBullet\libs\bullet2.8.2\include\LinearMath\btSerializer.h">
+      <Filter>addons\ofxBullet\libs\bullet2.8.2\include\LinearMath</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\addons\ofxBullet\libs\bullet2.8.2\include\LinearMath\btStackAlloc.h">
+      <Filter>addons\ofxBullet\libs\bullet2.8.2\include\LinearMath</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\addons\ofxBullet\libs\bullet2.8.2\include\LinearMath\btTransform.h">
+      <Filter>addons\ofxBullet\libs\bullet2.8.2\include\LinearMath</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\addons\ofxBullet\libs\bullet2.8.2\include\LinearMath\btTransformUtil.h">
+      <Filter>addons\ofxBullet\libs\bullet2.8.2\include\LinearMath</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\addons\ofxBullet\libs\bullet2.8.2\include\LinearMath\btVector3.h">
+      <Filter>addons\ofxBullet\libs\bullet2.8.2\include\LinearMath</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\addons\ofxBullet\libs\bullet2.8.2\include\vectormath\neon\boolInVec.h">
+      <Filter>addons\ofxBullet\libs\bullet2.8.2\include\vectormath\neon</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\addons\ofxBullet\libs\bullet2.8.2\include\vectormath\neon\floatInVec.h">
+      <Filter>addons\ofxBullet\libs\bullet2.8.2\include\vectormath\neon</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\addons\ofxBullet\libs\bullet2.8.2\include\vectormath\neon\mat_aos.h">
+      <Filter>addons\ofxBullet\libs\bullet2.8.2\include\vectormath\neon</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\addons\ofxBullet\libs\bullet2.8.2\include\vectormath\neon\quat_aos.h">
+      <Filter>addons\ofxBullet\libs\bullet2.8.2\include\vectormath\neon</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\addons\ofxBullet\libs\bullet2.8.2\include\vectormath\neon\vectormath_aos.h">
+      <Filter>addons\ofxBullet\libs\bullet2.8.2\include\vectormath\neon</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\addons\ofxBullet\libs\bullet2.8.2\include\vectormath\neon\vec_aos.h">
+      <Filter>addons\ofxBullet\libs\bullet2.8.2\include\vectormath\neon</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\addons\ofxBullet\libs\bullet2.8.2\include\vectormath\scalar\boolInVec.h">
+      <Filter>addons\ofxBullet\libs\bullet2.8.2\include\vectormath\scalar</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\addons\ofxBullet\libs\bullet2.8.2\include\vectormath\scalar\floatInVec.h">
+      <Filter>addons\ofxBullet\libs\bullet2.8.2\include\vectormath\scalar</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\addons\ofxBullet\libs\bullet2.8.2\include\vectormath\scalar\mat_aos.h">
+      <Filter>addons\ofxBullet\libs\bullet2.8.2\include\vectormath\scalar</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\addons\ofxBullet\libs\bullet2.8.2\include\vectormath\scalar\quat_aos.h">
+      <Filter>addons\ofxBullet\libs\bullet2.8.2\include\vectormath\scalar</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\addons\ofxBullet\libs\bullet2.8.2\include\vectormath\scalar\vectormath_aos.h">
+      <Filter>addons\ofxBullet\libs\bullet2.8.2\include\vectormath\scalar</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\addons\ofxBullet\libs\bullet2.8.2\include\vectormath\scalar\vec_aos.h">
+      <Filter>addons\ofxBullet\libs\bullet2.8.2\include\vectormath\scalar</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\addons\ofxBullet\libs\bullet2.8.2\include\vectormath\sse\boolInVec.h">
+      <Filter>addons\ofxBullet\libs\bullet2.8.2\include\vectormath\sse</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\addons\ofxBullet\libs\bullet2.8.2\include\vectormath\sse\floatInVec.h">
+      <Filter>addons\ofxBullet\libs\bullet2.8.2\include\vectormath\sse</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\addons\ofxBullet\libs\bullet2.8.2\include\vectormath\sse\mat_aos.h">
+      <Filter>addons\ofxBullet\libs\bullet2.8.2\include\vectormath\sse</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\addons\ofxBullet\libs\bullet2.8.2\include\vectormath\sse\quat_aos.h">
+      <Filter>addons\ofxBullet\libs\bullet2.8.2\include\vectormath\sse</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\addons\ofxBullet\libs\bullet2.8.2\include\vectormath\sse\vecidx_aos.h">
+      <Filter>addons\ofxBullet\libs\bullet2.8.2\include\vectormath\sse</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\addons\ofxBullet\libs\bullet2.8.2\include\vectormath\sse\vectormath_aos.h">
+      <Filter>addons\ofxBullet\libs\bullet2.8.2\include\vectormath\sse</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\addons\ofxBullet\libs\bullet2.8.2\include\vectormath\sse\vec_aos.h">
+      <Filter>addons\ofxBullet\libs\bullet2.8.2\include\vectormath\sse</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\addons\ofxBullet\libs\bullet2.8.2\include\vectormath\vmInclude.h">
+      <Filter>addons\ofxBullet\libs\bullet2.8.2\include\vectormath</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\addons\ofxFx\src\composers\ofxBlend.h">
+      <Filter>addons\ofxFx\src\composers</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\addons\ofxFx\src\composers\ofxClone.h">
+      <Filter>addons\ofxFx\src\composers</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\addons\ofxFx\src\composers\ofxMask.h">
+      <Filter>addons\ofxFx\src\composers</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\addons\ofxFx\src\composers\ofxMultiTexture.h">
+      <Filter>addons\ofxFx\src\composers</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\addons\ofxFx\src\filters\ofxBarrelChromaAb.h">
+      <Filter>addons\ofxFx\src\filters</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\addons\ofxFx\src\filters\ofxBloom.h">
+      <Filter>addons\ofxFx\src\filters</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\addons\ofxFx\src\filters\ofxBlur.h">
+      <Filter>addons\ofxFx\src\filters</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\addons\ofxFx\src\filters\ofxBokeh.h">
+      <Filter>addons\ofxFx\src\filters</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\addons\ofxFx\src\filters\ofxChromaAb.h">
+      <Filter>addons\ofxFx\src\filters</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\addons\ofxFx\src\filters\ofxChromaGlitch.h">
+      <Filter>addons\ofxFx\src\filters</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\addons\ofxFx\src\filters\ofxContrast.h">
+      <Filter>addons\ofxFx\src\filters</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\addons\ofxFx\src\filters\ofxGaussianBlur.h">
+      <Filter>addons\ofxFx\src\filters</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\addons\ofxFx\src\filters\ofxGlow.h">
+      <Filter>addons\ofxFx\src\filters</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\addons\ofxFx\src\filters\ofxGrayscale.h">
+      <Filter>addons\ofxFx\src\filters</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\addons\ofxFx\src\filters\ofxInverse.h">
+      <Filter>addons\ofxFx\src\filters</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\addons\ofxFx\src\filters\ofxLUT.h">
+      <Filter>addons\ofxFx\src\filters</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\addons\ofxFx\src\filters\ofxMedian.h">
+      <Filter>addons\ofxFx\src\filters</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\addons\ofxFx\src\filters\ofxOldTv.h">
+      <Filter>addons\ofxFx\src\filters</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\addons\ofxFx\src\generative\ofxFBM.h">
+      <Filter>addons\ofxFx\src\generative</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\addons\ofxFx\src\generative\ofxFire.h">
+      <Filter>addons\ofxFx\src\generative</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\addons\ofxFx\src\generative\ofxGrayScott.h">
+      <Filter>addons\ofxFx\src\generative</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\addons\ofxFx\src\generative\ofxNoise.h">
+      <Filter>addons\ofxFx\src\generative</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\addons\ofxFx\src\generative\ofxTint.h">
+      <Filter>addons\ofxFx\src\generative</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\addons\ofxFx\src\ofxFX.h">
+      <Filter>addons\ofxFx\src</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\addons\ofxFx\src\ofxFXObject.h">
+      <Filter>addons\ofxFx\src</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\addons\ofxFx\src\ofxSwapBuffer.h">
+      <Filter>addons\ofxFx\src</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\addons\ofxFx\src\operations\ofxAbsDiff.h">
+      <Filter>addons\ofxFx\src\operations</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\addons\ofxFx\src\operations\ofxBounce.h">
+      <Filter>addons\ofxFx\src\operations</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\addons\ofxFx\src\operations\ofxDisplacePixels.h">
+      <Filter>addons\ofxFx\src\operations</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\addons\ofxFx\src\operations\ofxEdgeDetect.h">
+      <Filter>addons\ofxFx\src\operations</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\addons\ofxFx\src\operations\ofxFlow.h">
+      <Filter>addons\ofxFx\src\operations</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\addons\ofxFx\src\operations\ofxNormals.h">
+      <Filter>addons\ofxFx\src\operations</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\addons\ofxFx\src\operations\ofxRipples.h">
+      <Filter>addons\ofxFx\src\operations</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\addons\ofxFx\src\operations\ofxSubstract.h">
+      <Filter>addons\ofxFx\src\operations</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\addons\ofxFx\src\operations\ofxThreshold.h">
+      <Filter>addons\ofxFx\src\operations</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\addons\ofxGui\src\ofxBaseGui.h">
+      <Filter>addons\ofxGui\src</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\addons\ofxGui\src\ofxButton.h">
+      <Filter>addons\ofxGui\src</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\addons\ofxGui\src\ofxGui.h">
+      <Filter>addons\ofxGui\src</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\addons\ofxGui\src\ofxGuiGroup.h">
+      <Filter>addons\ofxGui\src</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\addons\ofxGui\src\ofxLabel.h">
+      <Filter>addons\ofxGui\src</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\addons\ofxGui\src\ofxPanel.h">
+      <Filter>addons\ofxGui\src</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\addons\ofxGui\src\ofxSlider.h">
+      <Filter>addons\ofxGui\src</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\addons\ofxGui\src\ofxSliderGroup.h">
+      <Filter>addons\ofxGui\src</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\addons\ofxGui\src\ofxToggle.h">
+      <Filter>addons\ofxGui\src</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\addons\ofxMSATimer\src\ofxMSATimer.h">
+      <Filter>addons\ofxMSATimer\src</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\addons\ofxRange\src\ofRange.h">
+      <Filter>addons\ofxRange\src</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\addons\ofxTextInputField\src\ofxTextInputField.h">
+      <Filter>addons\ofxTextInputField\src</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\addons\ofxTimecode\src\ofxTimecode.h">
+      <Filter>addons\ofxTimecode\src</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\addons\ofxTimeline\src\ofxHotKeys.h">
+      <Filter>addons\ofxTimeline\src</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\addons\ofxTimeline\src\ofxRemoveCocoaMenu.h">
+      <Filter>addons\ofxTimeline\src</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\addons\ofxTimeline\src\ofxTimeline.h">
+      <Filter>addons\ofxTimeline\src</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\addons\ofxTimeline\src\ofxTLBangs.h">
+      <Filter>addons\ofxTimeline\src</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\addons\ofxTimeline\src\ofxTLCameraTrack.h">
+      <Filter>addons\ofxTimeline\src</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\addons\ofxTimeline\src\ofxTLColors.h">
+      <Filter>addons\ofxTimeline\src</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\addons\ofxTimeline\src\ofxTLColorTrack.h">
+      <Filter>addons\ofxTimeline\src</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\addons\ofxTimeline\src\ofxTLCurves.h">
+      <Filter>addons\ofxTimeline\src</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\addons\ofxTimeline\src\ofxTLEmptyKeyframes.h">
+      <Filter>addons\ofxTimeline\src</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\addons\ofxTimeline\src\ofxTLEmptyTrack.h">
+      <Filter>addons\ofxTimeline\src</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\addons\ofxTimeline\src\ofxTLEvents.h">
+      <Filter>addons\ofxTimeline\src</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\addons\ofxTimeline\src\ofxTLFlags.h">
+      <Filter>addons\ofxTimeline\src</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\addons\ofxTimeline\src\ofxTLImageSequence.h">
+      <Filter>addons\ofxTimeline\src</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\addons\ofxTimeline\src\ofxTLImageSequenceFrame.h">
+      <Filter>addons\ofxTimeline\src</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\addons\ofxTimeline\src\ofxTLImageTrack.h">
+      <Filter>addons\ofxTimeline\src</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\addons\ofxTimeline\src\ofxTLInOut.h">
+      <Filter>addons\ofxTimeline\src</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\addons\ofxTimeline\src\ofxTLKeyframes.h">
+      <Filter>addons\ofxTimeline\src</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\addons\ofxTimeline\src\ofxTLLFO.h">
+      <Filter>addons\ofxTimeline\src</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\addons\ofxTimeline\src\ofxTLPage.h">
+      <Filter>addons\ofxTimeline\src</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\addons\ofxTimeline\src\ofxTLPageTabs.h">
+      <Filter>addons\ofxTimeline\src</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\addons\ofxTimeline\src\ofxTLSwitches.h">
+      <Filter>addons\ofxTimeline\src</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\addons\ofxTimeline\src\ofxTLTicker.h">
+      <Filter>addons\ofxTimeline\src</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\addons\ofxTimeline\src\ofxTLTrack.h">
+      <Filter>addons\ofxTimeline\src</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\addons\ofxTimeline\src\ofxTLTrackHeader.h">
+      <Filter>addons\ofxTimeline\src</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\addons\ofxTimeline\src\ofxTLVideoThumb.h">
+      <Filter>addons\ofxTimeline\src</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\addons\ofxTimeline\src\ofxTLVideoTrack.h">
+      <Filter>addons\ofxTimeline\src</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\addons\ofxTimeline\src\ofxTLZoomer.h">
+      <Filter>addons\ofxTimeline\src</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\addons\ofxTimeline\libs\kiss\include\kiss_fft.h">
+      <Filter>addons\ofxTimeline\libs\kiss\include</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\addons\ofxTimeline\libs\kiss\include\kiss_fftr.h">
+      <Filter>addons\ofxTimeline\libs\kiss\include</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\addons\ofxTimeline\libs\kiss\src\_kiss_fft_guts.h">
+      <Filter>addons\ofxTimeline\libs\kiss\src</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\addons\ofxTimeline\libs\openal\include\AL\al.h">
+      <Filter>addons\ofxTimeline\libs\openal\include\AL</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\addons\ofxTimeline\libs\openal\include\AL\alc.h">
+      <Filter>addons\ofxTimeline\libs\openal\include\AL</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\addons\ofxTimeline\libs\openal\include\AL\alext.h">
+      <Filter>addons\ofxTimeline\libs\openal\include\AL</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\addons\ofxTimeline\libs\openal\include\AL\efx-creative.h">
+      <Filter>addons\ofxTimeline\libs\openal\include\AL</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\addons\ofxTimeline\libs\openal\include\AL\efx-presets.h">
+      <Filter>addons\ofxTimeline\libs\openal\include\AL</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\addons\ofxTimeline\libs\openal\include\AL\efx.h">
+      <Filter>addons\ofxTimeline\libs\openal\include\AL</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\addons\ofxTimeline\libs\sndfile\include\sndfile.h">
+      <Filter>addons\ofxTimeline\libs\sndfile\include</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\addons\ofxTween\src\Easings\easing_terms_of_use.html">
+      <Filter>addons\ofxTween\src\Easings</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\addons\ofxTween\src\Easings\ofxEasing.h">
+      <Filter>addons\ofxTween\src\Easings</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\addons\ofxTween\src\Easings\ofxEasingBack.h">
+      <Filter>addons\ofxTween\src\Easings</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\addons\ofxTween\src\Easings\ofxEasingBounce.h">
+      <Filter>addons\ofxTween\src\Easings</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\addons\ofxTween\src\Easings\ofxEasingCirc.h">
+      <Filter>addons\ofxTween\src\Easings</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\addons\ofxTween\src\Easings\ofxEasingCubic.h">
+      <Filter>addons\ofxTween\src\Easings</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\addons\ofxTween\src\Easings\ofxEasingElastic.h">
+      <Filter>addons\ofxTween\src\Easings</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\addons\ofxTween\src\Easings\ofxEasingExpo.h">
+      <Filter>addons\ofxTween\src\Easings</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\addons\ofxTween\src\Easings\ofxEasingLinear.h">
+      <Filter>addons\ofxTween\src\Easings</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\addons\ofxTween\src\Easings\ofxEasingQuad.h">
+      <Filter>addons\ofxTween\src\Easings</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\addons\ofxTween\src\Easings\ofxEasingQuart.h">
+      <Filter>addons\ofxTween\src\Easings</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\addons\ofxTween\src\Easings\ofxEasingQuint.h">
+      <Filter>addons\ofxTween\src\Easings</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\addons\ofxTween\src\Easings\ofxEasingSine.h">
+      <Filter>addons\ofxTween\src\Easings</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\addons\ofxTween\src\ofxTween.h">
+      <Filter>addons\ofxTween\src</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\addons\ofxXmlSettings\src\ofxXmlSettings.h">
+      <Filter>addons\ofxXmlSettings\src</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\addons\ofxXmlSettings\libs\tinyxml.h">
+      <Filter>addons\ofxXmlSettings\libs</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\addons\ofxMetaballs\src\MarchingCubes.h">
+      <Filter>addons\ofxMetaballs\src</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\addons\ofxMetaballs\src\MarchingTetrahedrons.h">
+      <Filter>addons\ofxMetaballs\src</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\addons\ofxMetaballs\src\ofxMetaballs.h">
+      <Filter>addons\ofxMetaballs\src</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\addons\ofxAutoReloadedShader\src\ofxAutoReloadedShader.h">
+      <Filter>addons\ofxAutoReloadedShader\src</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="icon.rc" />
+  </ItemGroup>
+</Project>

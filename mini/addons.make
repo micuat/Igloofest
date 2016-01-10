@@ -1,0 +1,12 @@
+ofxGui
+ofxXmlSettings
+ofxAutoReloadedShader
+ofxBullet
+ofxFx
+ofxMetaballs
+ofxMSATimer
+ofxRange
+ofxTextInputField
+ofxTimecode
+ofxTimeline
+ofxTween
