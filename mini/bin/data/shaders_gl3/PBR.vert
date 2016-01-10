@@ -1,8 +1,10 @@
 #version 120
 
-uniform mat4    viewMatrix;
+uniform mat4    vMatrix;
 uniform mat4    projectionMatrix;
 uniform mat4    modelViewMatrix;
+uniform mat4    modelMatrix;
+uniform mat4    modelViewProjectionMatrix;
 
 uniform vec3    uLightPosition;
 
@@ -17,12 +19,12 @@ out vec3		vPosition;
 
 
 void main(){
-    vec4 worldSpacePosition	= ftransform();//modelViewMatrix * position;
-    vec4 viewSpacePosition	= viewMatrix * worldSpacePosition;
+    vec4 worldSpacePosition	= modelMatrix * gl_Vertex;
+    vec4 viewSpacePosition	= vMatrix * worldSpacePosition;
 
     vNormal					= gl_NormalMatrix * gl_Normal;
-    vLightPosition			= uLightPosition;
+    vLightPosition			= ( vMatrix * vec4( uLightPosition, 1.0 ) ).xyz;
     vPosition				= worldSpacePosition.xyz;
 
-    gl_Position				= ftransform();//projectionMatrix * viewSpacePosition;
+    gl_Position				= gl_ProjectionMatrix * viewSpacePosition;
 }

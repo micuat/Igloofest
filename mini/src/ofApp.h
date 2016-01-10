@@ -27,8 +27,8 @@ public:
     void gotMessage(ofMessage msg);
 
     ofxPanel gui;
-    ofxVec3Slider lightPositionSlider;
-    ofxFloatSlider matRoughness, matSpecular, matMetallic;
+    ofxVec3Slider lightPosition, cameraPosition;
+    ofxFloatSlider matRoughness, matSpecular, matMetallic, lightRadius;
 
     ofLight pointLight, ambientLight;
 
@@ -57,4 +57,6 @@ public:
     MarchingCubes iso;
 
     ofxBloom        bloom;
+
+    ofNode scene;
 };

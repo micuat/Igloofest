@@ -8,10 +8,12 @@ void ofApp::setup() {
     ofEnableDepthTest();
 
     gui.setup();
-    gui.add(lightPositionSlider.setup("light", ofVec3f(), ofVec3f(-10), ofVec3f(10)));
+    gui.add(lightPosition.setup("light", ofVec3f(), ofVec3f(-10), ofVec3f(10)));
+    gui.add(cameraPosition.setup("camera", ofVec3f(), ofVec3f(-10), ofVec3f(10)));
     gui.add(matRoughness.setup("roughness", 0.5f, 0, 1));
     gui.add(matSpecular.setup("specular", 0.5f, 0, 1));
     gui.add(matMetallic.setup("metallic", 0.5f, 0, 1));
+    gui.add(lightRadius.setup("light radius", 4, 0, 100));
     gui.loadFromFile("settings.xml");
 
     // turn on smooth lighting //
@@ -120,9 +122,10 @@ void ofApp::update() {
 
     radius = cos(ofGetElapsedTimef()) * 200.f + 200.f;
 
-    pointLight.setPosition(lightPositionSlider);
+    pointLight.setPosition(lightPosition);
     pointLight.setDiffuseColor(lightColor);
 
+    camera.setPosition(cameraPosition);
 
     materialColor.setHue(colorHue);
     // the light highlight of the material //
@@ -170,12 +173,16 @@ void ofApp::draw() {
     //shader.end();
 
     ofPushMatrix();
-    ofScale(10, 10, 10);
-    ofTranslate(-.5, -.5, -.5);
+    scene.resetTransform();
+    scene.setPosition(-5, -5, -5);
+    scene.setScale(10, 10, 10);
+    scene.transformGL();
     shader.begin();
+    shader.setUniformMatrix4f("modelMatrix", scene.getGlobalTransformMatrix());
+    shader.setUniformMatrix4f("vMatrix", camera.getModelViewMatrix());
     shader.setUniform3fv("uLightPosition", pointLight.getPosition().getPtr());
     shader.setUniform3fv("uLightColor", pointLight.getSpecularColor().v);
-    shader.setUniform1f("uLightRadius", 1000);
+    shader.setUniform1f("uLightRadius", lightRadius);
     shader.setUniform3fv("uBaseColor", material.getSpecularColor().v);
     shader.setUniform1f("uSpecular", matSpecular);
     shader.setUniform1f("uExposure", 10);
@@ -184,6 +191,8 @@ void ofApp::draw() {
     shader.setUniform1f("uMetallic", matMetallic);
     iso.getMesh().draw();
     shader.end();
+    scene.restoreTransformGL();
+
     ofPopMatrix();
 
     camera.end();
