@@ -67,10 +67,11 @@ void ofApp::setup() {
     world.setCamera(&camera);
     world.setGravity(ofVec3f(0, gravitySlider, 0));
 
-    for (int i = 0; i < 16; i++)
+    int n = 512;
+    for (int i = 0; i < n; i++)
     {
         auto sphere = ofPtr<ofxBulletSphere>(new ofxBulletSphere());
-        sphere->create(world.world, ofVec3f(ofRandomf() * 0.01f, ofMap(i, 0, 16, 2, -2), ofRandomf() * 0.01f), 0.001f, 0.5f);
+        sphere->create(world.world, ofVec3f(ofRandomf() * 0.01f, ofMap(i, 0, n, 2, -2), ofRandomf() * 0.01f), 0.001f, 0.05f);
         sphere->setProperties(1, 0);
         sphere->setDamping(0);
         sphere->add();
@@ -133,11 +134,12 @@ void ofApp::update() {
         }
         world.setGravity(ofVec3f(0, gravitySlider, 0));
 
-        for (int i = 0; i < spheres.size(); i++)
+        int n = spheres.size();
+        for (int i = 0; i < n; i++)
         {
             spheres.at(i)->remove();
             auto sphere = ofPtr<ofxBulletSphere>(new ofxBulletSphere());
-            sphere->create(world.world, ofVec3f(ofRandomf() * 0.01f, ofMap(i, 0, 16, 2, -2), ofRandomf() * 0.01f), 0.1f, 0.5f);
+            sphere->create(world.world, ofVec3f(ofRandomf() * 0.01f, ofMap(i, 0, n, 2, -2), ofRandomf() * 0.01f), 0.001f, 0.05f);
             sphere->setProperties(1, 0);
             sphere->setDamping(0);
             sphere->add();
@@ -176,7 +178,8 @@ void ofApp::update() {
         centers.push_back(ofVec3f(ofMap(p.x, -5, 5, 0, 1, true), ofMap(p.y, -5, 5, 0, 1, true), ofMap(p.z, -5, 5, 0, 1, true)));
         //centers.push_back(ofVec3f(ofNoise(ofGetElapsedTimef() * 0.01f, i / 12.0f), ofNoise(ofGetElapsedTimef() * 0.02f, i / 12.0f), ofNoise(ofGetElapsedTimef() * 0.04f, i / 12.0f)));
         traces.at(i).addVertex(p);
-        traces.at(i).addColor(ofFloatColor(0.2f, 0.2f, 0.2f));
+        //traces.at(i).addColor(ofFloatColor(1, 1, 1, 0.5f));
+        traces.at(i).addColor(ofFloatColor(0.1f, 0.1f, 0.1f));
     }
     iso.setCenters(centers);
     if(metaballToggle)
@@ -191,6 +194,7 @@ void ofApp::draw() {
     
     ofSetLineWidth(1);
 
+    //ofEnableAlphaBlending();
     ofEnableBlendMode(OF_BLENDMODE_ADD);
     if (traceToggle)
     {
