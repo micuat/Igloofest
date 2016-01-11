@@ -10,6 +10,7 @@ void ofApp::setup() {
     gui.setup();
     gui.add(lightPosition.setup("light", ofVec3f(), ofVec3f(-10), ofVec3f(10)));
     gui.add(cameraPosition.setup("camera", ofVec3f(), ofVec3f(-10), ofVec3f(10)));
+    gui.add(lineWidth.setup("line width", 1, 0, 5));
     gui.add(gravitySlider.setup("gravity", 0.98f, 0, 0.98f));
     gui.add(matRoughness.setup("roughness", 0.5f, 0, 1));
     gui.add(matSpecular.setup("specular", 0.5f, 0, 1));
@@ -19,7 +20,11 @@ void ofApp::setup() {
     gui.add(metaballToggle.setup("metaballs", false));
     gui.add(traceToggle.setup("traces", true));
     gui.add(sphereToggle.setup("spheres", false));
+    gui.add(particleNum.setup("particle #", 4, 1, 9));
     gui.loadFromFile("settings.xml");
+    metaballToggleCur = metaballToggle;
+    traceToggleCur = traceToggle;
+    sphereToggleCur = sphereToggle;
 
     // turn on smooth lighting //
     ofSetSmoothLighting(true);
@@ -67,7 +72,7 @@ void ofApp::setup() {
     world.setCamera(&camera);
     world.setGravity(ofVec3f(0, gravitySlider, 0));
 
-    int n = 512;
+    int n = 1 << particleNum;
     for (int i = 0; i < n; i++)
     {
         auto sphere = ofPtr<ofxBulletSphere>(new ofxBulletSphere());
@@ -127,6 +132,19 @@ void ofApp::setup() {
 void ofApp::update() {
     if (refreshButton == true)
     {
+        metaballToggleCur = metaballToggle;
+        traceToggleCur = traceToggle;
+        sphereToggleCur = sphereToggle;
+
+        int n = 1 << particleNum;
+        spheres.resize(n);
+        traces.resize(n);
+        for (int i = 0; i < n; i++)
+        {
+            if (spheres.at(i))
+                spheres.at(i)->remove();
+        }
+
         for (int i = 0; i < traces.size(); i++)
         {
             traces.at(i).clear();
@@ -134,10 +152,8 @@ void ofApp::update() {
         }
         world.setGravity(ofVec3f(0, gravitySlider, 0));
 
-        int n = spheres.size();
         for (int i = 0; i < n; i++)
         {
-            spheres.at(i)->remove();
             auto sphere = ofPtr<ofxBulletSphere>(new ofxBulletSphere());
             sphere->create(world.world, ofVec3f(ofRandomf() * 0.01f, ofMap(i, 0, n, 2, -2), ofRandomf() * 0.01f), 0.001f, 0.05f);
             sphere->setProperties(1, 0);
@@ -182,7 +198,7 @@ void ofApp::update() {
         traces.at(i).addColor(ofFloatColor(0.1f, 0.1f, 0.1f));
     }
     iso.setCenters(centers);
-    if(metaballToggle)
+    if(metaballToggleCur)
         iso.update();
 }
 
@@ -192,11 +208,11 @@ void ofApp::draw() {
     ofEnableDepthTest();
     camera.begin();
     
-    ofSetLineWidth(1);
+    ofSetLineWidth(lineWidth);
 
     //ofEnableAlphaBlending();
     ofEnableBlendMode(OF_BLENDMODE_ADD);
-    if (traceToggle)
+    if (traceToggleCur)
     {
         for (int i = 0; i < traces.size(); i++)
         {
@@ -227,7 +243,7 @@ void ofApp::draw() {
     // call enable() so that it can update itself //
     pointLight.enable();
     ambientLight.enable();
-    if (sphereToggle)
+    if (sphereToggleCur)
     {
         for (int i = 0; i < spheres.size(); i++)
         {
@@ -243,7 +259,7 @@ void ofApp::draw() {
             scene.restoreTransformGL();
         }
     }
-    if (metaballToggle)
+    if (metaballToggleCur)
     {
         scene.resetTransform();
         scene.setPosition(-5, -5, -5);
@@ -265,9 +281,6 @@ void ofApp::draw() {
     ofDisableLighting();
 
     //ofSaveFrame();
-
-    ofSetColor(255, 255, 255);
-    ofDrawBitmapString("Draw Wireframe (w) : " + ofToString(bDrawWireframe, 0), 20, 20);
 
     ofDisableDepthTest();
     gui.draw();

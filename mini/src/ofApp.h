@@ -28,9 +28,11 @@ public:
 
     ofxPanel gui;
     ofxVec3Slider lightPosition, cameraPosition;
-    ofxFloatSlider matRoughness, matSpecular, matMetallic, lightRadius, gravitySlider;
+    ofxFloatSlider matRoughness, matSpecular, matMetallic, lightRadius, gravitySlider, lineWidth;
     ofxToggle refreshButton;
     ofxToggle metaballToggle, traceToggle, sphereToggle;
+    bool metaballToggleCur, traceToggleCur, sphereToggleCur;
+    ofxIntSlider particleNum;
 
     ofLight pointLight, ambientLight;
 
