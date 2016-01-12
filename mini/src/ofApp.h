@@ -68,7 +68,6 @@ public:
 
     vector<ofMesh> traces;
 
-    vector<ofImage> pos, neg;
-    unsigned int Ctexture;
+    unsigned int CtextureRad, CtextureIrad;
 
 };

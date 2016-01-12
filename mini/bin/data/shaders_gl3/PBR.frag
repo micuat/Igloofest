@@ -1,4 +1,4 @@
-#version 120
+#version 150
 
 uniform vec3        uLightPosition;
 uniform vec3        uLightColor;
@@ -12,51 +12,22 @@ uniform float		uSpecular;
 uniform float		uExposure;
 uniform float		uGamma;
 
-uniform samplerCube u_cubemap;
+uniform samplerCube uRadianceMap;
+uniform samplerCube uIrradianceMap;
+uniform float uRoughness4;
 
 in vec3             vNormal;
 in vec3             vLightPosition;
 in vec3             vPosition;
-in vec3             wPosition;
+in vec3				vEyePosition;
+in vec3				vWsNormal;
+in vec3				vWsPosition;
 
 out vec4            oColor;
 
 #define saturate(x) clamp(x, 0.0, 1.0)
-#define PI 3.14159265359
+#define PI 3.1415926535897932384626433832795
 
-// OrenNayar diffuse
-vec3 getDiffuse( vec3 diffuseColor, float roughness4, float NoV, float NoL, float VoH )
-{
-	float VoL = 2 * VoH - 1;
-	float c1 = 1 - 0.5 * roughness4 / (roughness4 + 0.33);
-	float cosri = VoL - NoV * NoL;
-	float c2 = 0.45 * roughness4 / (roughness4 + 0.09) * cosri * ( cosri >= 0 ? min( 1, NoL / NoV ) : NoL );
-	return diffuseColor / PI * ( NoL * c1 + c2 );
-}
-
-// GGX Normal distribution
-float getNormalDistribution( float roughness4, float NoH )
-{
-	float d = ( NoH * roughness4 - NoH ) * NoH + 1;
-	return roughness4 / ( d*d );
-}
-
-// Smith GGX geometric shadowing from "Physically-Based Shading at Disney"
-float getGeometricShadowing( float roughness4, float NoV, float NoL, float VoH, vec3 L, vec3 V )
-{
-	float gSmithV = NoV + sqrt( NoV * (NoV - NoV * roughness4) + roughness4 );
-	float gSmithL = NoL + sqrt( NoL * (NoL - NoL * roughness4) + roughness4 );
-	return 1.0 / ( gSmithV * gSmithL );
-}
-
-// Fresnel term
-vec3 getFresnel( vec3 specularColor, float VoH )
-{
-	vec3 specularColorSqrt = sqrt( clamp( vec3(0, 0, 0), vec3(0.99, 0.99, 0.99), specularColor ) );
-	vec3 n = ( 1 + specularColorSqrt ) / ( 1 - specularColorSqrt );
-	vec3 g = sqrt( n * n + VoH * VoH - 1 );
-	return 0.5 * pow( (g - VoH) / (g + VoH), vec3(2.0) ) * ( 1 + pow( ((g+VoH)*VoH - 1) / ((g-VoH)*VoH + 1), vec3(2.0) ) );
-}
 
 // Filmic tonemapping from
 // http://filmicgames.com/archives/75
@@ -73,67 +44,64 @@ vec3 Uncharted2Tonemap( vec3 x )
 	return ((x*(A*x+C*B)+D*E)/(x*(A*x+B)+D*F))-E/F;
 }
 
-// From "I'm doing it wrong"
-// http://imdoingitwrong.wordpress.com/2011/01/31/light-attenuation/
-float getAttenuation( vec3 lightPosition, vec3 vertexPosition, float lightRadius )
+// https://www.unrealengine.com/blog/physically-based-shading-on-mobile
+vec3 EnvBRDFApprox( vec3 SpecularColor, float Roughness, float NoV )
 {
-	float r				= lightRadius;
-	vec3 L				= lightPosition - vertexPosition;
-	float dist			= length(L);
-	float d				= max( dist - r, 0 );
-	L					/= dist;
-	float denom			= d / r + 1.0f;
-	float attenuation	= 1.0f / (denom*denom);
-	float cutoff		= 0.0052f;
-	attenuation			= (attenuation - cutoff) / (1 - cutoff);
-	attenuation			= max(attenuation, 0);
+	const vec4 c0 = vec4( -1, -0.0275, -0.572, 0.022 );
+	const vec4 c1 = vec4( 1, 0.0425, 1.04, -0.04 );
+	vec4 r = Roughness * c0 + c1;
+	float a004 = min( r.x * r.x, exp2( -9.28 * NoV ) ) * r.x + r.y;
+	vec2 AB = vec2( -1.04, 1.04 ) * a004 + r.zw;
+	return SpecularColor * AB.x + AB.y;
+}
 
-	return attenuation;
+
+// http://the-witness.net/news/2012/02/seamless-cube-map-filtering/
+vec3 fix_cube_lookup( vec3 v, float cube_size, float lod ) {
+	float M = max(max(abs(v.x), abs(v.y)), abs(v.z));
+	float scale = 1 - exp2(lod) / cube_size;
+	if (abs(v.x) != M) v.x *= scale;
+	if (abs(v.y) != M) v.y *= scale;
+	if (abs(v.z) != M) v.z *= scale;
+	return v;
 }
 
 void main() {
-	// get the normal, light, position and half vector normalized
-	vec3 N                  = normalize( vNormal );
-	vec3 L                  = normalize( vLightPosition - vPosition );
-	vec3 V                  = normalize( -vPosition );
-	vec3 H					= normalize(V + L);
 
-	// get all the usefull dot products and clamp them between 0 and 1 just to be safe
-	float NoL				= saturate( dot( N, L ) );
-	float NoV				= saturate( dot( N, V ) );
-	float VoH				= saturate( dot( V, H ) );
-	float NoH				= saturate( dot( N, H ) );
+	vec3 N 				= normalize( vWsNormal );
+	vec3 V 				= normalize( vEyePosition );
 
 	// deduce the diffuse and specular color from the baseColor and how metallic the material is
-	vec3 diffuseColor		= uBaseColor - uBaseColor * uMetallic;
-	vec3 specularColor		= mix( vec3( 0.08 * uSpecular ), uBaseColor, uMetallic );
+	vec3 diffuseColor	= uBaseColor - uBaseColor * uMetallic;
+	vec3 specularColor	= mix( vec3( 0.08 * uSpecular ), uBaseColor, uMetallic );
 
-	// compute the brdf terms
-	float distribution		= getNormalDistribution( uRoughness, NoH );
-	vec3 fresnel			= getFresnel( specularColor, VoH );
-	float geom				= getGeometricShadowing( uRoughness, NoV, NoL, VoH, L, V );
+	vec3 color;
 
-	// get the specular and diffuse and combine them
-	vec3 diffuse			= getDiffuse( diffuseColor, uRoughness, NoV, NoL, VoH );
-	vec3 specular			= NoL * ( distribution * fresnel * geom );
-	vec3 color				= uLightColor * ( diffuse + specular );
+	// sample the pre-filtered cubemap at the corresponding mipmap level
+	int numMips			= 6;
+	float mip			= numMips - 1 + log2(uRoughness);
+	vec3 lookup			= -reflect( V, N );
+	lookup				= fix_cube_lookup( lookup, 512, mip );
+	vec3 radiance		= pow( textureLod( uRadianceMap, lookup, mip ).rgb, vec3( 2.2f ) );
+	vec3 irradiance		= pow( textureCube( uIrradianceMap, N ).rgb, vec3( 2.2f ) );
 
-	// get the light attenuation from its radius
-	float attenuation		= getAttenuation( vLightPosition, vPosition, uLightRadius );
-	color					*= attenuation;
+	// get the approximate reflectance
+	float NoV			= saturate( dot( N, V ) );
+	vec3 reflectance	= EnvBRDFApprox( specularColor, uRoughness4, NoV );
+
+	// combine the specular IBL and the BRDF
+    vec3 diffuse  		= diffuseColor * irradiance;
+    vec3 specular 		= radiance * reflectance;
+	color				= diffuse + specular;
 
 	// apply the tone-mapping
-	color					= Uncharted2Tonemap( color * uExposure );
-
+	color				= Uncharted2Tonemap( color * uExposure );
 	// white balance
-	const float whiteInputLevel = 10.0f;
-	vec3 whiteScale			= 1.0f / Uncharted2Tonemap( vec3( whiteInputLevel ) );
-	color					= color * whiteScale;
+	color				= color * ( 1.0f / Uncharted2Tonemap( vec3( 20.0f ) ) );
 
 	// gamma correction
-	color					= pow( color, vec3( 1.0f / uGamma ) );
+	color				= pow( color, vec3( 1.0f / uGamma ) );
 
 	// output the fragment color
-    oColor                  = vec4( color, 1.0 );
-	oColor = textureCube(u_cubemap, wPosition);
+    oColor				= vec4( color, 1.0 );
 }

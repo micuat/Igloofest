@@ -1,5 +1,41 @@
 #include "ofApp.h"
 
+unsigned int bindMap(ofImage& map)
+{
+    vector<ofImage> pos, neg;
+    unsigned int Ctexture;
+    ofPixels pix;
+    map.getPixels().cropTo(pix, 512, 256, 256, 256); pos.push_back(ofImage(pix)); // right
+    map.getPixels().cropTo(pix, 256, 0, 256, 256); pos.push_back(ofImage(pix)); // top
+    map.getPixels().cropTo(pix, 256, 256, 256, 256); pos.push_back(ofImage(pix)); // front
+    map.getPixels().cropTo(pix, 0, 256, 256, 256); neg.push_back(ofImage(pix)); // left
+    map.getPixels().cropTo(pix, 256, 512, 256, 256); neg.push_back(ofImage(pix)); // bottom
+    map.getPixels().cropTo(pix, 256, 768, 256, 256); pix.rotate90(2); neg.push_back(ofImage(pix)); // back
+    ofDisableArbTex();
+    {
+        int size = pos[0].getWidth();
+        glGenTextures(1, &Ctexture);
+        glBindTexture(GL_TEXTURE_CUBE_MAP, Ctexture);
+        glTexParameteri(GL_TEXTURE_CUBE_MAP, GL_TEXTURE_MIN_FILTER, GL_LINEAR);
+        glTexParameteri(GL_TEXTURE_CUBE_MAP, GL_TEXTURE_MAG_FILTER, GL_LINEAR);
+        glTexParameteri(GL_TEXTURE_CUBE_MAP, GL_TEXTURE_WRAP_S, GL_CLAMP_TO_EDGE);
+        glTexParameteri(GL_TEXTURE_CUBE_MAP, GL_TEXTURE_WRAP_T, GL_CLAMP_TO_EDGE);
+        unsigned char * px, *nx, *py, *ny, *pz, *nz;
+        px = pos[0].getPixels();
+        py = pos[1].getPixels();
+        pz = pos[2].getPixels();
+        nx = neg[0].getPixels();
+        ny = neg[1].getPixels();
+        nz = neg[2].getPixels();
+        glTexImage2D(GL_TEXTURE_CUBE_MAP_POSITIVE_X, 0, GL_RGB, size, size, 0, GL_RGB, GL_UNSIGNED_BYTE, px);
+        glTexImage2D(GL_TEXTURE_CUBE_MAP_POSITIVE_Y, 0, GL_RGB, size, size, 0, GL_RGB, GL_UNSIGNED_BYTE, py);
+        glTexImage2D(GL_TEXTURE_CUBE_MAP_POSITIVE_Z, 0, GL_RGB, size, size, 0, GL_RGB, GL_UNSIGNED_BYTE, pz);
+        glTexImage2D(GL_TEXTURE_CUBE_MAP_NEGATIVE_X, 0, GL_RGB, size, size, 0, GL_RGB, GL_UNSIGNED_BYTE, nx);
+        glTexImage2D(GL_TEXTURE_CUBE_MAP_NEGATIVE_Y, 0, GL_RGB, size, size, 0, GL_RGB, GL_UNSIGNED_BYTE, ny);
+        glTexImage2D(GL_TEXTURE_CUBE_MAP_NEGATIVE_Z, 0, GL_RGB, size, size, 0, GL_RGB, GL_UNSIGNED_BYTE, nz);
+    }
+    return Ctexture;
+}
 //--------------------------------------------------------------
 void ofApp::setup() {
     ofSetVerticalSync(true);
@@ -20,7 +56,7 @@ void ofApp::setup() {
     gui.add(metaballToggle.setup("metaballs", false));
     gui.add(traceToggle.setup("traces", true));
     gui.add(sphereToggle.setup("spheres", false));
-    gui.add(particleNum.setup("particle #", 4, 1, 9));
+    gui.add(particleNum.setup("particle num", 4, 1, 9));
     gui.loadFromFile("settings.xml");
     metaballToggleCur = metaballToggle;
     traceToggleCur = traceToggle;
@@ -127,35 +163,10 @@ void ofApp::setup() {
 
     bloom.allocate(ofGetWidth(), ofGetHeight());
 
-    ofImage px("cubemap3/posx.jpg"); pos.push_back(px);
-    ofImage py("cubemap3/posy.jpg"); pos.push_back(py);
-    ofImage pz("cubemap3/posz.jpg"); pos.push_back(pz);
-    ofImage nx("cubemap3/negx.jpg"); neg.push_back(nx);
-    ofImage ny("cubemap3/negy.jpg"); neg.push_back(ny);
-    ofImage nz("cubemap3/negz.jpg"); neg.push_back(nz);
-    ofDisableArbTex();
-    {
-        int size = pos[0].getWidth();
-        glGenTextures(1, &Ctexture);
-        glBindTexture(GL_TEXTURE_CUBE_MAP, Ctexture);
-        glTexParameteri(GL_TEXTURE_CUBE_MAP, GL_TEXTURE_MIN_FILTER, GL_LINEAR);
-        glTexParameteri(GL_TEXTURE_CUBE_MAP, GL_TEXTURE_MAG_FILTER, GL_LINEAR);
-        glTexParameteri(GL_TEXTURE_CUBE_MAP, GL_TEXTURE_WRAP_S, GL_CLAMP_TO_EDGE);
-        glTexParameteri(GL_TEXTURE_CUBE_MAP, GL_TEXTURE_WRAP_T, GL_CLAMP_TO_EDGE);
-        unsigned char * px, *nx, *py, *ny, *pz, *nz;
-        px = pos[0].getPixels();
-        py = pos[1].getPixels();
-        pz = pos[2].getPixels();
-        nx = neg[0].getPixels();
-        ny = neg[1].getPixels();
-        nz = neg[2].getPixels();
-        glTexImage2D(GL_TEXTURE_CUBE_MAP_POSITIVE_X, 0, GL_RGB, size, size, 0, GL_RGB, GL_UNSIGNED_BYTE, px);
-        glTexImage2D(GL_TEXTURE_CUBE_MAP_POSITIVE_Y, 0, GL_RGB, size, size, 0, GL_RGB, GL_UNSIGNED_BYTE, py);
-        glTexImage2D(GL_TEXTURE_CUBE_MAP_POSITIVE_Z, 0, GL_RGB, size, size, 0, GL_RGB, GL_UNSIGNED_BYTE, pz);
-        glTexImage2D(GL_TEXTURE_CUBE_MAP_NEGATIVE_X, 0, GL_RGB, size, size, 0, GL_RGB, GL_UNSIGNED_BYTE, nx);
-        glTexImage2D(GL_TEXTURE_CUBE_MAP_NEGATIVE_Y, 0, GL_RGB, size, size, 0, GL_RGB, GL_UNSIGNED_BYTE, ny);
-        glTexImage2D(GL_TEXTURE_CUBE_MAP_NEGATIVE_Z, 0, GL_RGB, size, size, 0, GL_RGB, GL_UNSIGNED_BYTE, nz);
-    }
+    ofImage map("cubemap/radiance.png");
+    CtextureRad = bindMap(map);
+    ofImage mapI("cubemap/irradiance.png");
+    CtextureIrad = bindMap(mapI);
 
 }
 
@@ -233,6 +244,12 @@ void ofApp::update() {
         iso.update();
 }
 
+ofMatrix3x3 mat4ToMat3(ofMatrix4x4 mat4) {
+    return ofMatrix3x3(mat4._mat[0][0], mat4._mat[0][1], mat4._mat[0][2],
+        mat4._mat[1][0], mat4._mat[1][1], mat4._mat[1][2],
+        mat4._mat[2][0], mat4._mat[2][1], mat4._mat[2][2]);
+}
+
 //--------------------------------------------------------------
 void ofApp::draw() {
 
@@ -256,6 +273,7 @@ void ofApp::draw() {
 
     shader.begin();
     shader.setUniformMatrix4f("vMatrix", camera.getModelViewMatrix());
+    shader.setUniformMatrix4f("viewMatrixInverse", camera.getModelViewMatrix().getInverse());
     shader.setUniform3fv("uLightPosition", pointLight.getPosition().getPtr());
     shader.setUniform3fv("uLightColor", pointLight.getSpecularColor().v);
     shader.setUniform1f("uLightRadius", lightRadius);
@@ -264,12 +282,17 @@ void ofApp::draw() {
     shader.setUniform1f("uExposure", 10);
     shader.setUniform1f("uGamma", 2.2f);
     shader.setUniform1f("uRoughness", matRoughness);
+    shader.setUniform1f("uRoughness4", pow(matRoughness, 4));
     shader.setUniform1f("uMetallic", matMetallic);
-    shader.setUniform1i("u_cubemap", 0);
+    shader.setUniform1i("uRadianceMap", 0);
+    shader.setUniform1i("uIrradianceMap", 1);
     shader.end();
     ofPushMatrix();
 
-    glBindTexture(GL_TEXTURE_CUBE_MAP, Ctexture);
+    glActiveTexture(GL_TEXTURE0);
+    glBindTexture(GL_TEXTURE_CUBE_MAP, CtextureRad);
+    glActiveTexture(GL_TEXTURE1);
+    glBindTexture(GL_TEXTURE_CUBE_MAP, CtextureIrad);
 
     // enable lighting //
     ofEnableLighting();
@@ -287,6 +310,7 @@ void ofApp::draw() {
             scene.transformGL();
             shader.begin();
             shader.setUniformMatrix4f("modelMatrix", scene.getGlobalTransformMatrix());
+            shader.setUniformMatrix3f("normalMatrix", mat4ToMat3(ofGetCurrentNormalMatrix()));
             //spheres.at(i)->draw();
             ofDrawSphere(1);
             shader.end();
@@ -301,6 +325,7 @@ void ofApp::draw() {
         scene.transformGL();
         shader.begin();
         shader.setUniformMatrix4f("modelMatrix", scene.getGlobalTransformMatrix());
+        shader.setUniformMatrix3f("normalMatrix", mat4ToMat3(ofGetCurrentNormalMatrix()));
         iso.getMesh().draw();
         shader.end();
         scene.restoreTransformGL();
