@@ -126,6 +126,37 @@ void ofApp::setup() {
     iso.update();
 
     bloom.allocate(ofGetWidth(), ofGetHeight());
+
+    ofImage px("cubemap3/posx.jpg"); pos.push_back(px);
+    ofImage py("cubemap3/posy.jpg"); pos.push_back(py);
+    ofImage pz("cubemap3/posz.jpg"); pos.push_back(pz);
+    ofImage nx("cubemap3/negx.jpg"); neg.push_back(nx);
+    ofImage ny("cubemap3/negy.jpg"); neg.push_back(ny);
+    ofImage nz("cubemap3/negz.jpg"); neg.push_back(nz);
+    ofDisableArbTex();
+    {
+        int size = pos[0].getWidth();
+        glGenTextures(1, &Ctexture);
+        glBindTexture(GL_TEXTURE_CUBE_MAP, Ctexture);
+        glTexParameteri(GL_TEXTURE_CUBE_MAP, GL_TEXTURE_MIN_FILTER, GL_LINEAR);
+        glTexParameteri(GL_TEXTURE_CUBE_MAP, GL_TEXTURE_MAG_FILTER, GL_LINEAR);
+        glTexParameteri(GL_TEXTURE_CUBE_MAP, GL_TEXTURE_WRAP_S, GL_CLAMP_TO_EDGE);
+        glTexParameteri(GL_TEXTURE_CUBE_MAP, GL_TEXTURE_WRAP_T, GL_CLAMP_TO_EDGE);
+        unsigned char * px, *nx, *py, *ny, *pz, *nz;
+        px = pos[0].getPixels();
+        py = pos[1].getPixels();
+        pz = pos[2].getPixels();
+        nx = neg[0].getPixels();
+        ny = neg[1].getPixels();
+        nz = neg[2].getPixels();
+        glTexImage2D(GL_TEXTURE_CUBE_MAP_POSITIVE_X, 0, GL_RGB, size, size, 0, GL_RGB, GL_UNSIGNED_BYTE, px);
+        glTexImage2D(GL_TEXTURE_CUBE_MAP_POSITIVE_Y, 0, GL_RGB, size, size, 0, GL_RGB, GL_UNSIGNED_BYTE, py);
+        glTexImage2D(GL_TEXTURE_CUBE_MAP_POSITIVE_Z, 0, GL_RGB, size, size, 0, GL_RGB, GL_UNSIGNED_BYTE, pz);
+        glTexImage2D(GL_TEXTURE_CUBE_MAP_NEGATIVE_X, 0, GL_RGB, size, size, 0, GL_RGB, GL_UNSIGNED_BYTE, nx);
+        glTexImage2D(GL_TEXTURE_CUBE_MAP_NEGATIVE_Y, 0, GL_RGB, size, size, 0, GL_RGB, GL_UNSIGNED_BYTE, ny);
+        glTexImage2D(GL_TEXTURE_CUBE_MAP_NEGATIVE_Z, 0, GL_RGB, size, size, 0, GL_RGB, GL_UNSIGNED_BYTE, nz);
+    }
+
 }
 
 //--------------------------------------------------------------
@@ -198,7 +229,7 @@ void ofApp::update() {
         traces.at(i).addColor(ofFloatColor(0.1f, 0.1f, 0.1f));
     }
     iso.setCenters(centers);
-    if(metaballToggleCur)
+    if (metaballToggleCur)
         iso.update();
 }
 
@@ -207,7 +238,7 @@ void ofApp::draw() {
 
     ofEnableDepthTest();
     camera.begin();
-    
+
     ofSetLineWidth(lineWidth);
 
     //ofEnableAlphaBlending();
@@ -234,8 +265,11 @@ void ofApp::draw() {
     shader.setUniform1f("uGamma", 2.2f);
     shader.setUniform1f("uRoughness", matRoughness);
     shader.setUniform1f("uMetallic", matMetallic);
+    shader.setUniform1i("u_cubemap", 0);
     shader.end();
     ofPushMatrix();
+
+    glBindTexture(GL_TEXTURE_CUBE_MAP, Ctexture);
 
     // enable lighting //
     ofEnableLighting();

@@ -67,4 +67,8 @@ public:
     ofImage skyboxImage;
 
     vector<ofMesh> traces;
+
+    vector<ofImage> pos, neg;
+    unsigned int Ctexture;
+
 };

@@ -16,6 +16,7 @@ varying vec3  normal;
 out vec3		vNormal;
 out vec3		vLightPosition;
 out vec3		vPosition;
+out vec3		wPosition;
 
 
 void main(){
@@ -25,6 +26,7 @@ void main(){
     vNormal					= gl_NormalMatrix * gl_Normal;
     vLightPosition			= ( vMatrix * vec4( uLightPosition, 1.0 ) ).xyz;
     vPosition				= viewSpacePosition.xyz;
+    wPosition = gl_Vertex.xyz;
 
     gl_Position				= gl_ProjectionMatrix * viewSpacePosition;
 }

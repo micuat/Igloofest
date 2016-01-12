@@ -12,9 +12,12 @@ uniform float		uSpecular;
 uniform float		uExposure;
 uniform float		uGamma;
 
+uniform samplerCube u_cubemap;
+
 in vec3             vNormal;
 in vec3             vLightPosition;
 in vec3             vPosition;
+in vec3             wPosition;
 
 out vec4            oColor;
 
@@ -132,4 +135,5 @@ void main() {
 
 	// output the fragment color
     oColor                  = vec4( color, 1.0 );
+	oColor = textureCube(u_cubemap, wPosition);
 }
