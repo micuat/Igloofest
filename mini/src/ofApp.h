@@ -27,11 +27,12 @@ public:
     void gotMessage(ofMessage msg);
 
     ofxPanel gui;
-    ofxVec3Slider lightPosition, cameraPosition;
-    ofxFloatSlider matRoughness, matSpecular, matMetallic, lightRadius, gravitySlider, lineWidth;
+    ofxVec3Slider lightPosition, cameraPosition, obstaclePosition, obstacleScale;
+    ofxFloatSlider matRoughness, matSpecular, matMetallic, lightRadius, gravitySlider, centerForce, lineWidth;
     ofxToggle refreshButton;
-    ofxToggle metaballToggle, traceToggle, sphereToggle;
-    bool metaballToggleCur, traceToggleCur, sphereToggleCur;
+    ofxToggle metaballToggle, traceToggle, curveToggle, sphereToggle, obstacleToggle;
+    bool metaballToggleCur, traceToggleCur, curveToggleCur, sphereToggleCur;
+    float centerForceCur;
     ofxIntSlider particleNum;
 
     ofLight pointLight, ambientLight;
@@ -42,7 +43,7 @@ public:
     float sphereRadius;
     int numSpheres;
     ofVec3f center;
-    bool bDrawWireframe;
+    bool bDrawGui;
 
     ofColor lightColor;
     float colorHue;
@@ -54,6 +55,7 @@ public:
 
     ofxBulletWorldRigid world;
     vector<ofxBulletBox> grounds;
+    ofPtr<ofxBulletBox> obstacleBox;
     ofCamera camera;
 
     vector<ofPtr<ofxBulletSphere> > spheres;
@@ -66,7 +68,7 @@ public:
 
     ofImage skyboxImage;
 
-    vector<ofMesh> traces;
+    vector<ofMesh> traces, curves;
 
     unsigned int CtextureRad, CtextureIrad;
 

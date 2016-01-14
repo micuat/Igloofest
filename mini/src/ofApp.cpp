@@ -1,5 +1,7 @@
 #include "ofApp.h"
 
+//#define ENCODE
+
 unsigned int bindMap(ofImage& map)
 {
     vector<ofImage> pos, neg;
@@ -48,6 +50,7 @@ void ofApp::setup() {
     gui.add(cameraPosition.setup("camera", ofVec3f(), ofVec3f(-10), ofVec3f(10)));
     gui.add(lineWidth.setup("line width", 1, 0, 5));
     gui.add(gravitySlider.setup("gravity", 0.98f, 0, 0.98f));
+    gui.add(centerForce.setup("center", 0, 0, 0.98f));
     gui.add(matRoughness.setup("roughness", 0.5f, 0, 1));
     gui.add(matSpecular.setup("specular", 0.5f, 0, 1));
     gui.add(matMetallic.setup("metallic", 0.5f, 0, 1));
@@ -55,12 +58,18 @@ void ofApp::setup() {
     gui.add(refreshButton.setup("refresh", false));
     gui.add(metaballToggle.setup("metaballs", false));
     gui.add(traceToggle.setup("traces", true));
+    gui.add(curveToggle.setup("curves", true));
     gui.add(sphereToggle.setup("spheres", false));
     gui.add(particleNum.setup("particle num", 4, 1, 9));
+    gui.add(obstacleToggle.setup("obstacle", false));
+    gui.add(obstaclePosition.setup("obstacle pos", ofVec3f(), ofVec3f(-10), ofVec3f(10)));
+    gui.add(obstacleScale.setup("obstacle scale", ofVec3f(), ofVec3f(0.1f), ofVec3f(10)));
     gui.loadFromFile("settings.xml");
     metaballToggleCur = metaballToggle;
     traceToggleCur = traceToggle;
+    curveToggleCur = curveToggle;
     sphereToggleCur = sphereToggle;
+    centerForceCur = centerForce;
 
     // turn on smooth lighting //
     ofSetSmoothLighting(true);
@@ -90,7 +99,7 @@ void ofApp::setup() {
     sphereRadius = 140;
     numSpheres = 1;
     rotation = 0.f;
-    bDrawWireframe = false;
+    bDrawGui = true;
 
     colorHue = ofRandom(0, 250);
 
@@ -112,7 +121,7 @@ void ofApp::setup() {
     for (int i = 0; i < n; i++)
     {
         auto sphere = ofPtr<ofxBulletSphere>(new ofxBulletSphere());
-        sphere->create(world.world, ofVec3f(ofRandomf() * 0.01f, ofMap(i, 0, n, 2, -2), ofRandomf() * 0.01f), 0.001f, 0.05f);
+        sphere->create(world.world, ofVec3f(ofRandomf() * 0.01f, ofMap(i, 0, n, 2, -2), ofRandomf() * 0.01f), 0.001f, 0.1f);
         sphere->setProperties(1, 0);
         sphere->setDamping(0);
         sphere->add();
@@ -122,6 +131,9 @@ void ofApp::setup() {
         ofMesh mesh;
         mesh.setMode(OF_PRIMITIVE_LINE_STRIP);
         traces.push_back(mesh);
+        ofMesh curve;
+        curve.setMode(OF_PRIMITIVE_LINES);
+        curves.push_back(curve);
     }
 
     float rest = 1;
@@ -147,11 +159,19 @@ void ofApp::setup() {
     grounds.at(5).setProperties(rest, fric);
     grounds.at(5).add();
 
+    if (obstacleToggle == true)
+    {
+        obstacleBox = ofPtr<ofxBulletBox>(new ofxBulletBox());
+        obstacleBox->create(world.world, obstaclePosition, 0., obstacleScale->x, obstacleScale->y, obstacleScale->z);
+        obstacleBox->setProperties(rest, fric);
+        obstacleBox->add();
+    }
+
     camera.setPosition(ofVec3f(0, -3.f, -10.f));
     camera.lookAt(ofVec3f(0, 3, 0), ofVec3f(0, -1, 0));
     camera.setNearClip(0.01f);
 
-    iso.setup(32);
+    iso.setup(64);
 
     vector<ofVec3f> centers;
     for (int i = 0; i < spheres.size(); i++) {
@@ -172,15 +192,30 @@ void ofApp::setup() {
 
 //--------------------------------------------------------------
 void ofApp::update() {
+    if (obstacleToggle == true && obstacleBox == nullptr)
+    {
+        obstacleBox = ofPtr<ofxBulletBox>(new ofxBulletBox());
+        obstacleBox->create(world.world, obstaclePosition, 0., obstacleScale->x, obstacleScale->y, obstacleScale->z);
+        obstacleBox->setProperties(1, 0);
+        obstacleBox->add();
+    }
+    else if (obstacleToggle == false && obstacleBox != nullptr)
+    {
+        obstacleBox->remove();
+        obstacleBox = nullptr;
+    }
     if (refreshButton == true)
     {
         metaballToggleCur = metaballToggle;
         traceToggleCur = traceToggle;
+        curveToggleCur = curveToggle;
         sphereToggleCur = sphereToggle;
+        centerForceCur = centerForce;
 
         int n = 1 << particleNum;
         spheres.resize(n);
         traces.resize(n);
+        curves.resize(n);
         for (int i = 0; i < n; i++)
         {
             if (spheres.at(i))
@@ -191,13 +226,15 @@ void ofApp::update() {
         {
             traces.at(i).clear();
             traces.at(i).setMode(OF_PRIMITIVE_LINE_STRIP);
+            curves.at(i).clear();
+            curves.at(i).setMode(OF_PRIMITIVE_LINES);
         }
         world.setGravity(ofVec3f(0, gravitySlider, 0));
 
         for (int i = 0; i < n; i++)
         {
             auto sphere = ofPtr<ofxBulletSphere>(new ofxBulletSphere());
-            sphere->create(world.world, ofVec3f(ofRandomf() * 0.01f, ofMap(i, 0, n, 2, -2), ofRandomf() * 0.01f), 0.001f, 0.05f);
+            sphere->create(world.world, ofVec3f(ofRandomf() * 0.01f, ofMap(i, 0, n, 2, -2), ofRandomf() * 0.01f), 0.001f, 0.1f);
             sphere->setProperties(1, 0);
             sphere->setDamping(0);
             sphere->add();
@@ -238,6 +275,22 @@ void ofApp::update() {
         traces.at(i).addVertex(p);
         //traces.at(i).addColor(ofFloatColor(1, 1, 1, 0.5f));
         traces.at(i).addColor(ofFloatColor(0.1f, 0.1f, 0.1f));
+
+        if (curveToggleCur)
+        {
+            if (i % 2 == 0)
+            {
+                curves.at(i).addVertex(p);
+                curves.at(i).addVertex(spheres.at(i + 1)->getPosition());
+                curves.at(i).addColor(ofFloatColor(0.01f, 0.01f, 0.01f));
+                curves.at(i).addColor(ofFloatColor(0.01f, 0.01f, 0.01f));
+            }
+        }
+
+        if (centerForceCur > 0.01f)
+        {
+            spheres.at(i)->applyCentralForce(-p.getNormalized() * centerForceCur * 0.01f);
+        }
     }
     iso.setCenters(centers);
     if (metaballToggleCur)
@@ -262,10 +315,21 @@ void ofApp::draw() {
     ofEnableBlendMode(OF_BLENDMODE_ADD);
     if (traceToggleCur)
     {
+        ofDisableDepthTest();
         for (int i = 0; i < traces.size(); i++)
         {
             traces.at(i).draw();
         }
+        ofEnableDepthTest();
+    }
+    if (curveToggleCur)
+    {
+        ofDisableDepthTest();
+        for (int i = 0; i < traces.size(); i++)
+        {
+            curves.at(i).draw();
+        }
+        ofEnableDepthTest();
     }
     ofDisableBlendMode();
 
@@ -339,17 +403,23 @@ void ofApp::draw() {
     // turn off lighting //
     ofDisableLighting();
 
-    //ofSaveFrame();
+#ifdef ENCODE
+    ofSaveScreen(ofToDataPath("screenshots/" + ofToString(ofGetFrameNum(), 5, '0') + ".png"));
+#endif
 
     ofDisableDepthTest();
-    gui.draw();
+    if(bDrawGui)
+        gui.draw();
 }
 
 //--------------------------------------------------------------
 void ofApp::keyPressed(int key) {
     switch (key) {
-    case 'w':
-        bDrawWireframe = !bDrawWireframe;
+    case 'h':
+        bDrawGui = !bDrawGui;
+        break;
+    case 'f':
+        ofToggleFullscreen();
         break;
     default:
         break;
