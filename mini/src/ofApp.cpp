@@ -45,31 +45,29 @@ void ofApp::setup() {
     ofBackground(10, 10, 10);
     ofEnableDepthTest();
 
+    lightPosition = ofVec3f();
+    cameraPosition = ofVec3f();
+    lineWidth = 1;
+    gravitySlider = 0.98f;
+    centerForce = 0;
+    matRoughness = 0.5f;
+    matSpecular = 0.5f;
+    matMetallic = 0.5f;
+    lightRadius = 4;
+    refreshButton = false;
+    particleNum = 4;
+    obstacleToggle = false;
+    obstaclePosition = ofVec3f();
+    obstacleScale = ofVec3f();
+
+    drawMode = 0;
+    metaballToggleCur = true;
+    traceToggleCur = false;
+    curveToggleCur = false;
+    sphereToggleCur = false;
+    centerForceCur = false;
+
     gui.setup();
-    gui.add(lightPosition.setup("light", ofVec3f(), ofVec3f(-10), ofVec3f(10)));
-    gui.add(cameraPosition.setup("camera", ofVec3f(), ofVec3f(-10), ofVec3f(10)));
-    gui.add(lineWidth.setup("line width", 1, 0, 5));
-    gui.add(gravitySlider.setup("gravity", 0.98f, 0, 0.98f));
-    gui.add(centerForce.setup("center", 0, 0, 0.98f));
-    gui.add(matRoughness.setup("roughness", 0.5f, 0, 1));
-    gui.add(matSpecular.setup("specular", 0.5f, 0, 1));
-    gui.add(matMetallic.setup("metallic", 0.5f, 0, 1));
-    gui.add(lightRadius.setup("light radius", 4, 0, 100));
-    gui.add(refreshButton.setup("refresh", false));
-    gui.add(metaballToggle.setup("metaballs", false));
-    gui.add(traceToggle.setup("traces", true));
-    gui.add(curveToggle.setup("curves", true));
-    gui.add(sphereToggle.setup("spheres", false));
-    gui.add(particleNum.setup("particle num", 4, 1, 9));
-    gui.add(obstacleToggle.setup("obstacle", false));
-    gui.add(obstaclePosition.setup("obstacle pos", ofVec3f(), ofVec3f(-10), ofVec3f(10)));
-    gui.add(obstacleScale.setup("obstacle scale", ofVec3f(), ofVec3f(0.1f), ofVec3f(10)));
-    gui.loadFromFile("settings.xml");
-    metaballToggleCur = metaballToggle;
-    traceToggleCur = traceToggle;
-    curveToggleCur = curveToggle;
-    sphereToggleCur = sphereToggle;
-    centerForceCur = centerForce;
 
     // turn on smooth lighting //
     ofSetSmoothLighting(true);
@@ -162,7 +160,7 @@ void ofApp::setup() {
     if (obstacleToggle == true)
     {
         obstacleBox = ofPtr<ofxBulletBox>(new ofxBulletBox());
-        obstacleBox->create(world.world, obstaclePosition, 0., obstacleScale->x, obstacleScale->y, obstacleScale->z);
+        obstacleBox->create(world.world, obstaclePosition, 0., obstacleScale.x, obstacleScale.y, obstacleScale.z);
         obstacleBox->setProperties(rest, fric);
         obstacleBox->add();
     }
@@ -195,7 +193,7 @@ void ofApp::update() {
     if (obstacleToggle == true && obstacleBox == nullptr)
     {
         obstacleBox = ofPtr<ofxBulletBox>(new ofxBulletBox());
-        obstacleBox->create(world.world, obstaclePosition, 0., obstacleScale->x, obstacleScale->y, obstacleScale->z);
+        obstacleBox->create(world.world, obstaclePosition, 0., obstacleScale.x, obstacleScale.y, obstacleScale.z);
         obstacleBox->setProperties(1, 0);
         obstacleBox->add();
     }
@@ -206,10 +204,11 @@ void ofApp::update() {
     }
     if (refreshButton == true)
     {
-        metaballToggleCur = metaballToggle;
-        traceToggleCur = traceToggle;
-        curveToggleCur = curveToggle;
-        sphereToggleCur = sphereToggle;
+        metaballToggleCur = (drawMode == 0);
+        sphereToggleCur = (drawMode == 1);
+        traceToggleCur = (drawMode == 2);
+        curveToggleCur = (drawMode == 3);
+
         centerForceCur = centerForce;
 
         int n = 1 << particleNum;
@@ -408,8 +407,33 @@ void ofApp::draw() {
 #endif
 
     ofDisableDepthTest();
-    if(bDrawGui)
-        gui.draw();
+    if (bDrawGui)
+    {
+        gui.begin();
+
+        ImGui::SliderFloat3("light", lightPosition.getPtr(), -10, 10);
+        ImGui::SliderFloat3("camera", cameraPosition.getPtr(), -10, 10);
+        ImGui::SliderFloat("line width", &lineWidth, 0.0f, 5.0f);
+        ImGui::SliderFloat("gravity", &gravitySlider, 0.0f, 0.98f);
+        ImGui::SliderFloat("center", &centerForce, 0.0f, 0.98f);
+        ImGui::SliderFloat("roughness", &matRoughness, 0.0f, 1);
+        ImGui::SliderFloat("specular", &matSpecular, 0.0f, 1);
+        ImGui::SliderFloat("metallic", &matMetallic, 0.0f, 1);
+        ImGui::SliderFloat("light radius", &lightRadius, 0.0f, 100);
+        ImGui::Checkbox("refresh", &refreshButton);
+        ImGui::RadioButton("metaballs", &drawMode, 0); ImGui::SameLine();
+        ImGui::RadioButton("spheres", &drawMode, 1); ImGui::SameLine();
+        ImGui::RadioButton("traces", &drawMode, 2); ImGui::SameLine();
+        ImGui::RadioButton("curves", &drawMode, 3);
+        ImGui::SliderInt("particle num", &particleNum, 1, 9);
+        ImGui::Checkbox("obstacle", &obstacleToggle);
+        ImGui::SliderFloat3("obstacle pos", obstaclePosition.getPtr(), -10, 10);
+        ImGui::SliderFloat3("obstacle scale", obstacleScale.getPtr(), -10, 10);
+
+        ImGui::Text("Application average %.3f ms/frame (%.1f FPS)", 1000.0f / ImGui::GetIO().Framerate, ImGui::GetIO().Framerate);
+
+        gui.end();
+    }
 }
 
 //--------------------------------------------------------------

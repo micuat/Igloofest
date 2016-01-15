@@ -3,6 +3,7 @@ ofxXmlSettings
 ofxAutoReloadedShader
 ofxBullet
 ofxFx
+ofxImGui
 ofxMetaballs
 ofxMSATimer
 ofxRange

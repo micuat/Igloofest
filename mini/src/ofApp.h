@@ -2,10 +2,10 @@
 
 #include "ofMain.h"
 #include "ofxBullet.h"
-#include "ofxGui.h"
 #include "ofxMetaballs.h"
 #include "ofxAutoReloadedShader.h"
 #include "ofxBloom.h"
+#include "ofxImgui.h"
 
 class ofApp : public ofBaseApp {
 
@@ -26,14 +26,15 @@ public:
     void dragEvent(ofDragInfo dragInfo);
     void gotMessage(ofMessage msg);
 
-    ofxPanel gui;
-    ofxVec3Slider lightPosition, cameraPosition, obstaclePosition, obstacleScale;
-    ofxFloatSlider matRoughness, matSpecular, matMetallic, lightRadius, gravitySlider, centerForce, lineWidth;
-    ofxToggle refreshButton;
-    ofxToggle metaballToggle, traceToggle, curveToggle, sphereToggle, obstacleToggle;
+    ofxImgui gui;
+    ofVec3f lightPosition, cameraPosition, obstaclePosition, obstacleScale;
+    float matRoughness, matSpecular, matMetallic, lightRadius, gravitySlider, centerForce, lineWidth;
+    bool refreshButton;
+    int drawMode;
+    bool obstacleToggle;
     bool metaballToggleCur, traceToggleCur, curveToggleCur, sphereToggleCur;
     float centerForceCur;
-    ofxIntSlider particleNum;
+    int particleNum;
 
     ofLight pointLight, ambientLight;
 
