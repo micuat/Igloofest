@@ -62,6 +62,7 @@ void ofApp::setup() {
     obstacleScale = ofVec3f();
 
     renderModeCur = renderMode = Sphere;
+    meshModeCur = meshMode = None;
     centerForceCur = false;
 
     gui.setup();
@@ -186,7 +187,8 @@ void ofApp::setup() {
     ofImage mapI("cubemap/irradiance.png");
     CtextureIrad = bindMap(mapI);
 
-    //recordedMesh.load(ofToDataPath("meshesFaceNormal/turtle.ply"));
+    recordedMesh.load(ofToDataPath("meshesFaceNormal/turtle.ply"));
+    recordedMesh.clearColors();
 }
 
 //--------------------------------------------------------------
@@ -206,6 +208,7 @@ void ofApp::update() {
     if (refreshButton == true)
     {
         renderModeCur = renderMode;
+        meshModeCur = meshMode;
 
         centerForceCur = centerForce;
 
@@ -408,7 +411,7 @@ void ofApp::draw() {
             scene.restoreTransformGL();
         }
     }
-    if (renderModeCur ==  Metaball)
+    if (renderModeCur == Metaball)
     {
         scene.resetTransform();
         scene.setPosition(-5, -5, -5);
@@ -423,16 +426,32 @@ void ofApp::draw() {
     }
 
     ofPushMatrix();
+    if(meshModeCur != None)
     {
         scene.resetTransform();
         scene.setPosition(0, 0, 0);
-        scene.setScale(0.005, -0.005, -0.005);
+        scene.setScale(0.01, -0.01, -0.01);
         scene.transformGL();
-        shader.begin();
-        shader.setUniformMatrix4f("modelMatrix", scene.getGlobalTransformMatrix());
-        shader.setUniformMatrix3f("normalMatrix", mat4ToMat3(ofGetCurrentNormalMatrix()));
-        recordedMesh.draw();
-        shader.end();
+        if (meshModeCur == Mesh)
+        {
+            shader.begin();
+            shader.setUniformMatrix4f("modelMatrix", scene.getGlobalTransformMatrix());
+            shader.setUniformMatrix3f("normalMatrix", mat4ToMat3(ofGetCurrentNormalMatrix()));
+            recordedMesh.draw();
+            shader.end();
+        }
+        else if (meshModeCur == Wireframe)
+        {
+            material.end();
+            recordedMesh.drawWireframe();
+            material.begin();
+        }
+        else if (meshModeCur == Points)
+        {
+            material.end();
+            recordedMesh.drawVertices();
+            material.begin();
+        }
         scene.restoreTransformGL();
     }
 
@@ -469,6 +488,10 @@ void ofApp::draw() {
         ImGui::RadioButton("traces", (int *)&renderMode, 2); ImGui::SameLine();
         ImGui::RadioButton("curves", (int *)&renderMode, 3);
         ImGui::RadioButton("center", (int *)&renderMode, 4);
+        ImGui::RadioButton("none", (int *)&meshMode, 0); ImGui::SameLine();
+        ImGui::RadioButton("wireframe", (int *)&meshMode, 1); ImGui::SameLine();
+        ImGui::RadioButton("points", (int *)&meshMode, 2); ImGui::SameLine();
+        ImGui::RadioButton("mesh", (int *)&meshMode, 3);
         ImGui::SliderInt("particle num", &particleNum, 1, 9);
         ImGui::Checkbox("obstacle", &obstacleToggle);
         ImGui::SliderFloat3("obstacle pos", obstaclePosition.getPtr(), -10, 10);

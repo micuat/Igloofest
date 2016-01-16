@@ -31,6 +31,9 @@ public:
     float matRoughness, matSpecular, matMetallic, lightRadius, gravitySlider, centerForce, lineWidth;
     bool refreshButton;
     bool obstacleToggle;
+    enum MeshMode {
+        None, Wireframe, Points, Mesh
+    } meshMode, meshModeCur;
     enum RenderMode {
         Metaball, Sphere, Trace, Curve, Center
     } renderMode, renderModeCur;
