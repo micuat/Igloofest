@@ -27,7 +27,7 @@ public:
     void gotMessage(ofMessage msg);
 
     ofxImgui gui;
-    ofVec3f lightPosition, cameraPosition, obstaclePosition, obstacleScale;
+    ofVec3f lightPosition, cameraPosition, cameraLookat, obstaclePosition, obstacleScale;
     float matRoughness, matSpecular, matMetallic, lightRadius, gravitySlider, centerForce, lineWidth;
     bool refreshButton;
     int drawMode;
@@ -72,5 +72,7 @@ public:
     vector<ofMesh> traces, curves;
 
     unsigned int CtextureRad, CtextureIrad;
+
+    ofVboMesh recordedMesh;
 
 };

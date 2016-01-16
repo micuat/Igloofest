@@ -47,6 +47,7 @@ void ofApp::setup() {
 
     lightPosition = ofVec3f();
     cameraPosition = ofVec3f();
+    cameraLookat = ofVec3f(0, 0, 10);
     lineWidth = 1;
     gravitySlider = 0.98f;
     centerForce = 0;
@@ -166,7 +167,7 @@ void ofApp::setup() {
     }
 
     camera.setPosition(ofVec3f(0, -3.f, -10.f));
-    camera.lookAt(ofVec3f(0, 3, 0), ofVec3f(0, -1, 0));
+    camera.lookAt(cameraLookat, ofVec3f(0, -1, 0));
     camera.setNearClip(0.01f);
 
     iso.setup(64);
@@ -186,6 +187,7 @@ void ofApp::setup() {
     ofImage mapI("cubemap/irradiance.png");
     CtextureIrad = bindMap(mapI);
 
+    recordedMesh.load(ofToDataPath("meshesFaceNormal/fossilSmall.ply"));
 }
 
 //--------------------------------------------------------------
@@ -261,6 +263,7 @@ void ofApp::update() {
     pointLight.setDiffuseColor(lightColor);
 
     camera.setPosition(cameraPosition);
+    camera.lookAt(cameraLookat, ofVec3f(0, -1, 0));
 
     materialColor.setHue(colorHue);
     // the light highlight of the material //
@@ -312,6 +315,9 @@ void ofApp::draw() {
 
     //ofEnableAlphaBlending();
     ofEnableBlendMode(OF_BLENDMODE_ADD);
+
+    ofSetColor(255);
+
     if (traceToggleCur)
     {
         ofDisableDepthTest();
@@ -394,6 +400,20 @@ void ofApp::draw() {
         scene.restoreTransformGL();
     }
 
+    ofPushMatrix();
+    {
+        scene.resetTransform();
+        scene.setPosition(0, 0, 0);
+        scene.setScale(0.005, -0.005, -0.005);
+        scene.transformGL();
+        shader.begin();
+        shader.setUniformMatrix4f("modelMatrix", scene.getGlobalTransformMatrix());
+        shader.setUniformMatrix3f("normalMatrix", mat4ToMat3(ofGetCurrentNormalMatrix()));
+        recordedMesh.draw();
+        shader.end();
+        scene.restoreTransformGL();
+    }
+
     ofPopMatrix();
 
     camera.end();
@@ -413,6 +433,7 @@ void ofApp::draw() {
 
         ImGui::SliderFloat3("light", lightPosition.getPtr(), -10, 10);
         ImGui::SliderFloat3("camera", cameraPosition.getPtr(), -10, 10);
+        ImGui::SliderFloat3("lookat", cameraLookat.getPtr(), -10, 10);
         ImGui::SliderFloat("line width", &lineWidth, 0.0f, 5.0f);
         ImGui::SliderFloat("gravity", &gravitySlider, 0.0f, 0.98f);
         ImGui::SliderFloat("center", &centerForce, 0.0f, 0.98f);
