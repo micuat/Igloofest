@@ -46,7 +46,7 @@ void ofApp::setup() {
     ofEnableDepthTest();
 
     lightPosition = ofVec3f();
-    cameraPosition = ofVec3f();
+    cameraPosition = ofVec3f(0, 0, -10);
     cameraLookat = ofVec3f(0, 0, 10);
     lineWidth = 1;
     gravitySlider = 0.98f;
@@ -61,11 +61,7 @@ void ofApp::setup() {
     obstaclePosition = ofVec3f();
     obstacleScale = ofVec3f();
 
-    drawMode = 0;
-    metaballToggleCur = true;
-    traceToggleCur = false;
-    curveToggleCur = false;
-    sphereToggleCur = false;
+    renderModeCur = renderMode = Sphere;
     centerForceCur = false;
 
     gui.setup();
@@ -133,6 +129,9 @@ void ofApp::setup() {
         ofMesh curve;
         curve.setMode(OF_PRIMITIVE_LINES);
         curves.push_back(curve);
+        ofMesh center;
+        center.setMode(OF_PRIMITIVE_LINES);
+        centerLines.push_back(center);
     }
 
     float rest = 1;
@@ -187,7 +186,7 @@ void ofApp::setup() {
     ofImage mapI("cubemap/irradiance.png");
     CtextureIrad = bindMap(mapI);
 
-    recordedMesh.load(ofToDataPath("meshesFaceNormal/fossilSmall.ply"));
+    //recordedMesh.load(ofToDataPath("meshesFaceNormal/turtle.ply"));
 }
 
 //--------------------------------------------------------------
@@ -206,10 +205,7 @@ void ofApp::update() {
     }
     if (refreshButton == true)
     {
-        metaballToggleCur = (drawMode == 0);
-        sphereToggleCur = (drawMode == 1);
-        traceToggleCur = (drawMode == 2);
-        curveToggleCur = (drawMode == 3);
+        renderModeCur = renderMode;
 
         centerForceCur = centerForce;
 
@@ -217,6 +213,7 @@ void ofApp::update() {
         spheres.resize(n);
         traces.resize(n);
         curves.resize(n);
+        centerLines.resize(n);
         for (int i = 0; i < n; i++)
         {
             if (spheres.at(i))
@@ -229,6 +226,8 @@ void ofApp::update() {
             traces.at(i).setMode(OF_PRIMITIVE_LINE_STRIP);
             curves.at(i).clear();
             curves.at(i).setMode(OF_PRIMITIVE_LINES);
+            centerLines.at(i).clear();
+            centerLines.at(i).setMode(OF_PRIMITIVE_LINES);
         }
         world.setGravity(ofVec3f(0, gravitySlider, 0));
 
@@ -274,11 +273,13 @@ void ofApp::update() {
         auto p = spheres.at(i)->getPosition();
         centers.push_back(ofVec3f(ofMap(p.x, -5, 5, 0, 1, true), ofMap(p.y, -5, 5, 0, 1, true), ofMap(p.z, -5, 5, 0, 1, true)));
         //centers.push_back(ofVec3f(ofNoise(ofGetElapsedTimef() * 0.01f, i / 12.0f), ofNoise(ofGetElapsedTimef() * 0.02f, i / 12.0f), ofNoise(ofGetElapsedTimef() * 0.04f, i / 12.0f)));
-        traces.at(i).addVertex(p);
-        //traces.at(i).addColor(ofFloatColor(1, 1, 1, 0.5f));
-        traces.at(i).addColor(ofFloatColor(0.1f, 0.1f, 0.1f));
 
-        if (curveToggleCur)
+        if (renderModeCur == Trace)
+        {
+            traces.at(i).addVertex(p);
+            traces.at(i).addColor(ofFloatColor(0.1f, 0.1f, 0.1f));
+        }
+        else if (renderModeCur == Curve)
         {
             if (i % 2 == 0)
             {
@@ -288,6 +289,18 @@ void ofApp::update() {
                 curves.at(i).addColor(ofFloatColor(0.01f, 0.01f, 0.01f));
             }
         }
+        else if (renderModeCur == Center)
+        {
+            auto pm = p.getInterpolated(ofVec3f(), 0.125f);
+            centerLines.at(i).addVertex(p);
+            centerLines.at(i).addVertex(pm);
+            centerLines.at(i).addColor(ofFloatColor(0.1f, 0.1f, 0.1f));
+            centerLines.at(i).addColor(ofFloatColor(0, 0, 0));
+            //centerLines.at(i).addVertex(pm);
+            //centerLines.at(i).addVertex(ofVec3f());
+            //centerLines.at(i).addColor(ofFloatColor(0.01f, 0.01f, 0.01f));
+            //centerLines.at(i).addColor(ofFloatColor(0, 0, 0));
+        }
 
         if (centerForceCur > 0.01f)
         {
@@ -295,7 +308,7 @@ void ofApp::update() {
         }
     }
     iso.setCenters(centers);
-    if (metaballToggleCur)
+    if (renderModeCur == Metaball)
         iso.update();
 }
 
@@ -318,7 +331,7 @@ void ofApp::draw() {
 
     ofSetColor(255);
 
-    if (traceToggleCur)
+    if (renderModeCur == Trace)
     {
         ofDisableDepthTest();
         for (int i = 0; i < traces.size(); i++)
@@ -327,12 +340,21 @@ void ofApp::draw() {
         }
         ofEnableDepthTest();
     }
-    if (curveToggleCur)
+    else if (renderModeCur == Curve)
     {
         ofDisableDepthTest();
-        for (int i = 0; i < traces.size(); i++)
+        for (int i = 0; i < curves.size(); i++)
         {
             curves.at(i).draw();
+        }
+        ofEnableDepthTest();
+    }
+    else if (renderModeCur == Center)
+    {
+        ofDisableDepthTest();
+        for (int i = 0; i < centerLines.size(); i++)
+        {
+            centerLines.at(i).draw();
         }
         ofEnableDepthTest();
     }
@@ -369,7 +391,7 @@ void ofApp::draw() {
     // call enable() so that it can update itself //
     pointLight.enable();
     ambientLight.enable();
-    if (sphereToggleCur)
+    if (renderModeCur == Sphere)
     {
         for (int i = 0; i < spheres.size(); i++)
         {
@@ -386,7 +408,7 @@ void ofApp::draw() {
             scene.restoreTransformGL();
         }
     }
-    if (metaballToggleCur)
+    if (renderModeCur ==  Metaball)
     {
         scene.resetTransform();
         scene.setPosition(-5, -5, -5);
@@ -436,16 +458,17 @@ void ofApp::draw() {
         ImGui::SliderFloat3("lookat", cameraLookat.getPtr(), -10, 10);
         ImGui::SliderFloat("line width", &lineWidth, 0.0f, 5.0f);
         ImGui::SliderFloat("gravity", &gravitySlider, 0.0f, 0.98f);
-        ImGui::SliderFloat("center", &centerForce, 0.0f, 0.98f);
+        ImGui::SliderFloat("center force", &centerForce, 0.0f, 0.98f);
         ImGui::SliderFloat("roughness", &matRoughness, 0.0f, 1);
         ImGui::SliderFloat("specular", &matSpecular, 0.0f, 1);
         ImGui::SliderFloat("metallic", &matMetallic, 0.0f, 1);
         ImGui::SliderFloat("light radius", &lightRadius, 0.0f, 100);
         ImGui::Checkbox("refresh", &refreshButton);
-        ImGui::RadioButton("metaballs", &drawMode, 0); ImGui::SameLine();
-        ImGui::RadioButton("spheres", &drawMode, 1); ImGui::SameLine();
-        ImGui::RadioButton("traces", &drawMode, 2); ImGui::SameLine();
-        ImGui::RadioButton("curves", &drawMode, 3);
+        ImGui::RadioButton("metaballs", (int *)&renderMode, 0); ImGui::SameLine();
+        ImGui::RadioButton("spheres", (int *)&renderMode, 1);
+        ImGui::RadioButton("traces", (int *)&renderMode, 2); ImGui::SameLine();
+        ImGui::RadioButton("curves", (int *)&renderMode, 3);
+        ImGui::RadioButton("center", (int *)&renderMode, 4);
         ImGui::SliderInt("particle num", &particleNum, 1, 9);
         ImGui::Checkbox("obstacle", &obstacleToggle);
         ImGui::SliderFloat3("obstacle pos", obstaclePosition.getPtr(), -10, 10);

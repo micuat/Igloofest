@@ -30,9 +30,10 @@ public:
     ofVec3f lightPosition, cameraPosition, cameraLookat, obstaclePosition, obstacleScale;
     float matRoughness, matSpecular, matMetallic, lightRadius, gravitySlider, centerForce, lineWidth;
     bool refreshButton;
-    int drawMode;
     bool obstacleToggle;
-    bool metaballToggleCur, traceToggleCur, curveToggleCur, sphereToggleCur;
+    enum RenderMode {
+        Metaball, Sphere, Trace, Curve, Center
+    } renderMode, renderModeCur;
     float centerForceCur;
     int particleNum;
 
@@ -69,7 +70,7 @@ public:
 
     ofImage skyboxImage;
 
-    vector<ofMesh> traces, curves;
+    vector<ofMesh> traces, curves, centerLines;
 
     unsigned int CtextureRad, CtextureIrad;
 
