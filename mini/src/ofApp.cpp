@@ -378,6 +378,7 @@ void ofApp::draw() {
     shader.setUniform1f("uMetallic", matMetallic);
     shader.setUniform1i("uRadianceMap", 0);
     shader.setUniform1i("uIrradianceMap", 1);
+    shader.setUniform1i("uDistort", 0);
     shader.end();
     ofPushMatrix();
 
@@ -435,6 +436,18 @@ void ofApp::draw() {
             shader.begin();
             shader.setUniformMatrix4f("modelMatrix", scene.getGlobalTransformMatrix());
             shader.setUniformMatrix3f("normalMatrix", mat4ToMat3(ofGetCurrentNormalMatrix()));
+            shader.setUniform1i("uDistort", 1);
+            for (int i = 0; i < 8; i++)
+            {
+                if (i < spheres.size())
+                {
+                    shader.setUniform3f("sphere" + ofToString(i), spheres.at(i)->getPosition());
+                }
+                else
+                {
+                    shader.setUniform3f("sphere" + ofToString(i), ofVec3f(-10000));
+                }
+            }
             recordedMesh.draw();
             shader.end();
         }
