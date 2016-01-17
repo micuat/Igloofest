@@ -65,6 +65,8 @@ void ofApp::setup() {
     meshModeCur = meshMode = None;
     centerForceCur = false;
 
+    rotateToggleCur = rotateToggle = false;
+
     gui.setup();
 
     // turn on smooth lighting //
@@ -184,7 +186,7 @@ void ofApp::setup() {
     ofImage mapI("cubemap/irradiance.png");
     CtextureIrad = bindMap(mapI);
 
-    recordedMesh.load(ofToDataPath("meshesFaceNormal/turtle.ply"));
+    recordedMesh.load(ofToDataPath("meshesPCL/deer.ply"));
     recordedMesh.clearColors();
 }
 
@@ -208,6 +210,8 @@ void ofApp::update() {
         meshModeCur = meshMode;
 
         centerForceCur = centerForce;
+
+        rotateToggleCur = rotateToggle;
 
         int n = 1 << particleNum;
         spheres.resize(n);
@@ -246,8 +250,9 @@ void ofApp::update() {
     }
     world.update();
 
-    colorHue += .1f;
-    if (colorHue >= 255) colorHue = 0.f;
+    //colorHue += .1f;
+    //if (colorHue >= 255) colorHue = 0.f;
+    colorHue = 127;
     lightColor.setHue(colorHue);
 
     rotation += 1;
@@ -258,8 +263,17 @@ void ofApp::update() {
     pointLight.setPosition(lightPosition);
     pointLight.setDiffuseColor(lightColor);
 
-    camera.setPosition(cameraPosition);
-    camera.lookAt(cameraLookat, ofVec3f(0, -1, 0));
+    if (rotateToggleCur)
+    {
+        camera.setPosition(ofVec3f(0, 0, cameraPosition.z));
+        camera.rotateAround(rotation, ofVec3f(0, -1, 0), ofVec3f(0, 0, 0));
+        camera.lookAt(cameraLookat, ofVec3f(0, -1, 0));
+    }
+    else
+    {
+        camera.setPosition(cameraPosition);
+        camera.lookAt(cameraLookat, ofVec3f(0, -1, 0));
+    }
 
     materialColor.setHue(colorHue);
     // the light highlight of the material //
@@ -494,9 +508,10 @@ void ofApp::draw() {
         ImGui::RadioButton("normal", (int *)&meshMode, 3); ImGui::SameLine();
         ImGui::RadioButton("mesh", (int *)&meshMode, 4);
         ImGui::SliderInt("particle num", &particleNum, 1, 9);
+        ImGui::Checkbox("rotate", &rotateToggle);
         ImGui::Checkbox("obstacle", &obstacleToggle);
         ImGui::SliderFloat3("obstacle pos", obstaclePosition.getPtr(), -10, 10);
-        ImGui::SliderFloat3("obstacle scale", obstacleScale.getPtr(), -10, 10);
+        ImGui::SliderFloat3("obstacle scale", obstacleScale.getPtr(), 0, 10);
 
         ImGui::Text("Application average %.3f ms/frame (%.1f FPS)", 1000.0f / ImGui::GetIO().Framerate, ImGui::GetIO().Framerate);
 
