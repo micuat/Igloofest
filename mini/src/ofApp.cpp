@@ -125,14 +125,11 @@ void ofApp::setup() {
         spheres.push_back(sphere);
 
         ofMesh mesh;
-        mesh.setMode(OF_PRIMITIVE_LINE_STRIP);
+        if(renderMode == Trace)
+            mesh.setMode(OF_PRIMITIVE_LINE_STRIP);
+        else
+            mesh.setMode(OF_PRIMITIVE_LINES);
         traces.push_back(mesh);
-        ofMesh curve;
-        curve.setMode(OF_PRIMITIVE_LINES);
-        curves.push_back(curve);
-        ofMesh center;
-        center.setMode(OF_PRIMITIVE_LINES);
-        centerLines.push_back(center);
     }
 
     float rest = 1;
@@ -215,8 +212,6 @@ void ofApp::update() {
         int n = 1 << particleNum;
         spheres.resize(n);
         traces.resize(n);
-        curves.resize(n);
-        centerLines.resize(n);
         for (int i = 0; i < n; i++)
         {
             if (spheres.at(i))
@@ -226,11 +221,10 @@ void ofApp::update() {
         for (int i = 0; i < traces.size(); i++)
         {
             traces.at(i).clear();
-            traces.at(i).setMode(OF_PRIMITIVE_LINE_STRIP);
-            curves.at(i).clear();
-            curves.at(i).setMode(OF_PRIMITIVE_LINES);
-            centerLines.at(i).clear();
-            centerLines.at(i).setMode(OF_PRIMITIVE_LINES);
+            if(renderMode == Trace)
+                traces.at(i).setMode(OF_PRIMITIVE_LINE_STRIP);
+            else
+                traces.at(i).setMode(OF_PRIMITIVE_LINES);
         }
         world.setGravity(ofVec3f(0, gravitySlider, 0));
 
@@ -286,23 +280,31 @@ void ofApp::update() {
         {
             if (i % 2 == 0)
             {
-                curves.at(i).addVertex(p);
-                curves.at(i).addVertex(spheres.at(i + 1)->getPosition());
-                curves.at(i).addColor(ofFloatColor(0.01f, 0.01f, 0.01f));
-                curves.at(i).addColor(ofFloatColor(0.01f, 0.01f, 0.01f));
+                traces.at(i).addVertex(p);
+                traces.at(i).addVertex(spheres.at(i + 1)->getPosition());
+                traces.at(i).addColor(ofFloatColor(0.01f, 0.01f, 0.01f));
+                traces.at(i).addColor(ofFloatColor(0.01f, 0.01f, 0.01f));
             }
         }
         else if (renderModeCur == Center)
         {
             auto pm = p.getInterpolated(ofVec3f(), 0.125f);
-            centerLines.at(i).addVertex(p);
-            centerLines.at(i).addVertex(pm);
-            centerLines.at(i).addColor(ofFloatColor(0.1f, 0.1f, 0.1f));
-            centerLines.at(i).addColor(ofFloatColor(0, 0, 0));
-            //centerLines.at(i).addVertex(pm);
-            //centerLines.at(i).addVertex(ofVec3f());
-            //centerLines.at(i).addColor(ofFloatColor(0.01f, 0.01f, 0.01f));
-            //centerLines.at(i).addColor(ofFloatColor(0, 0, 0));
+            traces.at(i).addVertex(p);
+            traces.at(i).addVertex(pm);
+            traces.at(i).addColor(ofFloatColor(0.1f, 0.1f, 0.1f));
+            traces.at(i).addColor(ofFloatColor(0, 0, 0));
+        }
+        else if (renderModeCur == MeshAssign)
+        {
+            traces.at(i).clearVertices();
+            traces.at(i).clearColors();
+            auto pp = recordedMesh.getVertex(recordedMesh.getNumVertices() / spheres.size() * i);
+            pp *= ofVec3f(0.01, -0.01, -0.01);
+            //auto pm = pp.getInterpolated(p, 0.125f);
+            traces.at(i).addVertex(pp);
+            traces.at(i).addVertex(p);
+            traces.at(i).addColor(ofFloatColor(0.5f, 0.5f, 0.5f));
+            traces.at(i).addColor(ofFloatColor(0.0f, 0.0f, 0.0f));
         }
 
         if (centerForceCur > 0.01f)
@@ -334,30 +336,12 @@ void ofApp::draw() {
 
     ofSetColor(255);
 
-    if (renderModeCur == Trace)
+    if (renderModeCur == Trace || renderModeCur == Curve || renderModeCur == Center || renderModeCur == MeshAssign)
     {
         ofDisableDepthTest();
         for (int i = 0; i < traces.size(); i++)
         {
             traces.at(i).draw();
-        }
-        ofEnableDepthTest();
-    }
-    else if (renderModeCur == Curve)
-    {
-        ofDisableDepthTest();
-        for (int i = 0; i < curves.size(); i++)
-        {
-            curves.at(i).draw();
-        }
-        ofEnableDepthTest();
-    }
-    else if (renderModeCur == Center)
-    {
-        ofDisableDepthTest();
-        for (int i = 0; i < centerLines.size(); i++)
-        {
-            centerLines.at(i).draw();
         }
         ofEnableDepthTest();
     }
@@ -452,6 +436,21 @@ void ofApp::draw() {
             recordedMesh.drawVertices();
             material.begin();
         }
+        else if (meshModeCur == Normal)
+        {
+            material.end();
+            vector<ofVec3f> n = recordedMesh.getNormals();
+            vector<ofVec3f> v = recordedMesh.getVertices();
+            float normalLength = 10;
+
+            ofSetColor(255, 255, 255, 70);
+            for (unsigned int i = 0; i < n.size(); i+=4) {
+                ofDrawLine(v[i].x, v[i].y, v[i].z,
+                    v[i].x + n[i].x*normalLength, v[i].y + n[i].y*normalLength, v[i].z + n[i].z*normalLength);
+
+            }
+            material.begin();
+        }
         scene.restoreTransformGL();
     }
 
@@ -486,12 +485,14 @@ void ofApp::draw() {
         ImGui::RadioButton("metaballs", (int *)&renderMode, 0); ImGui::SameLine();
         ImGui::RadioButton("spheres", (int *)&renderMode, 1);
         ImGui::RadioButton("traces", (int *)&renderMode, 2); ImGui::SameLine();
-        ImGui::RadioButton("curves", (int *)&renderMode, 3);
-        ImGui::RadioButton("center", (int *)&renderMode, 4);
+        ImGui::RadioButton("curves", (int *)&renderMode, 3); ImGui::SameLine();
+        ImGui::RadioButton("center", (int *)&renderMode, 4); ImGui::SameLine();
+        ImGui::RadioButton("mesh assign", (int *)&renderMode, 5);
         ImGui::RadioButton("none", (int *)&meshMode, 0); ImGui::SameLine();
         ImGui::RadioButton("wireframe", (int *)&meshMode, 1); ImGui::SameLine();
         ImGui::RadioButton("points", (int *)&meshMode, 2); ImGui::SameLine();
-        ImGui::RadioButton("mesh", (int *)&meshMode, 3);
+        ImGui::RadioButton("normal", (int *)&meshMode, 3); ImGui::SameLine();
+        ImGui::RadioButton("mesh", (int *)&meshMode, 4);
         ImGui::SliderInt("particle num", &particleNum, 1, 9);
         ImGui::Checkbox("obstacle", &obstacleToggle);
         ImGui::SliderFloat3("obstacle pos", obstaclePosition.getPtr(), -10, 10);

@@ -32,10 +32,10 @@ public:
     bool refreshButton;
     bool obstacleToggle;
     enum MeshMode {
-        None, Wireframe, Points, Mesh
+        None, Wireframe, Points, Normal, Mesh
     } meshMode, meshModeCur;
     enum RenderMode {
-        Metaball, Sphere, Trace, Curve, Center
+        Metaball, Sphere, Trace, Curve, Center, MeshAssign
     } renderMode, renderModeCur;
     float centerForceCur;
     int particleNum;
@@ -73,7 +73,7 @@ public:
 
     ofImage skyboxImage;
 
-    vector<ofMesh> traces, curves, centerLines;
+    vector<ofMesh> traces;
 
     unsigned int CtextureRad, CtextureIrad;
 
