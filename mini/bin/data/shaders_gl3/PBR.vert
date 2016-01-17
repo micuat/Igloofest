@@ -34,10 +34,10 @@ out vec3		vWsPosition;
 
 vec4 distort(vec3 p, vec3 d)
 {
-    vec4 ret = vec4(0, 0, 0, 0);
+    vec4 ret = vec4(p, 0);
     vec3 dp = d - p;
     float len = dp.x * dp.x + dp.y * dp.y + dp.z * dp.z;
-    float threshold = 100;
+    float threshold = 2;
     if( len < threshold * threshold && len > 0.0  ){
 
         //lets get the distance into 0-1 ranges
@@ -53,7 +53,7 @@ vec4 distort(vec3 p, vec3 d)
         dp /= len;
 
         //apply the repulsion to our position
-        float amp = 100;
+        float amp = 0.5;
         ret.x = p.x + dp.x * pct * amp;
         ret.y = p.y + dp.y * pct * amp;
         ret.z = p.z + dp.z * pct * amp;
@@ -68,6 +68,7 @@ void main(){
     if(uDistort > 0)
     {
         vec4 v;
+        v = worldSpacePosition;
         v = distort(worldSpacePosition.xyz, sphere0);
         if(v.w == 0)
             v = distort(worldSpacePosition.xyz, sphere1);
@@ -83,7 +84,7 @@ void main(){
             v = distort(worldSpacePosition.xyz, sphere6);
         if(v.w == 0)
             v = distort(worldSpacePosition.xyz, sphere7);
-    worldSpacePosition.xyz = v.xyz;
+        worldSpacePosition.xyz = v.xyz;
     }
 
     vec4 viewSpacePosition	= vMatrix * worldSpacePosition;

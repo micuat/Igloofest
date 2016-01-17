@@ -43,7 +43,7 @@ public:
 
     ofLight pointLight, ambientLight;
 
-    float rotation;
+    int rotation;
 
     float radius;
     float sphereRadius;

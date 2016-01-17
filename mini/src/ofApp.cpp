@@ -212,6 +212,7 @@ void ofApp::update() {
         centerForceCur = centerForce;
 
         rotateToggleCur = rotateToggle;
+        rotation = 0;
 
         int n = 1 << particleNum;
         spheres.resize(n);
@@ -255,8 +256,11 @@ void ofApp::update() {
     colorHue = 127;
     lightColor.setHue(colorHue);
 
-    rotation += 1;
-    if (rotation >= 360) rotation = 0;
+    if (rotateToggleCur)
+    {
+        rotation += 1;
+        if (rotation >= 360) rotation = 0;
+    }
 
     radius = cos(ofGetElapsedTimef()) * 200.f + 200.f;
 
@@ -490,7 +494,14 @@ void ofApp::draw() {
     ofDisableLighting();
 
 #ifdef ENCODE
-    ofSaveScreen(ofToDataPath("screenshots/" + ofToString(ofGetFrameNum(), 5, '0') + ".png"));
+    if (rotateToggleCur)
+    {
+        ofSaveScreen(ofToDataPath("screenshots/" + ofToString(rotation, 3, '0') + ".png"));
+        if (rotation == 359)
+        {
+            rotateToggleCur = false;
+        }
+    }
 #endif
 
     ofDisableDepthTest();
