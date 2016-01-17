@@ -32,6 +32,7 @@ public:
     bool refreshButton;
     bool obstacleToggle;
     bool rotateToggle, rotateToggleCur;
+    bool cloneToggle, cloneToggleCur;
     enum MeshMode {
         None, Wireframe, Points, Normal, Mesh
     } meshMode, meshModeCur;

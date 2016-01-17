@@ -47,7 +47,7 @@ void ofApp::setup() {
 
     lightPosition = ofVec3f();
     cameraPosition = ofVec3f(0, 0, -10);
-    cameraLookat = ofVec3f(0, 0, 10);
+    cameraLookat = ofVec3f(0, -0.5f, 0);
     lineWidth = 1;
     gravitySlider = 0.98f;
     centerForce = 0;
@@ -64,6 +64,7 @@ void ofApp::setup() {
     renderModeCur = renderMode = Sphere;
     meshModeCur = meshMode = None;
     centerForceCur = false;
+    cloneToggleCur = cloneToggle = false;
 
     rotateToggleCur = rotateToggle = false;
 
@@ -213,6 +214,8 @@ void ofApp::update() {
 
         rotateToggleCur = rotateToggle;
         rotation = 0;
+
+        cloneToggleCur = cloneToggle;
 
         int n = 1 << particleNum;
         spheres.resize(n);
@@ -431,58 +434,68 @@ void ofApp::draw() {
     ofPushMatrix();
     if(meshModeCur != None)
     {
-        scene.resetTransform();
-        scene.setPosition(0, 0, 0);
-        scene.setScale(0.01, -0.01, -0.01);
-        scene.transformGL();
-        if (meshModeCur == Mesh)
+        for (int ii = 0; ii < 8; ii++)
         {
-            shader.begin();
-            shader.setUniformMatrix4f("modelMatrix", scene.getGlobalTransformMatrix());
-            shader.setUniformMatrix3f("normalMatrix", mat4ToMat3(ofGetCurrentNormalMatrix()));
-            shader.setUniform1i("uDistort", 1);
-            for (int i = 0; i < 8; i++)
+            if (!cloneToggleCur)
             {
-                if (i < spheres.size())
-                {
-                    shader.setUniform3f("sphere" + ofToString(i), spheres.at(i)->getPosition());
-                }
-                else
-                {
-                    shader.setUniform3f("sphere" + ofToString(i), ofVec3f(-10000));
-                }
+                if (ii > 0)
+                    break;
             }
-            recordedMesh.draw();
-            shader.end();
-        }
-        else if (meshModeCur == Wireframe)
-        {
-            material.end();
-            recordedMesh.drawWireframe();
-            material.begin();
-        }
-        else if (meshModeCur == Points)
-        {
-            material.end();
-            recordedMesh.drawVertices();
-            material.begin();
-        }
-        else if (meshModeCur == Normal)
-        {
-            material.end();
-            vector<ofVec3f> n = recordedMesh.getNormals();
-            vector<ofVec3f> v = recordedMesh.getVertices();
-            float normalLength = 10;
-
-            ofSetColor(255, 255, 255, 70);
-            for (unsigned int i = 0; i < n.size(); i+=4) {
-                ofDrawLine(v[i].x, v[i].y, v[i].z,
-                    v[i].x + n[i].x*normalLength, v[i].y + n[i].y*normalLength, v[i].z + n[i].z*normalLength);
-
+            scene.resetTransform();
+            scene.setPosition(0, 0, 0);
+            scene.setScale(0.01, -0.01, -0.01);
+            //scene.move(ofVec3f(-5, 0, 0));
+            scene.rotate(rotation * ii / 2.0f, ofVec3f(0, -1, 0));
+            scene.transformGL();
+            if (meshModeCur == Mesh)
+            {
+                shader.begin();
+                shader.setUniformMatrix4f("modelMatrix", scene.getGlobalTransformMatrix());
+                shader.setUniformMatrix3f("normalMatrix", mat4ToMat3(ofGetCurrentNormalMatrix()));
+                shader.setUniform1i("uDistort", 1);
+                for (int i = 0; i < 8; i++)
+                {
+                    if (i < spheres.size())
+                    {
+                        shader.setUniform3f("sphere" + ofToString(i), spheres.at(i)->getPosition());
+                    }
+                    else
+                    {
+                        shader.setUniform3f("sphere" + ofToString(i), ofVec3f(-10000));
+                    }
+                }
+                recordedMesh.draw();
+                shader.end();
             }
-            material.begin();
+            else if (meshModeCur == Wireframe)
+            {
+                material.end();
+                recordedMesh.drawWireframe();
+                material.begin();
+            }
+            else if (meshModeCur == Points)
+            {
+                material.end();
+                recordedMesh.drawVertices();
+                material.begin();
+            }
+            else if (meshModeCur == Normal)
+            {
+                material.end();
+                vector<ofVec3f> n = recordedMesh.getNormals();
+                vector<ofVec3f> v = recordedMesh.getVertices();
+                float normalLength = 10;
+
+                ofSetColor(255, 255, 255, 70);
+                for (unsigned int i = 0; i < n.size(); i += 4) {
+                    ofDrawLine(v[i].x, v[i].y, v[i].z,
+                        v[i].x + n[i].x*normalLength, v[i].y + n[i].y*normalLength, v[i].z + n[i].z*normalLength);
+
+                }
+                material.begin();
+            }
+            scene.restoreTransformGL();
         }
-        scene.restoreTransformGL();
     }
 
     ofPopMatrix();
@@ -510,7 +523,7 @@ void ofApp::draw() {
         gui.begin();
 
         ImGui::SliderFloat3("light", lightPosition.getPtr(), -10, 10);
-        ImGui::SliderFloat3("camera", cameraPosition.getPtr(), -10, 10);
+        ImGui::SliderFloat3("camera", cameraPosition.getPtr(), -20, 20);
         ImGui::SliderFloat3("lookat", cameraLookat.getPtr(), -10, 10);
         ImGui::SliderFloat("line width", &lineWidth, 0.0f, 5.0f);
         ImGui::SliderFloat("gravity", &gravitySlider, 0.0f, 0.98f);
@@ -536,6 +549,7 @@ void ofApp::draw() {
         ImGui::Checkbox("obstacle", &obstacleToggle);
         ImGui::SliderFloat3("obstacle pos", obstaclePosition.getPtr(), -10, 10);
         ImGui::SliderFloat3("obstacle scale", obstacleScale.getPtr(), 0, 10);
+        ImGui::Checkbox("clone", &cloneToggle);
 
         ImGui::Text("Application average %.3f ms/frame (%.1f FPS)", 1000.0f / ImGui::GetIO().Framerate, ImGui::GetIO().Framerate);
 
