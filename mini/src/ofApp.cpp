@@ -1,6 +1,6 @@
 #include "ofApp.h"
 
-//#define ENCODE
+#define ENCODE
 
 unsigned int bindMap(ofImage& map)
 {
@@ -42,7 +42,7 @@ unsigned int bindMap(ofImage& map)
 void ofApp::setup() {
     ofSetVerticalSync(true);
     ofSetFrameRate(60);
-    ofBackground(10, 10, 10);
+    ofBackground(0, 0);
     ofEnableDepthTest();
 
     lightPosition = ofVec3f();
@@ -189,6 +189,9 @@ void ofApp::setup() {
 
     recordedMesh.load(ofToDataPath("meshesPCL/deer.ply"));
     recordedMesh.clearColors();
+
+    fbo.allocate(1920, 1080, GL_RGBA);
+    image.allocate(1920, 1080, OF_IMAGE_COLOR_ALPHA);
 }
 
 //--------------------------------------------------------------
@@ -346,6 +349,12 @@ ofMatrix3x3 mat4ToMat3(ofMatrix4x4 mat4) {
 
 //--------------------------------------------------------------
 void ofApp::draw() {
+#ifdef ENCODE
+    fbo.begin();
+#endif
+
+    //ofClearAlpha();
+    ofBackground(0, 0);
 
     ofEnableDepthTest();
     camera.begin();
@@ -444,8 +453,11 @@ void ofApp::draw() {
             scene.resetTransform();
             scene.setPosition(0, 0, 0);
             scene.setScale(0.01, -0.01, -0.01);
-            //scene.move(ofVec3f(-5, 0, 0));
-            scene.rotate(rotation * ii / 2.0f, ofVec3f(0, -1, 0));
+            scene.move(ofVec3f(5, 0, 0));
+            scene.rotateAround(rotation * ii / 2.0f, ofVec3f(0, -1, 0), ofVec3f(0, 0.5f, 0));
+            scene.lookAt(ofVec3f(0, 0.5f, 0), ofVec3f(0, 1, 0));
+            scene.rotate(90, ofVec3f(0, -1, 0));
+
             scene.transformGL();
             if (meshModeCur == Mesh)
             {
@@ -507,9 +519,15 @@ void ofApp::draw() {
     ofDisableLighting();
 
 #ifdef ENCODE
+    fbo.end();
+    fbo.draw(0, 0, ofGetWidth(), ofGetHeight());
+
     if (rotateToggleCur)
     {
-        ofSaveScreen(ofToDataPath("screenshots/" + ofToString(rotation, 3, '0') + ".png"));
+        //ofSaveScreen(ofToDataPath("screenshots/" + ofToString(rotation, 3, '0') + ".png"));
+        fbo.readToPixels(image.getPixels());
+        //image.resize(1920, 1080);
+        image.save(ofToDataPath("screenshots/" + ofToString(rotation, 3, '0') + ".png"));
         if (rotation == 359)
         {
             rotateToggleCur = false;

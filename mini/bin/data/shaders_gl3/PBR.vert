@@ -69,21 +69,21 @@ void main(){
     {
         vec4 v;
         v = worldSpacePosition;
-        v = distort(worldSpacePosition.xyz, sphere0);
-        if(v.w == 0)
-            v = distort(worldSpacePosition.xyz, sphere1);
-        if(v.w == 0)
-            v = distort(worldSpacePosition.xyz, sphere2);
-        if(v.w == 0)
-            v = distort(worldSpacePosition.xyz, sphere3);
-        if(v.w == 0)
-            v = distort(worldSpacePosition.xyz, sphere4);
-        if(v.w == 0)
-            v = distort(worldSpacePosition.xyz, sphere5);
-        if(v.w == 0)
-            v = distort(worldSpacePosition.xyz, sphere6);
-        if(v.w == 0)
-            v = distort(worldSpacePosition.xyz, sphere7);
+        v = distort(v.xyz, sphere0);
+        //if(v.w == 0)
+            v = distort(v.xyz, sphere1);
+        //if(v.w == 0)
+            v = distort(v.xyz, sphere2);
+        //if(v.w == 0)
+            v = distort(v.xyz, sphere3);
+        //if(v.w == 0)
+            v = distort(v.xyz, sphere4);
+        //if(v.w == 0)
+            v = distort(v.xyz, sphere5);
+        //if(v.w == 0)
+            v = distort(v.xyz, sphere6);
+        //if(v.w == 0)
+            v = distort(v.xyz, sphere7);
         worldSpacePosition.xyz = v.xyz;
     }
 

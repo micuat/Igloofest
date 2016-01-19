@@ -81,4 +81,6 @@ public:
 
     ofVboMesh recordedMesh;
 
+    ofFbo fbo;
+    ofImage image;
 };
